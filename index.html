@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Playbook Aiwa v3</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#e30613">
+<style>
+:root{--red:#e30613;--gray:#f5f5f5}
+*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial}
+body{background:#fff;color:#222}
+.app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+@media(min-width:768px){.app{max-width:900px}}
+header{background:var(--red);color:#fff;padding:16px;text-align:center;position:sticky;top:0;z-index:10}
+.view{display:none;padding:16px;flex:1;overflow:auto}
+.view.active{display:block}
+.btn{background:var(--red);color:#fff;border:none;border-radius:12px;padding:14px;font-weight:600;cursor:pointer;margin:6px 0;width:100%}
+.btn.outline{background:#fff;color:var(--red);border:2px solid var(--red)}
+.back{color:var(--red);background:none;border:none;font-weight:600;margin-bottom:10px;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.toggle{display:flex;gap:8px;margin:10px 0}
+.toggle button{flex:1;padding:8px;border-radius:8px;border:2px solid var(--red);background:#fff;color:var(--red);font-weight:600}
+.toggle button.active{background:var(--red);color:#fff}
+.dialog{margin:14px 0}
+/* CHAT MODE */
+.chat-mode .dialog{display:flex;gap:10px;align-items:flex-start}
+.chat-mode .avatar{width:48px;height:48px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.chat-mode .bubble{background:#fff;border:2px solid var(--red);border-radius:14px;padding:10px 12px;position:relative;flex:1}
+.chat-mode .bubble:before{content:'';position:absolute;left:-8px;top:18px;width:0;height:0;border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:8px solid var(--red)}
+.chat-mode .bubble strong{color:var(--red);display:block;margin-bottom:4px;font-size:14px}
+/* HQ MODE */
+.hq-mode .dialog{text-align:center}
+.hq-mode .avatar{width:160px;height:auto;margin:0 auto 8px;display:block;border-radius:12px}
+.hq-mode .bubble{background:var(--gray);border-radius:12px;padding:14px;text-align:left;max-width:600px;margin:0 auto}
+.hq-mode .bubble strong{color:var(--red);display:block;margin-bottom:6px}
+.card{background:var(--gray);padding:14px;border-radius:12px;margin:10px 0}
+h2{color:var(--red);margin:10px 0}
+@media print{header,.back,.btn,.toggle{display:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><h1>Playbook Aiwa</h1></header>
+
+<div id="home" class="view active">
+ <div class="grid">
+  <button class="btn" onclick="show('sim')">Simulações</button>
+  <button class="btn" onclick="show('comp')">Comparativos</button>
+  <button class="btn" onclick="show('rot')">Roteiro</button>
+  <button class="btn" onclick="show('ad')">Antes/Depois</button>
+  <button class="btn outline" onclick="window.print()">Imprimir PDF</button>
+  <button class="btn outline" onclick="show('sobre')">Sobre</button>
+ </div>
+</div>
+
+<div id="sim" class="view">
+ <button class="back" onclick="show('home')">← Menu</button>
+ <h2>Simulações</h2>
+ <div class="toggle">
+   <button id="btnChat" class="active" onclick="setMode('chat')">💬 Chat</button>
+   <button id="btnHQ" onclick="setMode('hq')">📖 HQ</button>
+ </div>
+ <button class="btn outline" onclick="openSim('s1')">1 - Abordagem</button>
+ <button class="btn outline" onclick="openSim('s2')">2 - Pós-venda</button>
+ <button class="btn outline" onclick="openSim('s3')">3 - Indicação</button>
+ <button class="btn outline" onclick="openSim('s4')">4 - Treinamento</button>
+ <button class="btn outline" onclick="openSim('msg')">Mensagem Final</button>
+</div>
+
+<div id="viewer" class="view chat-mode">
+ <button class="back" onclick="show('sim')">← Voltar</button>
+ <div id="content"></div>
+</div>
+
+<div id="comp" class="view"><button class="back" onclick="show('home')">←</button><h2>Comparativo</h2><div class="card">Aiwa 200W RMS, 30h bateria, Proteção e Durabilidade IP66, App com Bass, TWS, Power Bank. Concorrentes perdem potência e custam R$800-1000 a mais.</div></div>
+<div id="rot" class="view"><button class="back" onclick="show('home')">←</button><h2>Roteiro</h2><div class="card">1 Pergunte uso • 2 Faça sentir o grave • 3 Mostre médio/agudo • 4 Abra app e ligue Bass • 5 Mostre equalizadores • 6 Acompanhe até a porta</div></div>
+<div id="ad" class="view"><button class="back" onclick="show('home')">←</button><h2>Antes e Depois</h2><div class="card"><strong>Antes:</strong> Venda só com promotor<br><strong>Depois:</strong> Loja vende sozinha, manda foto na folga, cliente indica amigo</div></div>
+<div id="sobre" class="view"><button class="back" onclick="show('home')">←</button><div class="card">Versão 3.0 com modo Chat e HQ. Toque em instalar no Chrome para usar como app.</div></div>
+
+</div>
+<script>
+const sims = {
+ s1:`<h2>Simulação 1 - Abordagem</h2>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>PROMOTOR:</strong>Opa, pode aumentar aí sem medo. Eu sou o Bruno, da AIWA.</div></div>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>CLIENTE:</strong>Quero para churrasco, vi a C.1 mas tá cara.</div></div>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>PROMOTOR:</strong>Coloca a mão, sente vibrar? São 200W RMS reais, mantém na bateria.</div></div>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>PROMOTOR:</strong>Proteção e Durabilidade IP66, app com Bass, até 30h de bateria.</div></div>`,
+ s2:`<h2>Simulação 2 - Pós-venda</h2>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>CRISTIANE:</strong>Foi até meia-noite e ainda tinha bateria!</div></div>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>EDY:</strong>Pode lavar com jato leve, fecha a tampinha.</div></div>`,
+ s3:`<h2>Simulação 3 - Indicação</h2>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>FERNANDA:</strong>Quero para academia e praia.</div></div>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>BRUNO:</strong>Conecta duas em TWS, fica estéreo de verdade.</div></div>`,
+ s4:`<h2>Simulação 4 - Treinamento</h2>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>BRUNO:</strong>Não fale só 200W. Fale: coloca a mão, sente o grave.</div></div>
+ <div class="dialog"><img class="avatar" src="avatar.png"><div class="bubble"><strong>BRUNO:</strong>Abre o app, liga o Bass para reforço do grave, mostra equalizadores.</div></div>`,
+ msg:`<h2>Mensagem Final Completa</h2><div class="card">Para mim, bom relacionamento não é vender quando não estou lá. É atendimento direcionado, ajudar no pós-venda com Proteção e Durabilidade, TWS ou app, arrumar ilha, conquistar vitrine na folga. Essa semana a Ana me mandou foto da vitrine. <br><br><strong>O que eu faço:</strong> aplico técnica, faço cliente sentir o grave, mostro médio e agudo, abro app Aiwa, ligo o Bass para reforço do grave, falo dos equalizadores, ensino vendedor, acompanho até a porta.<br><br><strong>Resultado:</strong> venda direta, venda indireta (Cristiane indicou Fernanda), divulgação dentro e fora da loja, ponto extra. Lojas que tiraram promotor pararam de vender. Quando oferecemos experiência, loja ganha, vendedor ganha, marca ganha. Experiência vira relacionamento, relacionamento vira venda todo dia.</div>`
+};
+function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));document.getElementById(id).classList.add('active')}
+function openSim(k){document.getElementById('content').innerHTML=sims[k];show('viewer')}
+function setMode(m){const v=document.getElementById('viewer');v.classList.remove('chat-mode','hq-mode');v.classList.add(m+'-mode');document.getElementById('btnChat').classList.toggle('active',m==='chat');document.getElementById('btnHQ').classList.toggle('active',m==='hq');localStorage.setItem('mode',m)}
+const saved=localStorage.getItem('mode')||'chat';setMode(saved);
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}
+</script>
+</body>
+</html>
