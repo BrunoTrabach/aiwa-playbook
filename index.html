@@ -2,85 +2,68 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aiwa Playbook - Bruno Maia</title>
+<title>Playbook Aiwa</title>
 <style>
-:root{--bg:#0f172a;--card:#111827;--line:#1f2937;--pri:#2563eb;--txt:#e2e8f0;--muted:#9ca3af}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--txt)}
-header{background:var(--card);padding:20px;border-bottom:1px solid var(--line);text-align:center}
-h1{margin:0;font-size:26px} .sub{color:var(--muted);margin-top:4px}
-.container{max-width:1000px;margin:0 auto;padding:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;transition:.2s}
-.card:hover{transform:translateY(-2px);border-color:var(--pri)}
-.card h2{margin:0 0 8px;font-size:18px;color:#93c5fd}
-.card p{margin:0 0 12px;color:var(--muted);font-size:14px}
-.btn{display:inline-block;background:var(--pri);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:500}
-.btn.secondary{background:#1f2937;border:1px solid #374151}
-.section{margin-top:32px}
-.section h3{margin:0 0 12px;font-size:16px;color:#93c5fd;border-left:3px solid var(--pri);padding-left:8px}
-.list{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:#0b1220;border:1px solid var(--line);padding:8px 12px;border-radius:8px;font-size:13px}
-footer{text-align:center;padding:30px;color:var(--muted);font-size:13px}
+:root{--red:#E30613;--bg:#fff;--gray:#f5f5f7}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;background:var(--bg);color:#111}
+header{background:var(--red);color:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:10}
+header h1{font-size:22px;margin:0;font-weight:700}
+.icons{display:flex;gap:8px}
+.icon-btn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;background:transparent;border:0;cursor:pointer}
+.icon-btn:active{background:rgba(255,255,255,.15)}
+main{max-width:480px;margin:0 auto;padding:24px 16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--red);color:#fff;border-radius:20px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;box-shadow:0 4px 12px rgba(227,6,19,.18);transition:transform .15s}
+.card:active{transform:translateY(1px)}
+.card svg{width:28px;height:28px}
+footer{text-align:center;color:#888;font-size:13px;margin:48px 0 24px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:16px;max-width:360px;padding:20px}
+.modal-box h3{margin:0 0 8px}
+.modal-box button{margin-top:12px;background:var(--red);color:#fff;border:0;padding:10px 16px;border-radius:10px}
 </style>
 </head>
 <body>
 <header>
-<h1>🎵 Aiwa Playbook</h1>
-<div class="sub">Bruno Maia - Promotor | Treinamento e Vendas</div>
+  <h1>Playbook Aiwa</h1>
+  <div class="icons">
+    <button class="icon-btn" onclick="window.print()" title="Imprimir">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+    </button>
+    <button class="icon-btn" onclick="document.getElementById('sobre').classList.add('show')" title="Sobre">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h0"/></svg>
+    </button>
+  </div>
 </header>
+<main>
+  <div class="grid">
+    <a class="card" href="simulacoes/sim1.html">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Simulações
+    </a>
+    <a class="card" href="comparativos.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+      Comparativos
+    </a>
+    <a class="card" href="mensagem-final.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+      Roteiro
+    </a>
+    <a class="card" href="tecnologias-recursos.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12l9-5-9-5-9 5 9 5z"/></svg>
+      Tecnologias e Recursos
+    </a>
+  </div>
+</main>
+<footer>Aiwa - Japanese Technology Since 1951</footer>
 
-<div class="container">
-<div class="grid">
-<div class="card">
-<h2>📖 Simulações</h2>
-<p>4 histórias reais: abordagem, pós-venda, indicação e treinamento</p>
-<a class="btn" href="simulacoes/sim1.html">Sim 1</a>
-<a class="btn secondary" href="simulacoes/sim2.html">Sim 2</a>
-<a class="btn secondary" href="simulacoes/sim3.html">Sim 3</a>
-<a class="btn secondary" href="simulacoes/sim4.html">Sim 4</a>
+<div id="sobre" class="modal" onclick="this.classList.remove('show')">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <h3>Sobre</h3>
+    <p>Playbook Aiwa v4.3 - Bruno Maia. Ferramenta de vendas para demonstrar diferenciais BBS-01, BBS-02, AWS-SP-02 contra concorrentes. Criado para Show de Talentos Aiwa 2025.</p>
+    <button onclick="document.getElementById('sobre').classList.remove('show')">Fechar</button>
+  </div>
 </div>
-
-<div class="card">
-<h2>▶️ Modo Teatro</h2>
-<p>Assista a história completa em sequência automática (Sim 1→4)</p>
-<a class="btn" href="simulacoes/teatro.html">Assistir História Completa</a>
-</div>
-
-<div class="card">
-<h2>📊 Comparativos</h2>
-<p>Compare Aiwa BBS01 vs JBL, Philco, LG com dados reais 2025-2026</p>
-<a class="btn" href="comparativos.html">Abrir Comparativos</a>
-</div>
-</div>
-
-<div class="section">
-<h3>Mensagens</h3>
-<div class="list">
-<a class="chip" href="mensagem-final.html">Mensagem Final Completa</a>
-<a class="chip" href="mensagem-resumida.html">Versão Resumida</a>
-</div>
-</div>
-
-<div class="section">
-<h3>Configurações</h3>
-<div class="list">
-<span class="chip">Avatares travados ✓</span>
-<span class="chip">visual.json</span>
-<span class="chip">interface-comparativos.json</span>
-<span class="chip">Modo Teatro ativo</span>
-</div>
-</div>
-
-<div class="card" style="margin-top:24px;background:#0b1220">
-<h2>💡 Como usar</h2>
-<p>1. Comece pelo <strong>Modo Teatro</strong> para ver a jornada completa<br>
-2. Use <strong>Comparativos</strong> para mostrar diferenças técnicas para o cliente<br>
-3. Treine com as <strong>Simulações</strong> individuais</p>
-</div>
-</div>
-
-<footer>
-Aiwa Playbook v4.1 • Atualizado 2026 • Experiência vira relacionamento
-</footer>
 </body>
 </html>
