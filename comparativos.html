@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comparativos Boombox</title>
+<style>
+body{margin:0;font-family:system-ui;background:#0f172a;color:#e2e8f0}
+header{background:#111827;padding:14px;border-bottom:1px solid #1f2937}
+.container{max-width:1200px;margin:auto;padding:16px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:16px;margin:12px 0}
+select{width:100%;padding:10px;background:#0b1220;color:#e2e8f0;border:1px solid #374151;border-radius:8px}
+.selects{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border:1px solid #1f2937;padding:8px}th{background:#0b1220;color:#93c5fd;position:sticky;top:0}
+tr:nth-child(even)td{background:#0f172a}.btn{background:#2563eb;color:#fff;padding:8px 12px;border:none;border-radius:8px;cursor:pointer;margin:4px}
+.badge{padding:2px 6px;border-radius:4px;font-size:11px;margin-left:4px}
+</style>
+</head>
+<body>
+<header><h1 style="margin:0">📊 Comparativos</h1></header>
+<div class="container">
+<div class="card">
+<div class="selects">
+<select id="m1"></select><select id="m2"></select><select id="m3"></select><select id="m4"></select>
+</div>
+<div id="rapidas" style="margin-top:12px"></div>
+</div>
+<div class="card" id="res" style="display:none"><div style="overflow:auto"><table id="tab"></table></div></div>
+</div>
+<script>
+let CONFIG, MODELOS;
+const dados = {
+"BBS01-B":{nome:"Aiwa BBS01-B",potencia:"200W RMS (mantém na bateria)",config:"Sub 100W + Mid 60W + Tweet 40W",volume:"Mais alto",graves:"Fortes + BOOST app",medios:"Equilibrados 3 amps",agudos:"Brilhantes",bateria_alto:"~3h",bateria_medio:"25-30h",energy:"✅ Sim",ip:"IP66",bt:"5.3",pendrive:"✅ FAT32",aux:"✅ cabo 1m",powerbank:"✅ 5V/2A",rgb:"✅ 6 modos",app:"Aiwa BR Audio",eq:"Graves/médios/agudos",boost:"✅ >70%",dj:"✅",tws:"TWS",peso:"~6-7kg",preco:"R$1.000-1.600"},
+"BBS01-LBL":{nome:"Aiwa BBS01-LBL",potencia:"200W RMS",config:"Sub 100W + Mid 60W + Tweet 40W",volume:"Mais alto",graves:"Fortes + BOOST",medios:"Equilibrados",agudos:"Brilhantes",bateria_alto:"~3h",bateria_medio:"25-30h",energy:"✅",ip:"IP66",bt:"5.3",pendrive:"✅",aux:"✅",powerbank:"✅ 5V/2A",rgb:"✅",app:"Aiwa BR Audio",eq:"Completo",boost:"✅",dj:"✅",tws:"TWS",peso:"~6-7kg",preco:"R$1.000-1.600"},
+"JBL Boombox 3":{nome:"JBL Boombox 3",potencia:"180W AC / 136W bat",config:"Sub 80W + Mid 80W + Tweet 20W",volume:"Muito alto",graves:"Profundos controlados",medios:"Encorpados",agudos:"Cristalinos",bateria_alto:"4-7h",bateria_medio:"15-20h",energy:"❌",ip:"IP67",bt:"5.3",pendrive:"✅ USB-A",aux:"✅",powerbank:"✅ 5V/2A",rgb:"❌",app:"JBL Portable",eq:"Gráfico",boost:"❌",dj:"❌",tws:"PartyBoost",peso:"6.7kg",preco:"R$1.800-2.500"},
+"PBX01":{nome:"Philco PBX01",potencia:"~100-150W RMS",config:"3 vias",volume:"Alto",graves:"Potentes menos definidos",medios:"Claros",agudos:"Estridentes",bateria_alto:"5-10h",bateria_medio:"18-25h",energy:"❌",ip:"IP66",bt:"5.4",pendrive:"✅",aux:"✅",powerbank:"❌",rgb:"✅ 5 modos",app:"Philco Audio",eq:"Básico",boost:"ExBass",dj:"❌",tws:"Philco Conn",peso:"Pesada",preco:"R$900-1.400"},
+"LG XG9S":{nome:"LG XG9S",potencia:"120W",config:"Woofer+tweet",volume:"Bom",graves:"Punchy",medios:"Claros",agudos:"Decentes",bateria_alto:"8-11h",bateria_medio:"10-15h",energy:"❌",ip:"IP67",bt:"-",pendrive:"❌",aux:"?",powerbank:"❌",rgb:"✅",app:"LG ThinQ",eq:"Sim",boost:"❌",dj:"❌",tws:"Multipoint",peso:"Leve",preco:"R$1.200-2.000"},
+"LG XG8T":{nome:"LG XG8T",potencia:"120W",config:"-",volume:"Bom",graves:"-",medios:"-",agudos:"-",bateria_alto:"6-8h",bateria_medio:"10-12h",energy:"❌",ip:"IP67",bt:"-",pendrive:"❌",aux:"?",powerbank:"❌",rgb:"✅",app:"LG ThinQ",eq:"Sim",boost:"❌",dj:"❌",tws:"-",peso:"-",preco:"R$1.200-1.800"}
+};
+const campos=[["Potência","potencia"],["Config","config"],["Volume","volume"],["Graves","graves"],["Médios","medios"],["Agudos","agudos"],["Bateria 100%","bateria_alto"],["Bateria 50%","bateria_medio"],["Energy Saving","energy"],["IP","ip"],["Bluetooth","bt"],["Pen Drive","pendrive"],["AUX","aux"],["Power Bank","powerbank"],["RGB","rgb"],["App","app"],["EQ","eq"],["BOOST","boost"],["DJ","dj"],["TWS","tws"],["Peso","peso"],["Preço","preco"]];
+
+async function init(){
+  try{
+    const r=await fetch('config/interface-comparativos.json'); CONFIG=await r.json();
+  }catch(e){CONFIG={modelos_disponiveis:Object.keys(dados).map(id=>({id,nome:dados[id].nome}))};}
+  
+  const lista = CONFIG.modelos_disponiveis||[];
+  [m1,m2,m3,m4].forEach(s=>{
+    s.innerHTML='<option value="">--</option>';
+    lista.forEach(m=>{
+      if(m.ativo!==false){
+        const o=document.createElement('option');o.value=m.id;o.textContent=m.nome;
+        if(m.destaque) o.textContent+=' ★';
+        s.appendChild(o);
+      }
+    });
+    s.onchange=atualizar;
+  });
+  
+  const rap=document.getElementById('rapidas');
+  (CONFIG.comparacoes_rapidas||[]).forEach(c=>{
+    const b=document.createElement('button');b.className='btn';b.textContent=c.nome;
+    b.onclick=()=>{ [m1,m2,m3,m4].forEach((s,i)=>s.value=c.modelos[i]||''); atualizar(); };
+    rap.appendChild(b);
+  });
+  
+  // padrão
+  m1.value='BBS01-B'; m2.value='JBL Boombox 3'; atualizar();
+}
+function atualizar(){
+  const sel=[m1.value,m2.value,m3.value,m4.value].filter(Boolean);
+  if(sel.length<2){res.style.display='none';return}
+  const t=document.getElementById('tab'); t.innerHTML='';
+  let h='<tr><th>Critério</th>'+sel.map(id=>`<th>${dados[id]?.nome||id}</th>`).join('')+'</tr>'; t.innerHTML=h;
+  campos.forEach(([l,k])=>{
+    let r=`<tr><td><strong>${l}</strong></td>`;
+    sel.forEach(id=>{r+=`<td>${dados[id]?.[k]||'-'}</td>`});
+    t.innerHTML+=r+'</tr>';
+  });
+  res.style.display='block';
+}
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+  "versao": "4.1",
+  "projeto": "Aiwa Playbook",
+  "avatares": {
+    "bruno": "../avatares/bruno-promotor.jpg",
+    "edy": "../avatares/edy-vendedor.jpg",
+    "cristiane": "../avatares/cristiane-cliente.jpg",
+    "fernanda": "../avatares/fernanda-cliente.jpg"
+  },
+  "simulacoes": {
+    "ordem": [
+      "sim1.html",
+      "sim2.html",
+      "sim3.html",
+      "sim4.html"
+    ],
+    "modo_teatro": {
+      "ativo": true,
+      "autoplay": true,
+      "tempo_por_fala_ms": 3500,
+      "pausa_entre_etapas_ms": 1500,
+      "finaliza_em": "../mensagem-final.html",
+      "mostrar_progresso": true,
+      "permitir_pausa": true
+    }
+  },
+  "botoes": {
+    "voltar": "history.back()",
+    "chat": "setMode('chat')",
+    "hq": "setMode('hq')",
+    "teatro_play": "iniciarTeatro()",
+    "teatro_pause": "pausarTeatro()"
+  },
+  "interface": {
+    "tema": "dark",
+    "cor_primaria": "#2563eb",
+    "cor_fundo": "#0f172a"
+  }
+}

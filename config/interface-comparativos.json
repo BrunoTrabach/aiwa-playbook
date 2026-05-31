@@ -1,0 +1,118 @@
+{
+  "versao": "4.1",
+  "categoria": "comparativos",
+  "titulo": "Comparativos Boombox 2025-2026",
+  "modelos_disponiveis": [
+    {
+      "id": "BBS01-B",
+      "nome": "Aiwa BBS01-B (Preto)",
+      "marca": "Aiwa",
+      "ativo": true,
+      "destaque": true,
+      "cor_badge": "#2563eb"
+    },
+    {
+      "id": "BBS01-LBL",
+      "nome": "Aiwa BBS01-LBL (Azul)",
+      "marca": "Aiwa",
+      "ativo": true,
+      "destaque": false,
+      "cor_badge": "#0ea5e9"
+    },
+    {
+      "id": "JBL Boombox 3",
+      "nome": "JBL Boombox 3",
+      "marca": "JBL",
+      "ativo": true,
+      "destaque": true,
+      "cor_badge": "#f97316"
+    },
+    {
+      "id": "PBX01",
+      "nome": "Philco PBX01 Extreme",
+      "marca": "Philco",
+      "ativo": true,
+      "destaque": false,
+      "cor_badge": "#84cc16"
+    },
+    {
+      "id": "LG XG9S",
+      "nome": "LG XBOOM XG9S",
+      "marca": "LG",
+      "ativo": true,
+      "destaque": false,
+      "cor_badge": "#a855f7"
+    },
+    {
+      "id": "LG XG8T",
+      "nome": "LG XBOOM XG8T",
+      "marca": "LG",
+      "ativo": true,
+      "destaque": false,
+      "cor_badge": "#a855f7"
+    }
+  ],
+  "comparacoes_rapidas": [
+    {
+      "nome": "BBS01-B vs JBL",
+      "modelos": [
+        "BBS01-B",
+        "JBL Boombox 3"
+      ]
+    },
+    {
+      "nome": "BBS01-LBL vs PBX01 vs XG9S vs BBS01-B",
+      "modelos": [
+        "BBS01-LBL",
+        "PBX01",
+        "LG XG9S",
+        "BBS01-B"
+      ]
+    },
+    {
+      "nome": "Custo-benefício",
+      "modelos": [
+        "BBS01-B",
+        "PBX01",
+        "LG XG9S"
+      ]
+    }
+  ],
+  "campos_exibidos": [
+    "potencia",
+    "config",
+    "volume",
+    "graves",
+    "medios",
+    "agudos",
+    "bateria_alto",
+    "bateria_medio",
+    "energy",
+    "ip",
+    "bt",
+    "pendrive",
+    "aux",
+    "powerbank",
+    "rgb",
+    "app",
+    "eq",
+    "boost",
+    "dj",
+    "tws",
+    "peso",
+    "preco"
+  ],
+  "interface": {
+    "tema": "dark",
+    "cor_primaria": "#2563eb",
+    "mostrar_badge_vencedor": true,
+    "permitir_ate_4_modelos": true,
+    "ordenacao_padrao": "marca"
+  },
+  "fontes": [
+    "Manual oficial Aiwa BBS01",
+    "JBL Boombox 3 spec sheet",
+    "Vídeo Lente Ágil dez/2024",
+    "RTINGS, TudoCelular, Canaltech 2025-2026"
+  ]
+}
