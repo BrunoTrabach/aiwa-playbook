@@ -1,4 +1,85 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulação 1</title>
-<style>body{margin:0;background:#000;color:#fff;font-family:system-ui;display:flex;flex-direction:column;height:100vh} .chat{flex:1;overflow:auto;padding:20px} .msg{margin:10px 0;padding:12px 16px;border-radius:18px;max-width:80%;line-height:1.4} .bot{background:#1c1c1e;align-self:flex-start} .user{background:#E30613;align-self:flex-end;margin-left:auto} .cont{padding:16px;background:#111;text-align:center;display:none} button{background:#E30613;color:#fff;border:0;padding:14px 24px;border-radius:12px;font-weight:700;font-size:16px}</style>
-</head><body><div class="chat" id="c"></div><div class="cont" id="b"><button onclick="location.href='sim2.html'">Continuar história →</button></div>
-<script>const m=[{"w": "bot", "t": "Olá! Bruno da Aiwa aqui. Procurando uma boombox?"}, {"w": "user", "t": "Quero algo potente pra festa"}, {"w": "bot", "t": "BBS-01 tem 200W RMS reais, com Energy Saving mantém 200W na bateria"}, {"w": "user", "t": "JBL não é melhor?"}, {"w": "bot", "t": "JBL Boombox 3 tem 180W na tomada e cai pra 136W na bateria. Aiwa mantém os 200W"}];let i=0;function n(){if(i<m.length){const d=document.createElement('div');d.className='msg '+m[i].w;d.textContent=m[i].t;document.getElementById('c').appendChild(d);document.getElementById('c').scrollTop=1e9;i++;setTimeout(n,1400)}else{document.getElementById('b').style.display='block'}}n();</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>História 1 - Promotor e Cliente</title>
+<style>
+:root{--red:#E30613;--bg:#000}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI';background:var(--bg);color:#fff;height:100vh;display:flex;flex-direction:column}
+header{background:var(--red);padding:12px 16px;display:flex;align-items:center;gap:12px}
+header a{color:#fff;text-decoration:none;font-size:22px}
+.stage{background:#1a1a1a;padding:8px 16px;font-size:12px;color:#E30613;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.chat{flex:1;overflow-y:auto;padding:16px;background:linear-gradient(#000,#111)}
+.msg{max-width:85%;margin:8px 0;padding:12px 16px;border-radius:18px;line-height:1.45;animation:fade .3s;position:relative}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.promotor{background:#1c1c1e;border-bottom-left-radius:4px;align-self:flex-start}
+.cliente{background:var(--red);border-bottom-right-radius:4px;margin-left:auto}
+.vendedor{background:#0a4a0a;border-bottom-left-radius:4px}
+.label{font-size:11px;opacity:.7;margin-bottom:4px;font-weight:600}
+.controls{padding:16px;background:#111;display:flex;gap:12px}
+button{flex:1;background:var(--red);color:#fff;border:0;padding:14px;border-radius:12px;font-weight:600;font-size:15px}
+button:disabled{opacity:.4}
+.progress{height:3px;background:#222;position:relative}
+.bar{height:100%;background:var(--red);width:0%;transition:.3s}
+</style>
+</head>
+<body>
+<header><a href="index.html">←</a><div><div style="font-weight:600">História 1</div><div style="font-size:12px;opacity:.8">Promotor e Cliente</div></div></header>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="stage" id="stage">Chegada e abordagem</div>
+<div class="chat" id="chat"></div>
+<div class="controls">
+  <button id="prev" onclick="step(-1)" disabled>◀ Anterior</button>
+  <button id="next" onclick="step(1)">Próximo ▶</button>
+</div>
+<script>
+const roteiro=[
+{stage:"Chegada e abordagem",who:"promotor",label:"PROMOTOR (Bruno)",text:"Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?"},
+{stage:"Chegada e abordagem",who:"cliente",label:"CLIENTE (Cristiane)",text:"Olá, estou sim. Tô dando uma olhada pois quero levar para um churrasco. Vi a C.1 ali, mas tá salgada, mas ouvi falar muito bem da Aiwa e estava passando aqui e quando vi ela eu pensei em conhecer melhor."},
+{stage:"Identificando necessidade - UX",who:"promotor",label:"PROMOTOR",text:"Que legal eu vou te ajudar. Qual seu nome?"},
+{stage:"Identificando necessidade - UX",who:"cliente",label:"CLIENTE",text:"Meu nome é Cristiane."},
+{stage:"Identificando necessidade - UX",who:"promotor",label:"PROMOTOR",text:"Prazer Cristiane. Então falando em churrasco, podemos unir autonomia, qualidade e Potência para durar até o final do churrasco. O que você acha disso?"},
+{stage:"Identificando necessidade - UX",who:"cliente",label:"CLIENTE",text:"Isso mesmo que eu quero. O Churrasco deve começar umas 15h e vai até depois da janta."},
+{stage:"Conexão emocional - Nostalgia",who:"promotor",label:"PROMOTOR",text:"Pronto. Você já conhecia a AIWA das antigas, aquele som 3 em 1, que tinha CDs, Toca fitas e toca discos?"},
+{stage:"Conexão emocional - Nostalgia",who:"cliente",label:"CLIENTE",text:"Sim, meu pai tem um 3 em 1 até hoje. É bom demais, e ainda está funcionando, tem um som muito bom."},
+{stage:"Conexão emocional - Nostalgia",who:"promotor",label:"PROMOTOR",text:"É essa mesma Aiwa! Lembra da Sony, ela sempre foi referência em qualidade de Áudio e Vídeo? Então, compramos a fábrica que foi da Sony em Manaus, e hoje a Aiwa trabalha com a melhor qualidade em seus produtos. E assim estamos com a nossa Boombox superando as nossas concorrentes, é isso que vou te mostrar hoje."},
+{stage:"Demonstração sensorial",who:"promotor",label:"PROMOTOR",text:"Vou colocar uma música, olha a qualidade do som e como ele é limpo e não distorce. Coloca a mão aqui do lado, sente vibrar? São 200W RMS de verdade, e ela mantém a mesma Potência mesmo na bateria. Já as concorrentes não conseguem segurar, entregam uma Potência quando na tomada e tirando da tomada ficando somente na bateria eles costumam ter uma perda para economizar energia."},
+{stage:"Demonstração sensorial",who:"cliente",label:"CLIENTE",text:"Caramba, o grave é limpo."},
+{stage:"Demonstração sensorial",who:"cliente",label:"CLIENTE",text:"Gostei do som, e sobre potência, isso é muito bom e eu não sabia."},
+{stage:"Demonstração sensorial",who:"promotor",label:"PROMOTOR",text:"E a bateria segura até 30 horas em volume médio, o que dá para curtir seu churrasco tranquilo."},
+{stage:"Demonstração sensorial",who:"cliente",label:"CLIENTE",text:"Eu posso levar ela para perto da piscina e levar para praia também?"},
+{stage:"Demonstração sensorial",who:"promotor",label:"PROMOTOR",text:"Com certeza, temos proteção IP66. Aguenta poeira e jatos de água. Pode ficar tranquilo. Imagine que alguém pulou na piscina ou derrubaram algum líquido nela, você fecha o compartimento traseiro, aí poderá molhar para limpá-la, você só não pode mergulhar ela."},
+{stage:"Teste real com app",who:"promotor",label:"PROMOTOR",text:"Olha, ainda temos o nosso Aplicativo Aiwa Áudio BR. Pelo app da AIWA você ainda pode dar um reforço no grave e ainda pode escolher vários equalizadores. Já salva aí no celular."},
+{stage:"Fechamento",who:"promotor",label:"PROMOTOR",text:"E aí, muito bem né. Se precisar tirar alguma dúvida pode falar, tudo bem?"},
+{stage:"Fechamento",who:"cliente",label:"CLIENTE",text:"Gostei. Quanto tá saindo?"},
+{stage:"Fechamento",who:"promotor",label:"PROMOTOR",text:"Essa é mais uma vantagem, ela sai bem mais barata que a C.1, com mais potência real, e ainda temos a opção de você utilizar pen-drives com músicas e ainda pode carregar seu telefone utilizando a bateria da caixa como carregador portátil. Vou chamar o vendedor para tirar o pedido para a Senhora, tudo bem, só um minuto."},
+{stage:"Fechamento",who:"vendedor",label:"VENDEDOR (Edy)",text:"Oi, tudo bem? O Bruno me passou. Vamos fechar? Você leva ela hoje mesmo."},
+{stage:"Fechamento",who:"cliente",label:"CLIENTE",text:"Vamos."},
+{stage:"Pós-venda",who:"promotor",label:"PROMOTOR",text:"Parabéns pela escolha! Qualquer dúvida do app ou se precisar de algum outro produto da Aiwa, volta aqui na loja e pode procurar pelo Bruno Promotor da Aiwa."},
+{stage:"Pós-venda",who:"cliente",label:"CLIENTE",text:"Claro eu precisando eu volto sim, muito obrigada pelo seu atendimento."},
+{stage:"Pós-venda",who:"promotor",label:"PROMOTOR",text:"Eu quem agradeço pela sua atenção. Vou te acompanhar até a saída, tudo bem."},
+{stage:"Pós-venda",who:"cliente",label:"CLIENTE",text:"Obrigada, até logo."},
+{stage:"Pós-venda",who:"promotor",label:"PROMOTOR",text:"Tchau até logo."}
+];
+let i=0;
+const chat=document.getElementById('chat'), stage=document.getElementById('stage'), bar=document.getElementById('bar');
+function render(){
+  chat.innerHTML='';
+  for(let j=0;j<=i;j++){
+    const m=roteiro[j];
+    const d=document.createElement('div');
+    d.className='msg '+m.who;
+    d.innerHTML=`<div class="label">${m.label}</div>${m.text}`;
+    chat.appendChild(d);
+  }
+  stage.textContent=roteiro[i].stage;
+  bar.style.width=((i+1)/roteiro.length*100)+'%';
+  chat.scrollTop=chat.scrollHeight;
+  document.getElementById('prev').disabled=i===0;
+  document.getElementById('next').disabled=i===roteiro.length-1;
+}
+function step(d){i=Math.max(0,Math.min(roteiro.length-1,i+d));render()}
+render();
+</script>
+</body>
+</html>

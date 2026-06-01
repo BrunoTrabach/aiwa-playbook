@@ -1,0 +1,15 @@
+{
+  "app": "Playbook Aiwa",
+  "versao": "5.0",
+  "simulacoes": {
+    "menu": "simulacoes/index.html",
+    "sim1": "simulacoes/sim1.html",
+    "sim2": "simulacoes/sim2.html",
+    "sim3": "simulacoes/sim3.html",
+    "sim4": "simulacoes/sim4.html"
+  },
+  "tema": {
+    "cor_primaria": "#E30613",
+    "fundo": "#000000"
+  }
+}

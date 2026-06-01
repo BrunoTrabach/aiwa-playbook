@@ -1,45 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teatro Aiwa</title>
-<style>body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui}header{position:sticky;top:0;background:#111827;padding:10px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #1f2937}
-.btn{background:#1f2937;border:1px solid #374151;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer}
-.progress{flex:1;height:6px;background:#1f2937;border-radius:3px}.bar{height:100%;width:0;background:#2563eb;transition:.3s}
-.container{max-width:900px;margin:auto;padding:16px}.etapa{color:#93c5fd;margin:20px 0 8px;border-left:3px solid #2563eb;padding-left:8px;font-size:14px}
-.chat{display:flex;gap:10px;margin:8px 0;opacity:0;transform:translateY(8px);transition:.4s}.chat.show{opacity:1;transform:none}
-.avatar{width:44px;height:44px;border-radius:50%;border:2px solid #374151}.bubble{background:#1f2937;padding:10px;border-radius:12px;max-width:75%}
-.bubble.me{background:#0b3a82}.name{font-size:12px;color:#9ca3af;margin-bottom:2px}
-.final{text-align:center;padding:40px}</style></head>
-<body>
-<header><button class="btn" onclick="history.back()">←</button><div>História Completa</div><div class="progress"><div class="bar" id="bar"></div></div><button class="btn" id="p" onclick="toggle()">⏸️</button></header>
-<div class="container" id="s"></div>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modo Teatro - História Completa</title>
+<style>body{margin:0;background:#000;color:#fff;font-family:system-ui;display:flex;flex-direction:column;height:100vh}header{background:#E30613;padding:14px;text-align:center;font-weight:700}.stage{padding:10px;background:#111;color:#E30613;text-align:center;font-size:13px;text-transform:uppercase}.chat{flex:1;overflow:auto;padding:20px}.msg{margin:12px 0;padding:14px 18px;border-radius:16px;max-width:80%;line-height:1.5;animation:fade .5s}@keyframes fade{from{opacity:0}} .promotor,.vendedor{background:#1c1c1e} .cliente,.amiga{background:#E30613;margin-left:auto} .label{font-size:11px;opacity:.7;margin-bottom:4px}</style>
+</head><body>
+<header>🎬 MODO TEATRO - Experiência Completa Aiwa</header>
+<div class="stage" id="stage">Iniciando...</div>
+<div class="chat" id="chat"></div>
 <script>
-const f=[{e:"Sim 1 - Abordagem",n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA.",m:1},
-{n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Tô olhando pra churrasco. Vi a C.1, mas ouvi falar bem da Aiwa."},
-{n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Podemos unir autonomia, qualidade e potência.",m:1},
-{n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Churrasco das 15h até depois da janta."},
-{n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Conhecia a AIWA 3 em 1?",m:1},
-{n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Meu pai tem um até hoje."},
-{n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Sente vibrar? São 200W RMS reais, mantém na bateria. IP66, 30h.",m:1},
-{n:"Edy",a:"../avatares/edy-vendedor.jpg",t:"Vamos fechar? Leva hoje mesmo.",m:1},
-{n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Vamos."},
-{e:"Sim 2 - Pós-venda",n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Ei Edy, vim dar um oi."},
-{n:"Edy",a:"../avatares/edy-vendedor.jpg",t:"Como foi o churrasco?",m:1},
-{n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Até meia-noite e ainda tinha bateria."},
-{n:"Edy",a:"../avatares/edy-vendedor.jpg",t:"IP66, pode lavar com jato leve.",m:1},
-{n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"E usar duas caixas?"}, 
-{n:"Edy",a:"../avatares/edy-vendedor.jpg",t:"É o TWS, soma a potência.",m:1},
-{e:"Sim 3 - Indicação",n:"Cristiane",a:"../avatares/cristiane-cliente.jpg",t:"Essa é a Fernanda."},
-{n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Pra academia ou praia?",m:1},
-{n:"Fernanda",a:"../avatares/fernanda-cliente.jpg",t:"Academia e praia."},
-{n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Duas pareadas = 400W estéreo.",m:1},
-{n:"Fernanda",a:"../avatares/fernanda-cliente.jpg",t:"Quero. Vou levar igual."},
-{e:"Sim 4 - Treinamento",n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Edy, coloca a mão, sente o grave. Não fale só 200W.",m:1},
-{n:"Edy",a:"../avatares/edy-vendedor.jpg",t:"Sinto."},
-{n:"Bruno",a:"../avatares/bruno-promotor.jpg",t:"Abre o app, liga Bass Boost, mostra equalizador.",m:1}];
-let i=0,play=1,t;const s=document.getElementById('s'),b=document.getElementById('bar');
-function show(){if(i>=f.length){s.innerHTML+='<div class="final"><h2>Fim</h2><p>Experiência vira relacionamento. Relacionamento vira venda.</p><a class="btn" href="../mensagem-final.html" style="background:#2563eb;text-decoration:none">Ver Mensagem Final</a></div>';play=0;return}
-const x=f[i];if(x.e){s.innerHTML+=`<div class="etapa">${x.e}</div>`}
-const d=document.createElement('div');d.className='chat';d.innerHTML=`<img class="avatar" src="${x.a}"><div><div class="name">${x.n}</div><div class="bubble ${x.m?'me':''}">${x.t}</div></div>`;s.appendChild(d);setTimeout(()=>d.classList.add('show'),30);b.style.width=((i+1)/f.length*100)+'%';window.scrollTo(0,document.body.scrollHeight);i++;if(play)t=setTimeout(show,3500)}
-function toggle(){play=!play;document.getElementById('p').textContent=play?'⏸️':'▶️';if(play)show();else clearTimeout(t)}
-show();
+const todas=[
+...[{"h":"HISTÓRIA 1 - A VENDA","who":"promotor","label":"BRUNO","text":"Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?"}].concat([
+{who:"cliente",label:"CRISTIANE",text:"Olá, estou sim. Tô dando uma olhada pois quero levar para um churrasco. Vi a C.1 ali, mas tá salgada, mas ouvi falar muito bem da Aiwa."},
+{who:"promotor",label:"BRUNO",text:"Prazer Cristiane. Podemos unir autonomia, qualidade e Potência para durar até o final do churrasco."},
+{who:"cliente",label:"CRISTIANE",text:"Isso mesmo. O Churrasco começa 15h e vai até depois da janta."},
+{who:"promotor",label:"BRUNO",text:"Você conhecia a AIWA das antigas, aquele 3 em 1?"},
+{who:"cliente",label:"CRISTIANE",text:"Sim, meu pai tem um até hoje."},
+{who:"promotor",label:"BRUNO",text:"É essa mesma! Compramos a fábrica da Sony em Manaus. Hoje a Aiwa supera as concorrentes."},
+{who:"promotor",label:"BRUNO",text:"Coloca a mão aqui, sente vibrar? São 200W RMS de verdade, mantém na bateria. Concorrentes perdem potência."},
+{who:"cliente",label:"CRISTIANE",text:"Caramba, o grave é limpo."},
+{who:"promotor",label:"BRUNO",text:"Bateria de 30 horas. IP66 aguenta piscina e praia."},
+{who:"promotor",label:"BRUNO",text:"Tem o app Aiwa Áudio BR com Bass Boost."},
+{who:"cliente",label:"CRISTIANE",text:"Gostei. Quanto tá?"},
+{who:"promotor",label:"BRUNO",text:"Bem mais barata que C.1, com powerbank e USB."},
+{who:"vendedor",label:"EDY",text:"Vamos fechar?"},
+{who:"cliente",label:"CRISTIANE",text:"Vamos."}
+]),
+...[{"h":"HISTÓRIA 2 - PÓS-VENDA (5 dias depois)","who":"cliente","label":"CRISTIANE","text":"Ei Edy! Vim só dar um oi."}].concat([
+{who:"vendedor",label:"EDY",text:"Como foi o churrasco?"},
+{who:"cliente",label:"CRISTIANE",text:"Ficamos até meia-noite e ainda tinha bateria."},
+{who:"vendedor",label:"EDY",text:"Usou na piscina?"},
+{who:"cliente",label:"CRISTIANE",text:"Usei e levei pra praia."},
+{who:"vendedor",label:"EDY",text:"IP66 pode lavar com jato leve, só não mergulhar."},
+{who:"cliente",label:"CRISTIANE",text:"E o TWS, como funciona?"},
+{who:"vendedor",label:"EDY",text:"Liga duas Boombox, fica 400W."},
+{who:"cliente",label:"CRISTIANE",text:"Minha amiga quer comprar."},
+{who:"vendedor",label:"EDY",text:"Traz ela sábado."}
+]),
+...[{"h":"HISTÓRIA 3 - INDICAÇÃO","who":"cliente","label":"CRISTIANE","text":"Edy! Essa é a Fernanda."}].concat([
+{who:"promotor",label:"BRUNO",text:"Olá Fernanda, pra que vai usar?"},
+{who:"amiga",label:"FERNANDA",text:"Academia e praia."},
+{who:"promotor",label:"BRUNO",text:"Pareia as duas, fica estéreo 400W."},
+{who:"amiga",label:"FERNANDA",text:"E a bateria?"},
+{who:"promotor",label:"BRUNO",text:"30 horas, IP66 não entra areia."},
+{who:"amiga",label:"FERNANDA",text:"Quero levar."}
+]),
+...[{"h":"HISTÓRIA 4 - TREINAMENTO","who":"promotor","label":"BRUNO","text":"Edy, vamos parear duas. Coloca a mão, sente o grave?"}].concat([
+{who:"vendedor",label:"EDY",text:"Sinto."},
+{who:"promotor",label:"BRUNO",text:"Não fale '200W', fale 'sente o grave'. Mostra o app, Bass Boost, equalizadores."},
+{who:"promotor",label:"BRUNO",text:"Resumo: pergunta uso, pareia, sente grave, mostra app, deixa escolher."}
+]),
+...[{"h":"MENSAGEM FINAL","who":"promotor","label":"BRUNO - MENSAGEM",text:"Relacionamento é fazer a loja vender Aiwa mesmo sem eu estar lá. Eu não vendo ficha técnica, eu entrego experiência. Experiência vira relacionamento. Relacionamento vira venda todo dia."}]
+];
+let i=0;const chat=document.getElementById('chat'),stage=document.getElementById('stage');
+function next(){if(i<todas.length){const m=todas[i];if(m.h)stage.textContent=m.h;const d=document.createElement('div');d.className='msg '+m.who;d.innerHTML=`<div class="label">${m.label}</div>${m.text}`;chat.appendChild(d);chat.scrollTop=1e9;i++;setTimeout(next,2800)}else{stage.textContent="FIM - Experiência completa";}}
+next();
 </script></body></html>

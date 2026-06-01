@@ -1,69 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Playbook Aiwa</title>
-<style>
-:root{--red:#E30613;--bg:#fff;--gray:#f5f5f7}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial;background:var(--bg);color:#111}
-header{background:var(--red);color:#fff;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:10}
-header h1{font-size:22px;margin:0;font-weight:700}
-.icons{display:flex;gap:8px}
-.icon-btn{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;background:transparent;border:0;cursor:pointer}
-.icon-btn:active{background:rgba(255,255,255,.15)}
-main{max-width:480px;margin:0 auto;padding:24px 16px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.card{background:var(--red);color:#fff;border-radius:20px;height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;font-size:16px;box-shadow:0 4px 12px rgba(227,6,19,.18);transition:transform .15s}
-.card:active{transform:translateY(1px)}
-.card svg{width:28px;height:28px}
-footer{text-align:center;color:#888;font-size:13px;margin:48px 0 24px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:20px}
-.modal.show{display:flex}
-.modal-box{background:#fff;border-radius:16px;max-width:360px;padding:20px}
-.modal-box h3{margin:0 0 8px}
-.modal-box button{margin-top:12px;background:var(--red);color:#fff;border:0;padding:10px 16px;border-radius:10px}
-</style>
-</head>
-<body>
-<header>
-  <h1>Playbook Aiwa</h1>
-  <div class="icons">
-    <button class="icon-btn" onclick="window.print()" title="Imprimir">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
-    </button>
-    <button class="icon-btn" onclick="document.getElementById('sobre').classList.add('show')" title="Sobre">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h0"/></svg>
-    </button>
-  </div>
-</header>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tecnologias e Recursos</title>
+<style>body{margin:0;font-family:system-ui;background:#000;color:#fff}header{background:#E30613;padding:20px;text-align:center;font-size:22px;font-weight:700}main{max-width:900px;margin:0 auto;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}.brand{background:#111;border:1px solid #333;border-radius:16px;padding:20px;text-align:center;text-decoration:none;color:#fff}.brand h3{color:#E30613;margin:0 0 8px}</style></head><body>
+<header>TECNOLOGIAS E RECURSOS</header>
 <main>
-  <div class="grid">
-    <a class="card" href="simulacoes/sim1.html">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-      Simulações
-    </a>
-    <a class="card" href="comparativos.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
-      Comparativos
-    </a>
-    <a class="card" href="mensagem-final.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-      Roteiro
-    </a>
-    <a class="card" href="tecnologias-recursos.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20l9-5-9-5-9 5 9 5z"/><path d="M12 12l9-5-9-5-9 5 9 5z"/></svg>
-      Tecnologias e Recursos
-    </a>
-  </div>
-</main>
-<footer>Aiwa - Japanese Technology Since 1951</footer>
-
-<div id="sobre" class="modal" onclick="this.classList.remove('show')">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <h3>Sobre</h3>
-    <p>Playbook Aiwa v4.3 - Bruno Maia. Ferramenta de vendas para demonstrar diferenciais BBS-01, BBS-02, AWS-SP-02 contra concorrentes. Criado para Show de Talentos Aiwa 2025.</p>
-    <button onclick="document.getElementById('sobre').classList.remove('show')">Fechar</button>
-  </div>
-</div>
-</body>
-</html>
+<a class="brand" href="aiwa/visao-geral.html"><h3>AIWA</h3><p>BBS01 - 200W</p></a>
+<a class="brand" href="jbl/visao-geral.html"><h3>JBL</h3><p>Boombox 3 - 180W</p></a>
+<a class="brand" href="lg/visao-geral.html"><h3>LG</h3><p>XG9S - 120W Meridian</p></a>
+<a class="brand" href="philco/visao-geral.html"><h3>PHILCO</h3><p>PBX01 - 300W</p></a>
+</main></body></html>
