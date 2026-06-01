@@ -1,21 +1,4 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>História 2 - Anime</title>
-<style>:root{--red:#E30613}body{margin:0;font-family:system-ui;background:#000;color:#fff;height:100vh;display:flex;flex-direction:column}
-header{background:var(--red);padding:12px;display:flex;align-items:center;gap:12px}header a{color:#fff;text-decoration:none;font-size:22px}
-.chat{flex:1;overflow:auto;padding:16px;background:#111}.msg{display:flex;gap:10px;margin:12px 0;align-items:flex-end}
-.msg img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #333}
-.bubble{max-width:75%;padding:12px 16px;border-radius:18px;line-height:1.4}
-.vendedor .bubble,.promotor .bubble{background:#1c1c1e;border-bottom-left-radius:4px}
-.cliente .bubble,.amiga .bubble{background:var(--red);border-bottom-right-radius:4px}
-.cliente,.amiga{flex-direction:row-reverse}
-.label{font-size:11px;opacity:.7;margin-bottom:4px}
-.controls{padding:14px;background:#000;display:flex;gap:10px}button{flex:1;background:var(--red);border:0;color:#fff;padding:12px;border-radius:10px;font-weight:600}
-</style></head><body>
-<header><a href="index.html">←</a><div>História 2 - Anime</div></header>
-<div class="chat" id="chat"></div>
-<div class="controls"><button onclick="step(-1)">◀</button><button onclick="step(1)">▶</button></div>
-<script>
-const roteiro=[{'who': 'cliente', 'avatar': 'Cristiane_cliente_anime.jpg', 'label': 'CRISTIANE', 'text': 'Ei Edy! Vim dar um oi.'}, {'who': 'vendedor', 'avatar': 'Edy_Vendedor_anime.jpg', 'label': 'EDY', 'text': 'Como foi o churrasco?'}, {'who': 'cliente', 'avatar': 'Cristiane_cliente_anime.jpg', 'label': 'CRISTIANE', 'text': 'Ficamos até meia-noite e ainda tinha bateria!'}, {'who': 'vendedor', 'avatar': 'Edy_Vendedor_anime.jpg', 'label': 'EDY', 'text': 'Usou na piscina?'}, {'who': 'cliente', 'avatar': 'Cristiane_cliente_anime.jpg', 'label': 'CRISTIANE', 'text': 'Sim, IP66 aguentou.'}];
-let i=0;const chat=document.getElementById('chat');
-function render(){chat.innerHTML='';for(let j=0;j<=i;j++){const m=roteiro[j];const d=document.createElement('div');d.className='msg '+m.who;d.innerHTML=`<img src="avatares/${m.avatar}"><div><div class="label">${m.label}</div><div class="bubble">${m.text}</div></div>`;chat.appendChild(d);}chat.scrollTop=1e9}
-function step(d){i=Math.max(0,Math.min(roteiro.length-1,i+d));render()}render();
-</script></body></html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulação 2 - Anime</title>
+<style>body{margin:0;font-family:system-ui;background:#0b0b0b;color:#fff}header{background:#E30613;padding:16px;text-align:center;font-weight:800}.wrap{max-width:700px;margin:auto;padding:16px}.msg{display:flex;gap:10px;margin:14px 0;align-items:flex-end}.msg img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #E30613}.bubble{background:#1a1a1a;padding:12px 14px;border-radius:14px;max-width:75%}.msg.right{flex-direction:row-reverse}.msg.right .bubble{background:#E30613}a{color:#fff;text-decoration:none;display:block;text-align:center;margin:20px}</style></head><body>
+<header>Simulação 2 - Anime</header>
+<div class="wrap"><div class="msg right"><img src="../avatares/Bruno_Promotor_anime.jpg"><div class="bubble"><b>Bruno</b><br>Coloca a mão aqui perto. Vou ativar o BOOST no app.</div></div><div class="msg left"><img src="../avatares/Cristiane_cliente_anime.jpg"><div class="bubble"><b>Cristiane</b><br>Nossa! Vibra muito!</div></div><div class="msg right"><img src="../avatares/Edy_Vendedor_anime.jpg"><div class="bubble"><b>Edy</b><br>E a bateria dura 30 horas reais. IP66, pode levar pra praia sem medo.</div></div><a href="index.html">← Voltar</a></div></body></html>

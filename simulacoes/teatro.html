@@ -1,54 +1,12 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modo Teatro - História Completa</title>
-<style>body{margin:0;background:#000;color:#fff;font-family:system-ui;display:flex;flex-direction:column;height:100vh}header{background:#E30613;padding:14px;text-align:center;font-weight:700}.stage{padding:10px;background:#111;color:#E30613;text-align:center;font-size:13px;text-transform:uppercase}.chat{flex:1;overflow:auto;padding:20px}.msg{margin:12px 0;padding:14px 18px;border-radius:16px;max-width:80%;line-height:1.5;animation:fade .5s}@keyframes fade{from{opacity:0}} .promotor,.vendedor{background:#1c1c1e} .cliente,.amiga{background:#E30613;margin-left:auto} .label{font-size:11px;opacity:.7;margin-bottom:4px}</style>
-</head><body>
-<header>🎬 MODO TEATRO - Experiência Completa Aiwa</header>
-<div class="stage" id="stage">Iniciando...</div>
-<div class="chat" id="chat"></div>
-<script>
-const todas=[
-...[{"h":"HISTÓRIA 1 - A VENDA","who":"promotor","label":"BRUNO","text":"Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?"}].concat([
-{who:"cliente",label:"CRISTIANE",text:"Olá, estou sim. Tô dando uma olhada pois quero levar para um churrasco. Vi a C.1 ali, mas tá salgada, mas ouvi falar muito bem da Aiwa."},
-{who:"promotor",label:"BRUNO",text:"Prazer Cristiane. Podemos unir autonomia, qualidade e Potência para durar até o final do churrasco."},
-{who:"cliente",label:"CRISTIANE",text:"Isso mesmo. O Churrasco começa 15h e vai até depois da janta."},
-{who:"promotor",label:"BRUNO",text:"Você conhecia a AIWA das antigas, aquele 3 em 1?"},
-{who:"cliente",label:"CRISTIANE",text:"Sim, meu pai tem um até hoje."},
-{who:"promotor",label:"BRUNO",text:"É essa mesma! Compramos a fábrica da Sony em Manaus. Hoje a Aiwa supera as concorrentes."},
-{who:"promotor",label:"BRUNO",text:"Coloca a mão aqui, sente vibrar? São 200W RMS de verdade, mantém na bateria. Concorrentes perdem potência."},
-{who:"cliente",label:"CRISTIANE",text:"Caramba, o grave é limpo."},
-{who:"promotor",label:"BRUNO",text:"Bateria de 30 horas. IP66 aguenta piscina e praia."},
-{who:"promotor",label:"BRUNO",text:"Tem o app Aiwa Áudio BR com Bass Boost."},
-{who:"cliente",label:"CRISTIANE",text:"Gostei. Quanto tá?"},
-{who:"promotor",label:"BRUNO",text:"Bem mais barata que C.1, com powerbank e USB."},
-{who:"vendedor",label:"EDY",text:"Vamos fechar?"},
-{who:"cliente",label:"CRISTIANE",text:"Vamos."}
-]),
-...[{"h":"HISTÓRIA 2 - PÓS-VENDA (5 dias depois)","who":"cliente","label":"CRISTIANE","text":"Ei Edy! Vim só dar um oi."}].concat([
-{who:"vendedor",label:"EDY",text:"Como foi o churrasco?"},
-{who:"cliente",label:"CRISTIANE",text:"Ficamos até meia-noite e ainda tinha bateria."},
-{who:"vendedor",label:"EDY",text:"Usou na piscina?"},
-{who:"cliente",label:"CRISTIANE",text:"Usei e levei pra praia."},
-{who:"vendedor",label:"EDY",text:"IP66 pode lavar com jato leve, só não mergulhar."},
-{who:"cliente",label:"CRISTIANE",text:"E o TWS, como funciona?"},
-{who:"vendedor",label:"EDY",text:"Liga duas Boombox, fica 400W."},
-{who:"cliente",label:"CRISTIANE",text:"Minha amiga quer comprar."},
-{who:"vendedor",label:"EDY",text:"Traz ela sábado."}
-]),
-...[{"h":"HISTÓRIA 3 - INDICAÇÃO","who":"cliente","label":"CRISTIANE","text":"Edy! Essa é a Fernanda."}].concat([
-{who:"promotor",label:"BRUNO",text:"Olá Fernanda, pra que vai usar?"},
-{who:"amiga",label:"FERNANDA",text:"Academia e praia."},
-{who:"promotor",label:"BRUNO",text:"Pareia as duas, fica estéreo 400W."},
-{who:"amiga",label:"FERNANDA",text:"E a bateria?"},
-{who:"promotor",label:"BRUNO",text:"30 horas, IP66 não entra areia."},
-{who:"amiga",label:"FERNANDA",text:"Quero levar."}
-]),
-...[{"h":"HISTÓRIA 4 - TREINAMENTO","who":"promotor","label":"BRUNO","text":"Edy, vamos parear duas. Coloca a mão, sente o grave?"}].concat([
-{who:"vendedor",label:"EDY",text:"Sinto."},
-{who:"promotor",label:"BRUNO",text:"Não fale '200W', fale 'sente o grave'. Mostra o app, Bass Boost, equalizadores."},
-{who:"promotor",label:"BRUNO",text:"Resumo: pergunta uso, pareia, sente grave, mostra app, deixa escolher."}
-]),
-...[{"h":"MENSAGEM FINAL","who":"promotor","label":"BRUNO - MENSAGEM",text:"Relacionamento é fazer a loja vender Aiwa mesmo sem eu estar lá. Eu não vendo ficha técnica, eu entrego experiência. Experiência vira relacionamento. Relacionamento vira venda todo dia."}]
-];
-let i=0;const chat=document.getElementById('chat'),stage=document.getElementById('stage');
-function next(){if(i<todas.length){const m=todas[i];if(m.h)stage.textContent=m.h;const d=document.createElement('div');d.className='msg '+m.who;d.innerHTML=`<div class="label">${m.label}</div>${m.text}`;chat.appendChild(d);chat.scrollTop=1e9;i++;setTimeout(next,2800)}else{stage.textContent="FIM - Experiência completa";}}
-next();
-</script></body></html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modo Teatro</title>
+<style>body{margin:0;font-family:system-ui;background:#000;color:#fff}header{background:#E30613;padding:16px;text-align:center;font-weight:800}main{max-width:800px;margin:auto;padding:20px;line-height:1.7}h2{color:#E30613}</style></head><body>
+<header>MODO TEATRO - TREINAMENTO COMPLETO</header>
+<main>
+<h2>Roteiro completo</h2>
+<p><b>Personagens:</b> Bruno Promotor AIWA, Edy Vendedor, Cristiane Cliente, Fernanda Amiga</p>
+<h2>Ato 1 - Abordagem</h2><p>Bruno aborda Cristiane com sorriso e pergunta sobre uso.</p>
+<h2>Ato 2 - Demonstração</h2><p>Ativa BOOST, mostra app, compara com JBL.</p>
+<h2>Ato 3 - Objeção</h2><p>Cristiane questiona preço. Bruno explica RMS vs PMPO.</p>
+<h2>Ato 4 - Fechamento</h2><p>Oferta capa + parcelamento. Fechamento.</p>
+<p><a href="index.html" style="color:#fff">← Voltar</a></p>
+</main></body></html>
