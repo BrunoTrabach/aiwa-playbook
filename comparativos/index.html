@@ -1,17 +1,1 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparativos</title><link rel="stylesheet" href="../assets/css/gvbus.css"></head><body>
-<div class="page-header"><h1>COMPARATIVOS</h1></div>
-<div class="container"><div class="card">
-<h3>Selecione os modelos</h3>
-<label><input type="checkbox" class="m" value="aiwa" checked> Aiwa BBS-01</label> 
-<label><input type="checkbox" class="m" value="jbl" checked> JBL Boombox 3</label>
-<label><input type="checkbox" class="m" value="lg"> LG Xboom</label>
-<label><input type="checkbox" class="m" value="philco"> Philco</label>
-</div>
-<div class="card"><table id="t"><thead><tr><th>Especificação</th><th data-k="aiwa">Aiwa BBS-01</th><th data-k="jbl">JBL Boombox 3</th><th data-k="lg" style="display:none">LG Xboom</th><th data-k="philco" style="display:none">Philco</th></tr></thead><tbody>
-<tr><td>Potência</td><td data-k="aiwa">200W RMS</td><td data-k="jbl">180W (AC) / 136W (bateria)</td><td data-k="lg" style="display:none">—</td><td data-k="philco" style="display:none">—</td></tr>
-<tr><td>Bateria</td><td data-k="aiwa">30h</td><td data-k="jbl">24h</td><td data-k="lg" style="display:none">—</td><td data-k="philco" style="display:none">—</td></tr>
-<tr><td>IP</td><td data-k="aiwa">IP66</td><td data-k="jbl">IP67</td><td data-k="lg" style="display:none">—</td><td data-k="philco" style="display:none">—</td></tr>
-<tr><td>Power Bank</td><td data-k="aiwa"><span class="badge" style="background:#009639">Sim 5V/2A</span></td><td data-k="jbl"><span class="badge" style="background:#009639">Sim</span></td><td data-k="lg" style="display:none">—</td><td data-k="philco" style="display:none">—</td></tr>
-</tbody></table></div></div>
-<script>document.querySelectorAll('.m').forEach(c=>c.onchange=()=>{document.querySelectorAll(`[data-k="${c.value}"]`).forEach(el=>el.style.display=c.checked?'':'none')})</script>
-</body></html>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparativos</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-gray-50"><header class="bg-[#E30613] text-white sticky top-0"><div class="flex items-center h-14 px-4 gap-3"><a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></a><h1 class="font-semibold capitalize">comparativos</h1></div></header><main class="p-6"><div class="bg-white p-8 rounded-2xl shadow text-center">Em construção</div></main></body></html>
