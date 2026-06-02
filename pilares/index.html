@@ -1,16 +1,15 @@
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3 Pilares</title>
-<style>body{margin:0;font-family:system-ui;background:#0a0a0a;color:#fff}header{background:#E30613;padding:20px;text-align:center}h1{margin:0}.container{max-width:900px;margin:auto;padding:20px}.pilar{background:#141414;border-left:5px solid #E30613;padding:20px;margin:16px 0;border-radius:8px}.script{background:#000;padding:14px;border-radius:8px;margin-top:10px;font-style:italic;border:1px dashed #333}</style>
-</head><body>
-<header><h1>🧠 3 Pilares - Método CHEGA+</h1></header>
-<div class="container" id="content">Carregando...</div>
-<script>
-fetch('dados/pilares.json').then(r=>r.json()).then(d=>{
-  document.getElementById('content').innerHTML = '<p style="color:#aaa">'+d.descricao+'</p>' + d.pilares.map(p=>`
-    <div class="pilar">
-      <h2>${p.icone} ${p.nome}</h2>
-      <p><b>Conceito:</b> ${p.conceito}</p>
-      <div class="script">"${p.script}"</div>
-    </div>
-  `).join('');
-});
-</script></body></html>
+<link rel="stylesheet" href="../assets/css/unificado.css"></head><body>
+<div class="header-page"><h1>3 PILARES</h1></div>
+<div class="container">
+  <div class="card"><h2 style="color:var(--aiwa);margin-top:0">Método CHEGA+</h2>
+    <div class="etapa">Pilar 1: UX & Descoberta</div>
+    <div class="texto-box">E aí, beleza? Pode aumentar o som aí... você busca som para casa relaxando ou pancada para churrasco? Você é da época da AIWA 3 em 1?</div>
+    <div class="etapa">Pilar 2: Legado e Engenharia</div>
+    <div class="texto-box">Fabricada em Manaus, na antiga fábrica da Sony. Mesma engenharia japonesa, com Bluetooth e bateria de última geração.</div>
+    <div class="etapa">Pilar 3: Demonstração Sensorial</div>
+    <div class="texto-box">Coloca a mão aqui... sente o radiador vibrar? 200W reais, sem distorção.</div>
+  </div>
+</div>
+<div class="watermark-footer">Desenvolvido por Bruno Trabach • Playbook Aiwa V4 • 2026</div>
+</body></html>

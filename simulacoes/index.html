@@ -1,16 +1,42 @@
 <!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulações</title>
-<style>body{margin:0;font-family:system-ui;background:#f5f5f5}header{background:#E30613;color:#fff;padding:18px;text-align:center;font-weight:800}.list{padding:16px;max-width:600px;margin:auto}.item{background:#fff;border-radius:14px;padding:18px;margin:12px 0;box-shadow:0 2px 8px rgba(0,0,0,.06);text-decoration:none;color:#000;display:block}.item b{color:#E30613}</style></head><body>
-<header>SIMULAÇÕES DE VENDA</header>
-<div class="list">
-<a class="item" href="sim1.html"><b>Sim 1</b><br>Abordagem inicial na loja</a>
-<a class="item" href="sim2.html"><b>Sim 2</b><br>Demonstração do grave</a>
-<a class="item" href="sim3.html"><b>Sim 3</b><br>Objeção de preço</a>
-<a class="item" href="sim4.html"><b>Sim 4</b><br>Fechamento com app</a>
-<a class="item" href="teatro.html"><b>Modo Teatro</b><br>Treinamento completo</a>
-<hr>
-<a class="item" href="sim1_anime.html"><b>Sim 1 Anime</b></a>
-<a class="item" href="sim2_anime.html"><b>Sim 2 Anime</b></a>
-<a class="item" href="sim3_anime.html"><b>Sim 3 Anime</b></a>
-<a class="item" href="sim4_anime.html"><b>Sim 4 Anime</b></a>
-<p><a href="../index.html">← Voltar</a></p>
-</div></body></html>
+<link rel="stylesheet" href="../assets/css/unificado.css"></head><body>
+<div class="header-page"><h1>SIMULAÇÕES</h1></div>
+<div class="container">
+  <div class="card">
+    <div class="nav-pills">
+      <button onclick="load(1)" id="b1" class="active">Simulação 1</button>
+      <button onclick="load(2)" id="b2">Simulação 2</button>
+      <button onclick="load(3)" id="b3">Simulação 3</button>
+      <button onclick="load(4)" id="b4">Simulação 4</button>
+      <a href="teatro.html" style="margin-left:auto;padding:9px 18px;background:#f39c12;color:#fff;border-radius:22px;text-decoration:none;font-weight:700">▶ Teatro</a>
+    </div>
+    <div id="content"></div>
+  </div>
+</div>
+<div class="watermark-footer">Desenvolvido por Bruno Trabach • Playbook Aiwa V4 • 2026</div>
+<script>
+async function load(i){
+  document.querySelectorAll('.nav-pills button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('b'+i).classList.add('active');
+  const r=await fetch(`dados/historia${i}_integral.json`); const d=await r.json();
+  let html=`<h2 style="color:var(--aiwa);margin-top:0">${d.titulo}</h2>`;
+  const txt=d.texto_integral||'';
+  const partes=txt.split('[ETAPA:');
+  if(partes[0].trim()) html+=`<div class="texto-box">${partes[0].trim()}</div>`;
+  for(let j=1;j<partes.length;j++){
+    const [et,...rest]=partes[j].split(']'); html+=`<div class="etapa">ETAPA: ${et.trim()}</div>`;
+    const corpo=rest.join(']').trim(); const linhas=corpo.split('\n'); let buf='';
+    linhas.forEach(l=>{
+      if(l.match(/^(PROMOTOR|CLIENTE|VENDEDOR|FERNANDA)/)){
+        if(buf){html+=`<div class="texto-box">${buf}</div>`;buf='';}
+        const [p,...f]=l.split(':'); const nome=p.trim(); const fala=f.join(':').trim();
+        const av=nome.includes('PROMOTOR')?'../assets/avatares/Bruno_promotor_aiwa.png':nome.includes('CLIENTE')?'../assets/avatares/Cristiane_cliente.png':nome.includes('VENDEDOR')?'../assets/avatares/Edy_vendedor.png':'../assets/avatares/Fernanda Cliente.png';
+        html+=`<div class="fala"><img src="${av}" onerror="this.style.display='none'"><div><b>${nome}:</b> ${fala}</div></div>`;
+      } else if(l.trim()){ buf+=l+'\n'; }
+    });
+    if(buf) html+=`<div class="texto-box">${buf}</div>`;
+  }
+  document.getElementById('content').innerHTML=html;
+}
+load(1);
+</script></body></html>

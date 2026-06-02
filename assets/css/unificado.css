@@ -1,0 +1,33 @@
+:root{
+  --aiwa:#E30613; --bg:#f5f7fa; --card:#fff; --text:#222; --muted:#666;
+  --shadow:0 3px 10px rgba(0,0,0,.06); --radius:16px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+.header-main{background:var(--aiwa);color:#fff;padding:56px 20px 76px;text-align:center;position:relative}
+.header-main .logo-aiwa{font-size:48px;font-weight:900;letter-spacing:3px;margin:0;line-height:1;text-align:center}
+.header-main .logo-playbook{font-size:15px;font-weight:300;letter-spacing:4px;text-transform:uppercase;opacity:.85;margin-top:6px;text-align:center}
+.header-main .greeting{position:absolute;bottom:24px;left:0;right:0;font-size:20px;font-weight:600;text-align:center}
+.header-page{background:var(--aiwa);color:#fff;padding:16px 20px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.header-page h1{margin:0;font-size:17px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.container{max-width:1100px;margin:auto;padding:20px}
+.card{background:var(--card);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow)}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.btn-card{display:flex;flex-direction:column;justify-content:space-between;background:var(--card);border:2px solid var(--c);border-radius:18px;padding:22px;text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:.25s;min-height:130px}
+.btn-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.btn-card .ico{font-size:34px;color:var(--c)}
+.btn-card b{color:var(--c);font-size:16px;font-weight:700}
+.watermark{position:fixed;bottom:80px;right:14px;font-size:11px;color:#d0d0d0;font-weight:300;letter-spacing:.5px;writing-mode:vertical-rl;transform:rotate(180deg);opacity:.65;pointer-events:none;z-index:1}
+.watermark-footer{text-align:center;padding:40px 20px 60px;font-size:11px;color:#aaa;letter-spacing:.3px}
+.etapa{background:#fff9e6;border-left:4px solid #f0ad4e;padding:12px 14px;font-weight:700;margin:18px 0;border-radius:6px}
+.texto-box{background:#fafafa;border:1px solid #eee;padding:16px;border-radius:10px;font-family:ui-monospace,SFMono-Regular,monospace;font-size:14px;white-space:pre-wrap;line-height:1.7}
+.fala{display:flex;gap:14px;margin:18px 0;align-items:flex-start}
+.fala img{width:50px;height:50px;border-radius:50%;object-fit:cover;border:2px solid #f0f0f0;flex-shrink:0}
+.fala b{color:var(--aiwa)}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+th,td{padding:13px 14px;border-bottom:1px solid #f0f0f0;text-align:left;font-size:14px}
+th{background:var(--aiwa);color:#fff;font-weight:700}
+tr:last-child td{border-bottom:none}
+.nav-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.nav-pills button{padding:9px 18px;border:2px solid #e0e0e0;background:#fff;border-radius:22px;cursor:pointer;font-weight:600;transition:.2s}
+.nav-pills button.active{background:var(--aiwa);color:#fff;border-color:var(--aiwa)}
