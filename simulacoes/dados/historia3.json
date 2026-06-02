@@ -1,5 +1,105 @@
 {
-  "titulo": "História 3",
-  "contexto": "Sábado - Cristiane volta com a amiga Fernanda",
-  "telas": []
+  "titulo": "História 3 - Indicação da amiga",
+  "telas": [
+    {
+      "tipo": "intro",
+      "texto": "Sábado - Cristiane volta com a amiga Fernanda"
+    },
+    {
+      "tipo": "contexto",
+      "texto": "[ETAPA: Venda por indicação]\n\nCristiane trouxe a amiga Fernanda, que viu a caixa no churrasco e quer uma igual. Fernanda está na dúvida entre AIWA e JBL.\n\nBruno faz a abordagem."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Bruno, essa é a Fernanda, minha amiga do churrasco. Falei para ela vir aqui."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Opa Fernanda, prazer! A Cristiane falou que você curtiu o som."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "avatar": "Fernanda Cliente.png",
+      "texto": "Curti sim, mas eu tava vendo a JBL também, a Boombox 3. Meu primo tem uma."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "Comparativo consultivo"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Entendo, a JBL é boa. Posso te mostrar a diferença na prática? Pode aumentar as duas."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "avatar": "Fernanda Cliente.png",
+      "texto": "Pode."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Olha só: a JBL tem 180W na tomada, mas na bateria cai para 136W. A AIWA mantém 200W o tempo todo, na tomada ou na bateria. Coloca a mão aqui... sente a pressão?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "avatar": "Fernanda Cliente.png",
+      "texto": "É verdade, essa tá mais forte."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "E olha o preço: JBL tá R$ 2.200, AIWA tá R$ 1.399. Quase mil reais de diferença. Com essa economia você compra outra depois e faz o par estéreo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Eu falei, Fê! E a bateria durou horrores."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "avatar": "Fernanda Cliente.png",
+      "texto": "E para praia pode?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Pode, IP66. E ainda tem entrada para pendrive, a JBL não tem. Você coloca suas músicas direto, sem gastar bateria do celular."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "Fechamento por indicação"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "avatar": "Fernanda Cliente.png",
+      "texto": "Tá, vou levar essa mesmo. A Cristiane não para de falar dela."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Boa escolha! Vou chamar o Edy para fechar para você."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "Vamos lá, Fernanda. Mesmo preço da Cristiane para você."
+    }
+  ]
 }

@@ -1,5 +1,97 @@
 {
-  "titulo": "História 4",
-  "contexto": "Bruno treinando o Edy na loja, fim do dia",
-  "telas": []
+  "titulo": "História 4 - Treinamento em campo",
+  "telas": [
+    {
+      "tipo": "intro",
+      "texto": "Bruno treinando o Edy na loja, fim do dia"
+    },
+    {
+      "tipo": "contexto",
+      "texto": "[ETAPA: Treinamento interno]\n\nFim do expediente. Bruno está passando o método CHEGA+ para o Edy, vendedor da loja, usando as vendas da Cristiane e Fernanda como exemplo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Edy, viu como foi hoje? Duas vendas só de indicação. Quer aprender o método?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "Quero sim, Bruno. Você fala diferente dos outros promotores."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "Pilar 1 - UX"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Primeiro pilar: nunca chega vendendo. Chega perguntando da experiência. 'É para casa ou churrasco?' A pessoa relaxa."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "Em vez de falar preço já de cara."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Isso. Segundo pilar: conta a história da fábrica. 'É a antiga Sony de Manaus'. Isso dá confiança."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "Pilar 2 - Legado"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "O pessoal lembra da Sony mesmo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Terceiro pilar: faz a pessoa sentir. 'Bota a mão aqui'. Não adianta falar de 200W, tem que sentir vibrar."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "Pilar 3 - Demonstração"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "E quando fala da JBL?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Nunca fala mal. Fala: 'JBL é boa, mas olha a diferença na bateria'. Mostra, não critica. E sempre fala do preço no final, depois que a pessoa já gostou."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "Entendi. UX, história, demonstração."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Isso. CHEGA+: Conexão, História, Experiência, Gatilho, Ação. Amanhã você tenta com o próximo cliente e eu fico do lado."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "avatar": "Edy_vendedor.png",
+      "texto": "Fechado!"
+    }
+  ]
 }

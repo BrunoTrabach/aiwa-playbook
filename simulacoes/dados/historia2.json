@@ -1,5 +1,105 @@
 {
-  "titulo": "História 2",
-  "contexto": "5 dias depois do churrasco - Cristiane volta na loja",
-  "telas": []
+  "titulo": "História 2 - 5 dias depois do churrasco",
+  "telas": [
+    {
+      "tipo": "intro",
+      "texto": "5 dias depois do churrasco - Cristiane volta na loja"
+    },
+    {
+      "tipo": "contexto",
+      "texto": "[ETAPA: Retorno e pós-venda]\n\nCristiane usou a Boombox AIWA no churrasco do fim de semana. Bateria durou, som agradou todo mundo. Ela voltou na loja para agradecer e tirar dúvidas sobre o aplicativo.\n\nBruno está na loja."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Bruno! Vim te contar, o som foi sucesso no churrasco! Todo mundo perguntou da caixa."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Fala Cristiane! Que bom que curtiu. Durou até o final?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Durou sim! Começou 15h, foi até quase meia-noite e ainda tinha bateria. E o grave... meu vizinho veio perguntar que caixa era."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "Demonstração de recursos avançados"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Viu? Te falei. E você já testou conectar duas caixas juntas? O TWS?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Não, como faz?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Se você comprar outra AIWA depois, aperta o botão TWS nas duas e elas viram som estéreo de verdade, uma toca o lado esquerdo, outra o direito. Fica igual cinema."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Nossa, e dá para levar para praia mesmo? Não estraga?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Pode levar tranquila. IP66 aguenta areia e respingo. Só não pode mergulhar. Depois é só passar um pano úmido."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "App e fidelização"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "E o aplicativo, você baixou? O Aiwa Áudio BR?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Baixei, mas não mexi muito."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Abre aí. Olha, aqui você aumenta o Bass Boost, muda equalizador para rock, sertanejo... e ainda vê a bateria certinho."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Ah, agora sim! Vou usar no próximo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "avatar": "Bruno_promotor_aiwa.png",
+      "texto": "Qualquer coisa me chama. E se alguém perguntar, manda vir aqui falar comigo, tá?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "avatar": "Cristiane_cliente.png",
+      "texto": "Pode deixar, já indiquei para duas amigas!"
+    }
+  ]
 }
