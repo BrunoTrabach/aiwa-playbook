@@ -1,13 +1,17 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mensagem Completa</title>
-<style>body{margin:0;font-family:system-ui;background:#fff;line-height:1.7}header{background:#E30613;color:#fff;padding:18px;text-align:center;font-weight:800}main{max-width:700px;margin:auto;padding:24px}h2{color:#E30613}</style></head><body>
-<header>MENSAGEM FINAL - COMPLETA</header>
-<main>
-<h2>Por que AIWA BBS01 é a melhor escolha?</h2>
-<p>Você está levando 200W RMS de som real, não PMPO inflado. Grave profundo que você sente no peito.</p>
-<p>Bateria de 30 horas testada, IP66 para praia e piscina, Bluetooth 5.3 com TWS para parear duas caixas.</p>
-<p>App AIWA Connect com equalizador e modo BOOST exclusivo.</p>
-<p>Preço justo: R$ 1.299 vs JBL Boombox 3 por R$ 2.499 com menos potência.</p>
-<p>Garantia oficial Brasil 12 meses e assistência técnica nacional.</p>
-<p><b>Feche agora e leve capa protetora grátis.</b></p>
-<p><a href="index.html">← Voltar</a></p>
-</main></body></html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mensagem Final - Completa</title>
+<style>body{margin:0;font-family:system-ui;background:#0a0a0a;color:#fff}header{background:#E30613;padding:20px;text-align:center}h1{margin:0}.container{max-width:800px;margin:30px auto;padding:0 20px}.card{background:#141414;padding:30px;border-radius:12px;line-height:1.8;font-size:17px;white-space:pre-wrap;border-left:5px solid #E30613}.nav{text-align:center;margin:30px}.btn{background:#E30613;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:700;margin:0 8px;display:inline-block}</style>
+</head><body>
+<header><h1>💬 Mensagem Final</h1></header>
+<div class="container">
+<div class="card" id="texto">Carregando...</div>
+<div class="nav">
+<a href="resumida.html" class="btn">Ver Versão Resumida</a>
+<a href="../index.html" class="btn" style="background:#333">Voltar</a>
+</div>
+</div>
+<script>
+fetch('dados/mensagem.json').then(r=>r.json()).then(d=>{
+  document.getElementById('texto').textContent = d.completa;
+});
+</script>
+</body></html>
