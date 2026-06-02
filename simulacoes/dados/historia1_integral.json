@@ -1,0 +1,188 @@
+{
+  "titulo": "Simulação 1 - Promotor e Cliente",
+  "telas": [
+    {
+      "tipo": "texto",
+      "conteudo": "SIMULAÇÃO 1 - Promotor e Cliente Jornada completa com UX"
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Chegada e abordagem"
+    },
+    {
+      "tipo": "texto",
+      "conteudo": "A cliente entra na loja olhando as caixas Boombox da Concorrente 1, 2 e da Aiwa. Ela tem um amigo que tem a Boombox da Concorrente 1 e ficou interessada. Recentemente ela viu a Boombox da Aiwa ao passar na frente de um quiosque na praia e foi pesquisar, então ficou muito mais interessada e esta procurando para conhecer melhor e ver se já levar pra casa. 1ª abordagem do Promotor Aiwa. Após a cliente ter entrado na loja ela olhou as 3 marcas e ficou olhando, neste momento o Promotor chegou perto dela e inicia uma conversa."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Olá, estou sim, Tô dando uma olhada pois quero levar para um churrasco. Vi a \"C.1\" ali, mas tá salgada, mais ouvi falar muito bem da Aiwa e estava passando aqui e quando vi ela eu pensei em conhecer melhor."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Identificando necessidade - UX"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Que legal eu vou te ajudar. Qual seu nome?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Meu nome é Cristiane."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Prazer Cristiane, Então falando em churrasco, podemos unir autonomia, qualidade e Potência para durar o até o final do churrasco. Oque você acha disso?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Isso mesmo que eu quero. O Churrasco deve começar umas 15h e vai até depois da janta."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Conexão emocional - Nostalgia"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Pronto, Você já conhecia a AIWA das antigas, aquele som 3 em 1, que tinha CDs, Toca fitas e toca discos?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Sim, Meu pai tem um 3 em 1 até hoje. É bom demais, e ainda esta funcionando, tem um som muito bom."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "É essa mesma Aiwa! Lembra da Sony, ela sempre foi referência em qualidadede Áudio e Vídeo? Então, compramos a fabrica que foi da Sony em Manaus, e hoje a Aiwa trabalha com a melhor qualidade em seus produtos."
+    },
+    {
+      "tipo": "texto",
+      "conteudo": "e assim estamos com a nossa Boombox superando as nossas concorrentes, é isso que vou te mostrar hoje."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Demonstração sensorial - Cereja do bolo"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Vou colocar uma musica, olha a qualidade do som e como ele é limpo e não distorce, Coloca a mão aqui do lado, sente vibrar? São 200W RMS de verdade, e ela mantem a mesma Potência mesmo na bateria, já as concorrentes não conseguem segurar, entregam uma Potência quando na tomada e tirando da tomada ficando somente na bateria eles costumam ter uma perda para economizar energia."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Caramba, o grave é limpo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Gostei do som, e sobre potência, isso é muito bom e eu não sabia."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "E a bateria segura até 30 horas em volume médio, o que da para curtir seu churrasco tranquilo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Eu posso levar ela para perto da piscina e levar para praia também?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Com certeza, temos proteção IP66. Aguenta poeira da e jatos de água. Pode ficar tranquilo."
+    },
+    {
+      "tipo": "texto",
+      "conteudo": "Imagine que algum pulou na piscina ou derrubaram algum líquido nela, você fecha o compartimento traseiro, ai poderá molhar para limpá-la, você só não pode mergulhar ela."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Teste real com celular do cliente"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Olha ainda temos o Nosso Aplicativo Aiwa Áudio BR,"
+    },
+    {
+      "tipo": "texto",
+      "conteudo": "Pelo app da AIWA você ainda pode dar um reforço no grave e a ainda pode escolher varios equalizadores. Já Salva ai no celular."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Fechamento sem pressão + handoff"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "E ai muito bem né. Se precisar tirar alguma dúvida pode falar, tudo bem?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Gostei. Quanto tá saindo?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Essa é mais uma vantagem, ela sai bem mais batara que a C.1, com mais potência real, e ainda temos a opção de você utilizar pen-drives com músicas e ainda pode carregar seu telefone utilizando a bateria da caixa como carregador portátil."
+    },
+    {
+      "tipo": "texto",
+      "conteudo": "Vou chamar o vendedor para tirar o pedido para a Senhora, tudo bem, só um minuto."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Oi, tudo bem? O Bruno me passou. Vamos fechar? Você leva ela hoje mesmo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Vamos."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Pós-venda - Acompanhamento até a porta"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Parabéns pela escolha! Qualquer dúvida do app ou se precisar de algum outro produto da Aiwa, volta aqui na loja e pode procurar pelo Bruno Promotor da Aiwa."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Claro eu precisando eu volto sim, muito obrigada pelo seu atendimento."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Eu quem agradeço pela sua atenção, Vou te acompanhar até a saída, tudo bem."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Obrigada, até logo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Tchau até logo."
+    }
+  ],
+  "texto_integral": "SIMULAÇÃO 1 - Promotor e Cliente\nJornada completa com UX\n\n[ETAPA: Chegada e abordagem]\n\nA cliente entra na loja olhando as caixas Boombox da Concorrente 1, 2 e da Aiwa.\nEla tem um amigo que tem a Boombox da Concorrente 1 e ficou interessada.\nRecentemente ela viu a Boombox da Aiwa ao passar na frente de um quiosque na praia e foi pesquisar, então ficou muito mais interessada e esta procurando para conhecer melhor e ver se já levar pra casa.\n\n1ª abordagem do Promotor Aiwa.\nApós a cliente ter entrado na loja ela olhou as 3 marcas e ficou olhando, neste momento o Promotor chegou perto dela e inicia uma conversa.\n\n\nPROMOTOR (Aiwa): Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?\n\nCLIENTE: Olá, estou sim, Tô dando uma olhada pois quero levar para um churrasco. Vi a \"C.1\" ali, mas tá salgada, mais ouvi falar muito bem da Aiwa e estava passando aqui e quando vi ela eu pensei em conhecer melhor.\n\n[ETAPA: Identificando necessidade - UX]\n\nPROMOTOR: Que legal eu vou te ajudar. Qual seu nome? \n\nCLIENTE: Meu nome é Cristiane.\n\nPROMOTOR: Prazer Cristiane, Então falando em churrasco, podemos unir autonomia, qualidade e Potência para durar o até o final do churrasco. Oque você acha disso?\n\nCLIENTE: Isso mesmo que eu quero. O Churrasco deve começar umas 15h e vai até depois da janta.\n\n[ETAPA: Conexão emocional - Nostalgia]\n\nPROMOTOR: Pronto, Você já conhecia a AIWA das antigas, aquele som 3 em 1, que tinha CDs, Toca fitas e toca discos?\n\nCLIENTE: Sim, Meu pai tem um 3 em 1 até hoje. É bom demais, e ainda esta funcionando, tem um som muito bom.\n\nPROMOTOR: É essa mesma Aiwa! Lembra da Sony, ela sempre foi referência em qualidadede Áudio e Vídeo? Então, compramos a fabrica que foi da Sony em Manaus, e hoje a Aiwa trabalha com a melhor qualidade em seus produtos.\ne assim estamos com a nossa Boombox superando as nossas concorrentes, é isso que vou te mostrar hoje.\n\n[ETAPA: Demonstração sensorial - Cereja do bolo]\n\nPROMOTOR: Vou colocar uma musica, olha a qualidade do som e como ele é limpo e não distorce, Coloca a mão aqui do lado, sente vibrar? São 200W RMS de verdade, e ela mantem a mesma Potência mesmo na bateria, já as concorrentes não conseguem segurar, entregam uma Potência quando na tomada e tirando da tomada ficando somente na bateria eles costumam ter uma perda para economizar energia.\n\nCLIENTE: Caramba, o grave é limpo.\n\nCLIENTE: Gostei do som, e sobre potência, isso é muito bom e eu não sabia.\n\nPROMOTOR: E a bateria segura até 30 horas em volume médio, o que da para curtir seu churrasco tranquilo.\n\nCLIENTE: Eu posso levar ela para perto da piscina e levar para praia também?\n\nPROMOTOR: Com certeza, temos proteção IP66. Aguenta poeira da e jatos de água. Pode ficar tranquilo.\nImagine que algum pulou na piscina ou derrubaram algum líquido nela, você fecha o compartimento traseiro, ai poderá molhar para limpá-la, você só não pode mergulhar ela.\n\n[ETAPA: Teste real com celular do cliente]\n\nPROMOTOR: Olha ainda temos o Nosso Aplicativo Aiwa Áudio BR, \nPelo app da AIWA você ainda pode dar um reforço no grave e a ainda pode escolher varios equalizadores. Já Salva ai no celular.\n\n[ETAPA: Fechamento sem pressão + handoff]\n\nPROMOTOR: E ai muito bem né. Se precisar tirar alguma dúvida pode falar, tudo bem?\n\nCLIENTE: Gostei. Quanto tá saindo?\n\nPROMOTOR: Essa é mais uma vantagem, ela sai bem mais batara que a C.1, com mais potência real, e ainda temos a opção de você utilizar pen-drives com músicas e ainda pode carregar seu telefone utilizando a bateria da caixa como carregador portátil.\nVou chamar o vendedor para tirar o pedido para a Senhora, tudo bem, só um minuto.\n\nVENDEDOR (Edy): Oi, tudo bem? O Bruno me passou. Vamos fechar? Você leva ela hoje mesmo.\n\nCLIENTE: Vamos.\n\n[ETAPA: Pós-venda - Acompanhamento até a porta]\n\nPROMOTOR: Parabéns pela escolha! Qualquer dúvida do app ou se precisar de algum outro produto da Aiwa, volta aqui na loja e pode procurar pelo Bruno Promotor da Aiwa. \n\nCLIENTE: Claro eu precisando eu volto sim, muito obrigada pelo seu atendimento.\n\nPROMOTOR: Eu quem agradeço pela sua atenção, Vou te acompanhar até a saída, tudo bem.\n\nCLIENTE: Obrigada, até logo.\n\nPROMOTOR: Tchau até logo."
+}

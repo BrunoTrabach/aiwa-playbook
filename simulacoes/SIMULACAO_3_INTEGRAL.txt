@@ -1,0 +1,39 @@
+SIMULAÇÃO 3 - Indicação
+
+Sábado - Cristiane volta com a amiga Fernanda
+
+[ETAPA: Chegada com indicação]
+
+CLIENTE (Cristiane): Edy, trouxe minha amiga Fernanda. Ela viu a caixa no churrasco.
+
+FERNANDA: Oi, eu quero uma igual. Mas tô na dúvida entre essa e a C.1.
+
+[ETAPA: Abordagem consultiva]
+
+PROMOTOR (Bruno): Fernanda, prazer. Vamos testar as duas lado a lado? Pode aumentar.
+
+FERNANDA: Pode.
+
+PROMOTOR: Coloca a mão aqui. Sente? São 200W reais. A C.1 perde potência na bateria.
+
+FERNANDA: É, essa tá mais forte.
+
+PROMOTOR: E olha, você ganha entrada pra pendrive, IP66, e economiza quase mil reais.
+
+[ETAPA: Demonstração app]
+
+PROMOTOR: Abre o app. Aqui você aumenta o grave, escolhe equalizador.
+
+FERNANDA: Legal.
+
+PROMOTOR: E a bateria? 30h no médio. Você usa 2h na academia, carrega uma vez por semana.
+
+FERNANDA: Quanto tá? A C.1 tá quase mil a mais.
+
+VENDEDOR: Essa sai bem mais em conta, com garantia Aiwa. Quer levar hoje?
+
+FERNANDA: Quero. Vou levar igual a dela.
+
+PROMOTOR: Excelente escolha. Cristiane, valeu pela indicação.
+
+CLIENTE (Cristiane): Imagina. Agora a gente faz o treino juntas.

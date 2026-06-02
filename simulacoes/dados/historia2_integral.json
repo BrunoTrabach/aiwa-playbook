@@ -1,0 +1,100 @@
+{
+  "titulo": "Simulação 2",
+  "telas": [
+    {
+      "tipo": "texto",
+      "conteudo": "SIMULAÇÃO 2 - Vendedor e Cliente no Pós-Venda 5 dias depois do churrasco - Cristiane volta na loja"
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Retorno espontâneo"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Ei como vai Edy, tudo bem? Vim só dar um oi."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Olá Cristiane! Que bom te ver. E aí, como foi o churrasco?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Foi bom demais. ficamos até quase meia-noite e ainda tinha bateria. Meus amigos ficaram doidos."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Escuta ativa - UX"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Que massa. e ai usou ela perto da piscina mesmo?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Usei. E levei pra praia no domingo. Aí fiquei com medo do sal, passei um pano úmido, fique com medo de jogar um pouco de água nela."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Sem problemas. Com IP66 você pode lavar com jato leve, só fecha bem aquela tampinha traseira. Depois é só secar. Nada de mergulhar ela ta bem?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Isso o Bruno tinha falado. Outra coisa, coloquei meu celular carregar na USB, só não testei com Pendrive, uma amigo falou também algo sobre utilizar duas caixas da mesma, porém não entendi, você pode me ajudar?"
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Demonstração prática"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Ajudo sim, O Bruno me falou dessa função, é o TWS, ela permite ligar duas Boombox e somar a potênciadas duas. Vi que você trouxe a sua Boombox, vamos testar aqui, você vai ver que legal? [pega a caixa que ela trouxe na sacola e parea as duas caixas do mesmo modelo]"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Vou por uma musica que eu vi o Bruno da Aiwa testando a caixa outro dia e gostei muito, olha agora as duas tocando junto, ficou o dobro da potência."
+    },
+    {
+      "tipo": "texto",
+      "conteudo": "assim se você tiver em um um parente ou amigo com uma Boombox da Aiwa, parea as duas pra fazer a festa bombar ainda mais."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Nossa, verdade tenho uma amiga que estava pensando em comprar uma também, vou falar com ela."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Opa, fala com ela que pode me procurar aqui e eu ou o Bruno mostranos tudo que a Boombox tem de melhor e as vantagens que ela vai levar pra casa, temho certeza que ela vai gostar."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Testei também o aplicativo da Aiwa que o Bruno me passou, testei os equalizadores já definidos e testei o grave. Ficou com mais grave mesmo."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Reforço de valor e relacionamento"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Muito legal né, tem muita qualidade mesmo."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Todos da festa gostaram da Boomboxda Aiwa."
+    }
+  ],
+  "texto_integral": "SIMULAÇÃO 2 - Vendedor e Cliente no Pós-Venda\n\n5 dias depois do churrasco - Cristiane volta na loja\n\n[ETAPA: Retorno espontâneo]\n\nCLIENTE (Cristiane): Ei como vai Edy, tudo bem? Vim só dar um oi.\n\nVENDEDOR (Edy): Olá Cristiane! Que bom te ver. E aí, como foi o churrasco?\n\nCLIENTE: Foi bom demais. ficamos até quase meia-noite e ainda tinha bateria. Meus amigos ficaram doidos.\n\n[ETAPA: Escuta ativa - UX]\n\nVENDEDOR: Que massa. e ai usou ela perto da piscina mesmo?\n\nCLIENTE: Usei. E levei pra praia no domingo. Aí fiquei com medo do sal, passei um pano úmido, fique com medo de jogar um pouco de água nela.\n\nVENDEDOR: Sem problemas. Com IP66 você pode lavar com jato leve, só fecha bem aquela tampinha traseira. Depois é só secar. Nada de mergulhar ela ta bem?\n\nCLIENTE: Isso o Bruno tinha falado. Outra coisa, coloquei meu celular carregar na USB, só não testei com Pendrive, uma amigo falou também algo sobre utilizar duas caixas da mesma, porém não entendi, você pode me ajudar?\n\n[ETAPA: Demonstração prática]\n\nVENDEDOR: Ajudo sim, O Bruno me falou dessa função, é o TWS, ela permite ligar duas Boombox e somar a potênciadas duas. Vi que você trouxe a sua Boombox, vamos testar aqui, você vai ver que legal? [pega a caixa que ela trouxe na sacola e parea as duas caixas do mesmo modelo]\n\nVENDEDOR: Vou por uma musica que eu vi o Bruno da Aiwa testando a caixa outro dia e gostei muito, olha agora as duas tocando junto, ficou o dobro da potência.\nassim se você tiver em um um parente ou amigo com uma Boombox da Aiwa, parea as duas pra fazer a festa bombar ainda mais.\n\nCLIENTE: Nossa, verdade tenho uma amiga que estava pensando em comprar uma também, vou falar com ela.\n\nVENDEDOR: Opa, fala com ela que pode me procurar aqui e eu ou o Bruno mostranos tudo que a Boombox tem de melhor e as vantagens que ela vai levar pra casa, temho certeza que ela vai gostar.\n\nCLIENTE: Testei também o aplicativo da Aiwa que o Bruno me passou, testei os equalizadores já definidos e testei o grave. Ficou com mais grave mesmo.\n\n[ETAPA: Reforço de valor e relacionamento]\n\nVENDEDOR: Muito legal né, tem muita qualidade mesmo.\n\nCLIENTE: Todos da festa gostaram da Boomboxda Aiwa."
+}

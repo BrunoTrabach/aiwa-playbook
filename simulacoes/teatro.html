@@ -1,12 +1,77 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modo Teatro</title>
-<style>body{margin:0;font-family:system-ui;background:#000;color:#fff}header{background:#E30613;padding:16px;text-align:center;font-weight:800}main{max-width:800px;margin:auto;padding:20px;line-height:1.7}h2{color:#E30613}</style></head><body>
-<header>MODO TEATRO - TREINAMENTO COMPLETO</header>
-<main>
-<h2>Roteiro completo</h2>
-<p><b>Personagens:</b> Bruno Promotor AIWA, Edy Vendedor, Cristiane Cliente, Fernanda Amiga</p>
-<h2>Ato 1 - Abordagem</h2><p>Bruno aborda Cristiane com sorriso e pergunta sobre uso.</p>
-<h2>Ato 2 - Demonstração</h2><p>Ativa BOOST, mostra app, compara com JBL.</p>
-<h2>Ato 3 - Objeção</h2><p>Cristiane questiona preço. Bruno explica RMS vs PMPO.</p>
-<h2>Ato 4 - Fechamento</h2><p>Oferta capa + parcelamento. Fechamento.</p>
-<p><a href="index.html" style="color:#fff">← Voltar</a></p>
-</main></body></html>
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulações - Modo Teatro</title>
+<style>body{margin:0;background:#000;color:#fff;font-family:system-ui;display:flex;flex-direction:column;height:100vh}
+header{background:#E30613;padding:15px;text-align:center;font-weight:800}
+#stage{flex:1;display:flex;align-items:center;justify-content:center;padding:20px;overflow-y:auto}
+.card{background:#111;padding:30px;border-radius:16px;max-width:900px;width:100%;font-size:18px;line-height:1.7;white-space:pre-wrap}
+.etapa{color:#E30613;font-weight:800;text-align:center;font-size:20px;margin:20px 0}
+.fala{margin:15px 0;padding:15px;background:#1a1a1a;border-left:4px solid #E30613;border-radius:8px}
+.personagem{color:#E30613;font-weight:700}
+.controls{position:fixed;bottom:0;left:0;right:0;background:#111;padding:15px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+button{background:#E30613;color:#fff;border:none;padding:12px 20px;border-radius:8px;font-weight:700;cursor:pointer}
+button:hover{opacity:.9}
+.progress{width:100%;height:4px;background:#333;position:fixed;top:0;left:0}
+.progress-bar{height:100%;background:#E30613;width:0%;transition:width .3s}
+</style>
+</head><body>
+<div class="progress"><div class="progress-bar" id="progress"></div></div>
+<header id="titulo">Carregando Simulações...</header>
+<div id="stage"></div>
+<div class="controls">
+<button onclick="prev()">◀ Anterior</button>
+<button onclick="toggleAuto()" id="autoBtn">▶ Auto</button>
+<button onclick="next()">Próximo ▶</button>
+<button onclick="location.href='../index.html'" style="background:#333">Sair</button>
+</div>
+<script>
+let historias=[], hIndex=0, tIndex=0, auto=false, timer=null;
+
+async function load(){
+  for(let i=1;i<=4;i++){
+    try{
+      const r=await fetch(`dados/historia${i}_integral.json`);
+      const d=await r.json();
+      historias.push(d);
+    }catch(e){}
+  }
+  render();
+}
+
+function render(){
+  const h=historias[hIndex];
+  const t=h.telas[tIndex];
+  document.getElementById('titulo').textContent=`${h.titulo} - ${tIndex+1}/${h.telas.length}`;
+  const stage=document.getElementById('stage');
+  
+  if(t.tipo==='etapa'){
+    stage.innerHTML=`<div class="card"><div class="etapa">${t.texto}</div></div>`;
+  }else if(t.tipo==='fala'){
+    stage.innerHTML=`<div class="card"><div class="fala"><span class="personagem">${t.personagem}:</span><br>${t.texto}</div></div>`;
+  }else{
+    stage.innerHTML=`<div class="card">${t.conteudo||t.texto||''}</div>`;
+  }
+  
+  const total = historias.reduce((s,h)=>s+h.telas.length,0);
+  const atual = historias.slice(0,hIndex).reduce((s,h)=>s+h.telas.length,0)+tIndex;
+  document.getElementById('progress').style.width=(atual/total*100)+'%';
+}
+
+function next(){
+  if(tIndex < historias[hIndex].telas.length-1){ tIndex++; }
+  else if(hIndex < historias.length-1){ hIndex++; tIndex=0; }
+  else { hIndex=0; tIndex=0; }
+  render();
+}
+function prev(){
+  if(tIndex>0){ tIndex--; }
+  else if(hIndex>0){ hIndex--; tIndex=historias[hIndex].telas.length-1; }
+  render();
+}
+function toggleAuto(){
+  auto=!auto;
+  document.getElementById('autoBtn').textContent=auto?'⏸ Pausar':'▶ Auto';
+  if(auto){ timer=setInterval(next,4000); } else { clearInterval(timer); }
+}
+document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight')next(); if(e.key==='ArrowLeft')prev(); if(e.key===' ')toggleAuto(); });
+load();
+</script>
+</body></html>

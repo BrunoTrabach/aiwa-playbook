@@ -1,0 +1,97 @@
+{
+  "titulo": "Simulação 3",
+  "telas": [
+    {
+      "tipo": "texto",
+      "conteudo": "SIMULAÇÃO 3 - Indicação Sábado - Cristiane volta com a amiga Fernanda"
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Chegada com indicação"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Edy, trouxe minha amiga Fernanda. Ela viu a caixa no churrasco."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "texto": "Oi, eu quero uma igual. Mas tô na dúvida entre essa e a C.1."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Abordagem consultiva"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno (Bruno)",
+      "texto": "Fernanda, prazer. Vamos testar as duas lado a lado? Pode aumentar."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "texto": "Pode."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Coloca a mão aqui. Sente? São 200W reais. A C.1 perde potência na bateria."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "texto": "É, essa tá mais forte."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "E olha, você ganha entrada pra pendrive, IP66, e economiza quase mil reais."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Demonstração app"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Abre o app. Aqui você aumenta o grave, escolhe equalizador."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "texto": "Legal."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "E a bateria? 30h no médio. Você usa 2h na academia, carrega uma vez por semana."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "texto": "Quanto tá? A C.1 tá quase mil a mais."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Essa sai bem mais em conta, com garantia Aiwa. Quer levar hoje?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Fernanda",
+      "texto": "Quero. Vou levar igual a dela."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Excelente escolha. Cristiane, valeu pela indicação."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Cristiane",
+      "texto": "Imagina. Agora a gente faz o treino juntas."
+    }
+  ],
+  "texto_integral": "SIMULAÇÃO 3 - Indicação\n\nSábado - Cristiane volta com a amiga Fernanda\n\n[ETAPA: Chegada com indicação]\n\nCLIENTE (Cristiane): Edy, trouxe minha amiga Fernanda. Ela viu a caixa no churrasco.\n\nFERNANDA: Oi, eu quero uma igual. Mas tô na dúvida entre essa e a C.1.\n\n[ETAPA: Abordagem consultiva]\n\nPROMOTOR (Bruno): Fernanda, prazer. Vamos testar as duas lado a lado? Pode aumentar.\n\nFERNANDA: Pode.\n\nPROMOTOR: Coloca a mão aqui. Sente? São 200W reais. A C.1 perde potência na bateria.\n\nFERNANDA: É, essa tá mais forte.\n\nPROMOTOR: E olha, você ganha entrada pra pendrive, IP66, e economiza quase mil reais.\n\n[ETAPA: Demonstração app]\n\nPROMOTOR: Abre o app. Aqui você aumenta o grave, escolhe equalizador.\n\nFERNANDA: Legal.\n\nPROMOTOR: E a bateria? 30h no médio. Você usa 2h na academia, carrega uma vez por semana.\n\nFERNANDA: Quanto tá? A C.1 tá quase mil a mais.\n\nVENDEDOR: Essa sai bem mais em conta, com garantia Aiwa. Quer levar hoje?\n\nFERNANDA: Quero. Vou levar igual a dela.\n\nPROMOTOR: Excelente escolha. Cristiane, valeu pela indicação.\n\nCLIENTE (Cristiane): Imagina. Agora a gente faz o treino juntas."
+}

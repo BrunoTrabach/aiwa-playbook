@@ -1,0 +1,107 @@
+{
+  "titulo": "Simulação 4",
+  "telas": [
+    {
+      "tipo": "texto",
+      "conteudo": "SIMULAÇÃO 4 – Treinamento prático e relacionamento Bruno treinando o Edy na loja, fim do dia"
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Treinamento TWS – ouvir médio, grave e agudo"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno (Bruno)",
+      "texto": "Edy, vem aqui. Vamos parear duas Boombox rapidinho. Faremos igual você fez quando a cliente Cristiane retornou na loja e indicou para a amiga dela que veio e comprou uma igual."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Pareei."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Agora coloca essa música aqui, tem grave marcado, médio e agudo. Coloca a mão aqui do lado, sente vibrar?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Sinto, sim."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Isso é o grave. Agora presta atenção na clareza dos instrumentos, como você consegue ouvir vários separadamente. O som não fica embolado como em muitas caixas do mercado. É aqui que o cliente se liga. Sempre que puder, faz o cliente ter esta experiência."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Deu para notar tudo. Vou fazer sempre."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Então, você pode falar com o cliente assim. Não fale somente da potência de \"200W RMS\". Fale: \"coloca a mão, sente o grave\". O cliente entende na hora."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Aplicativo Aiwa Áudio BR"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Abre o app Aiwa Áudio BR. Conecta na caixa."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Conectei."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Aqui tem o Bass Boost. Liga. Sentiu a diferença?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "O grave aumentou."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Desliga. Agora vai em equalizadores. Tem Rock, Pop, Sertanejo, etc. Mostra pro cliente e fala: \"escolhe o que fica melhor pra sua música\". Deixa ele testar, assim ele vai ter a experiência real."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "E o TWS, tem algum exemplo que posso mostrar?"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Sim. Depois de parear, mostra as duas tocando e fala do estéreo. Diz: \"imagina um carro de corrida ou avião passando de um lado pro outro\". O cliente lembra disso."
+    },
+    {
+      "tipo": "etapa",
+      "texto": "ETAPA: Como replicar com o cliente"
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Resumo: 1. Pergunta o uso. 2. Pareia. 3. Manda sentir o grave com a mão. 4. Mostra médio e agudo. 5. Abre o app, liga o Bass Boost, troca equalizador. 6. Deixa ele escolher."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Edy",
+      "texto": "Anotado."
+    },
+    {
+      "tipo": "fala",
+      "personagem": "Bruno",
+      "texto": "Então, bora. Amanhã vamos montar uma ilha juntos e eu vou trazer o material novo."
+    }
+  ],
+  "texto_integral": "SIMULAÇÃO 4 – Treinamento prático e relacionamento\nBruno treinando o Edy na loja, fim do dia\n\n[ETAPA: Treinamento TWS – ouvir médio, grave e agudo]\n\nPROMOTOR (Bruno): Edy, vem aqui. Vamos parear duas Boombox rapidinho. Faremos igual você fez quando a cliente Cristiane retornou na loja e indicou para a amiga dela que veio e comprou uma igual.\n\nVENDEDOR (Edy): Pareei.\n\nPROMOTOR: Agora coloca essa música aqui, tem grave marcado, médio e agudo. Coloca a mão aqui do lado, sente vibrar?\n\nVENDEDOR: Sinto, sim.\n\nPROMOTOR: Isso é o grave. Agora presta atenção na clareza dos instrumentos, como você consegue ouvir vários separadamente. O som não fica embolado como em muitas caixas do mercado. É aqui que o cliente se liga. Sempre que puder, faz o cliente ter esta experiência.\n\nVENDEDOR: Deu para notar tudo. Vou fazer sempre.\n\nPROMOTOR: Então, você pode falar com o cliente assim. Não fale somente da potência de \"200W RMS\". Fale: \"coloca a mão, sente o grave\". O cliente entende na hora.\n\n[ETAPA: Aplicativo Aiwa Áudio BR]\n\nPROMOTOR: Abre o app Aiwa Áudio BR. Conecta na caixa.\n\nVENDEDOR: Conectei.\n\nPROMOTOR: Aqui tem o Bass Boost. Liga. Sentiu a diferença?\n\nVENDEDOR: O grave aumentou.\n\nPROMOTOR: Desliga. Agora vai em equalizadores. Tem Rock, Pop, Sertanejo, etc. Mostra pro cliente e fala: \"escolhe o que fica melhor pra sua música\". Deixa ele testar, assim ele vai ter a experiência real.\n\nVENDEDOR: E o TWS, tem algum exemplo que posso mostrar?\n\nPROMOTOR: Sim. Depois de parear, mostra as duas tocando e fala do estéreo. Diz: \"imagina um carro de corrida ou avião passando de um lado pro outro\". O cliente lembra disso.\n\n[ETAPA: Como replicar com o cliente]\n\nPROMOTOR: Resumo: 1. Pergunta o uso. 2. Pareia. 3. Manda sentir o grave com a mão. 4. Mostra médio e agudo. 5. Abre o app, liga o Bass Boost, troca equalizador. 6. Deixa ele escolher.\n\nVENDEDOR: Anotado.\n\nPROMOTOR: Então, bora. Amanhã vamos montar uma ilha juntos e eu vou trazer o material novo."
+}

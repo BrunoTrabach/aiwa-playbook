@@ -1,0 +1,80 @@
+SIMULAÇÃO 1 - Promotor e Cliente
+Jornada completa com UX
+
+[ETAPA: Chegada e abordagem]
+
+A cliente entra na loja olhando as caixas Boombox da Concorrente 1, 2 e da Aiwa.
+Ela tem um amigo que tem a Boombox da Concorrente 1 e ficou interessada.
+Recentemente ela viu a Boombox da Aiwa ao passar na frente de um quiosque na praia e foi pesquisar, então ficou muito mais interessada e esta procurando para conhecer melhor e ver se já levar pra casa.
+
+1ª abordagem do Promotor Aiwa.
+Após a cliente ter entrado na loja ela olhou as 3 marcas e ficou olhando, neste momento o Promotor chegou perto dela e inicia uma conversa.
+
+
+PROMOTOR (Aiwa): Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?
+
+CLIENTE: Olá, estou sim, Tô dando uma olhada pois quero levar para um churrasco. Vi a "C.1" ali, mas tá salgada, mais ouvi falar muito bem da Aiwa e estava passando aqui e quando vi ela eu pensei em conhecer melhor.
+
+[ETAPA: Identificando necessidade - UX]
+
+PROMOTOR: Que legal eu vou te ajudar. Qual seu nome? 
+
+CLIENTE: Meu nome é Cristiane.
+
+PROMOTOR: Prazer Cristiane, Então falando em churrasco, podemos unir autonomia, qualidade e Potência para durar o até o final do churrasco. Oque você acha disso?
+
+CLIENTE: Isso mesmo que eu quero. O Churrasco deve começar umas 15h e vai até depois da janta.
+
+[ETAPA: Conexão emocional - Nostalgia]
+
+PROMOTOR: Pronto, Você já conhecia a AIWA das antigas, aquele som 3 em 1, que tinha CDs, Toca fitas e toca discos?
+
+CLIENTE: Sim, Meu pai tem um 3 em 1 até hoje. É bom demais, e ainda esta funcionando, tem um som muito bom.
+
+PROMOTOR: É essa mesma Aiwa! Lembra da Sony, ela sempre foi referência em qualidadede Áudio e Vídeo? Então, compramos a fabrica que foi da Sony em Manaus, e hoje a Aiwa trabalha com a melhor qualidade em seus produtos.
+e assim estamos com a nossa Boombox superando as nossas concorrentes, é isso que vou te mostrar hoje.
+
+[ETAPA: Demonstração sensorial - Cereja do bolo]
+
+PROMOTOR: Vou colocar uma musica, olha a qualidade do som e como ele é limpo e não distorce, Coloca a mão aqui do lado, sente vibrar? São 200W RMS de verdade, e ela mantem a mesma Potência mesmo na bateria, já as concorrentes não conseguem segurar, entregam uma Potência quando na tomada e tirando da tomada ficando somente na bateria eles costumam ter uma perda para economizar energia.
+
+CLIENTE: Caramba, o grave é limpo.
+
+CLIENTE: Gostei do som, e sobre potência, isso é muito bom e eu não sabia.
+
+PROMOTOR: E a bateria segura até 30 horas em volume médio, o que da para curtir seu churrasco tranquilo.
+
+CLIENTE: Eu posso levar ela para perto da piscina e levar para praia também?
+
+PROMOTOR: Com certeza, temos proteção IP66. Aguenta poeira da e jatos de água. Pode ficar tranquilo.
+Imagine que algum pulou na piscina ou derrubaram algum líquido nela, você fecha o compartimento traseiro, ai poderá molhar para limpá-la, você só não pode mergulhar ela.
+
+[ETAPA: Teste real com celular do cliente]
+
+PROMOTOR: Olha ainda temos o Nosso Aplicativo Aiwa Áudio BR, 
+Pelo app da AIWA você ainda pode dar um reforço no grave e a ainda pode escolher varios equalizadores. Já Salva ai no celular.
+
+[ETAPA: Fechamento sem pressão + handoff]
+
+PROMOTOR: E ai muito bem né. Se precisar tirar alguma dúvida pode falar, tudo bem?
+
+CLIENTE: Gostei. Quanto tá saindo?
+
+PROMOTOR: Essa é mais uma vantagem, ela sai bem mais batara que a C.1, com mais potência real, e ainda temos a opção de você utilizar pen-drives com músicas e ainda pode carregar seu telefone utilizando a bateria da caixa como carregador portátil.
+Vou chamar o vendedor para tirar o pedido para a Senhora, tudo bem, só um minuto.
+
+VENDEDOR (Edy): Oi, tudo bem? O Bruno me passou. Vamos fechar? Você leva ela hoje mesmo.
+
+CLIENTE: Vamos.
+
+[ETAPA: Pós-venda - Acompanhamento até a porta]
+
+PROMOTOR: Parabéns pela escolha! Qualquer dúvida do app ou se precisar de algum outro produto da Aiwa, volta aqui na loja e pode procurar pelo Bruno Promotor da Aiwa. 
+
+CLIENTE: Claro eu precisando eu volto sim, muito obrigada pelo seu atendimento.
+
+PROMOTOR: Eu quem agradeço pela sua atenção, Vou te acompanhar até a saída, tudo bem.
+
+CLIENTE: Obrigada, até logo.
+
+PROMOTOR: Tchau até logo.

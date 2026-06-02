@@ -1,0 +1,40 @@
+SIMULAÇÃO 2 - Vendedor e Cliente no Pós-Venda
+
+5 dias depois do churrasco - Cristiane volta na loja
+
+[ETAPA: Retorno espontâneo]
+
+CLIENTE (Cristiane): Ei como vai Edy, tudo bem? Vim só dar um oi.
+
+VENDEDOR (Edy): Olá Cristiane! Que bom te ver. E aí, como foi o churrasco?
+
+CLIENTE: Foi bom demais. ficamos até quase meia-noite e ainda tinha bateria. Meus amigos ficaram doidos.
+
+[ETAPA: Escuta ativa - UX]
+
+VENDEDOR: Que massa. e ai usou ela perto da piscina mesmo?
+
+CLIENTE: Usei. E levei pra praia no domingo. Aí fiquei com medo do sal, passei um pano úmido, fique com medo de jogar um pouco de água nela.
+
+VENDEDOR: Sem problemas. Com IP66 você pode lavar com jato leve, só fecha bem aquela tampinha traseira. Depois é só secar. Nada de mergulhar ela ta bem?
+
+CLIENTE: Isso o Bruno tinha falado. Outra coisa, coloquei meu celular carregar na USB, só não testei com Pendrive, uma amigo falou também algo sobre utilizar duas caixas da mesma, porém não entendi, você pode me ajudar?
+
+[ETAPA: Demonstração prática]
+
+VENDEDOR: Ajudo sim, O Bruno me falou dessa função, é o TWS, ela permite ligar duas Boombox e somar a potênciadas duas. Vi que você trouxe a sua Boombox, vamos testar aqui, você vai ver que legal? [pega a caixa que ela trouxe na sacola e parea as duas caixas do mesmo modelo]
+
+VENDEDOR: Vou por uma musica que eu vi o Bruno da Aiwa testando a caixa outro dia e gostei muito, olha agora as duas tocando junto, ficou o dobro da potência.
+assim se você tiver em um um parente ou amigo com uma Boombox da Aiwa, parea as duas pra fazer a festa bombar ainda mais.
+
+CLIENTE: Nossa, verdade tenho uma amiga que estava pensando em comprar uma também, vou falar com ela.
+
+VENDEDOR: Opa, fala com ela que pode me procurar aqui e eu ou o Bruno mostranos tudo que a Boombox tem de melhor e as vantagens que ela vai levar pra casa, temho certeza que ela vai gostar.
+
+CLIENTE: Testei também o aplicativo da Aiwa que o Bruno me passou, testei os equalizadores já definidos e testei o grave. Ficou com mais grave mesmo.
+
+[ETAPA: Reforço de valor e relacionamento]
+
+VENDEDOR: Muito legal né, tem muita qualidade mesmo.
+
+CLIENTE: Todos da festa gostaram da Boomboxda Aiwa.
