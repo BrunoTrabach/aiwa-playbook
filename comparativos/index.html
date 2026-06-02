@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparativos</title>
+<style>body{margin:0;font-family:system-ui;background:#0a0a0a;color:#fff}header{background:#E30613;padding:20px;text-align:center}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;padding:20px;max-width:1200px;margin:auto}.card{background:#141414;padding:16px;border-radius:12px;border-top:4px solid var(--c)}</style>
+</head><body>
+<header><h1>📊 Comparativos 2025-2026</h1></header>
+<div class="grid" id="grid"></div>
+<script>
+fetch('dados/modelos.json').then(r=>r.json()).then(d=>{
+  const cores={aiwa:'#E30613',jbl:'#FF6600',lg:'#009639',philco:'#6A0DAD'};
+  document.getElementById('grid').innerHTML = Object.entries(d.modelos).map(([k,v])=>`
+    <div class="card" style="--c:${cores[k]}">
+      <h3 style="color:${cores[k]};margin-top:0">${v.nome}</h3>
+      <p><b>Potência:</b> ${v.potencia}</p>
+      <p><b>Bateria:</b> ${v.bateria}</p>
+      <p><b>IP:</b> ${v.ip} | <b>BT:</b> ${v.bluetooth}</p>
+      <p><b>Preço:</b> ${v.preco}</p>
+    </div>
+  `).join('');
+});
+</script></body></html>

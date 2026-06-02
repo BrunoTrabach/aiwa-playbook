@@ -1,0 +1,44 @@
+{
+  "modelos": {
+    "aiwa": {
+      "nome": "AIWA BBS01",
+      "potencia": "200W RMS Constantes",
+      "bateria": "30h (50%) / 3h (100%)",
+      "ip": "IP66",
+      "bluetooth": "5.3",
+      "freq": "20Hz - 20kHz",
+      "preco": "R$ 1.000 - R$ 1.600",
+      "peso": "3,2kg"
+    },
+    "jbl": {
+      "nome": "JBL Boombox 3",
+      "potencia": "180W (tomada) / 136W (bateria)",
+      "bateria": "24h nominal",
+      "ip": "IP67",
+      "bluetooth": "5.3",
+      "freq": "40Hz - 20kHz",
+      "preco": "R$ 1.800 - R$ 2.500+",
+      "peso": "6,7kg"
+    },
+    "lg": {
+      "nome": "LG XBOOM XG9S",
+      "potencia": "120W RMS",
+      "bateria": "24h nominal",
+      "ip": "IP67",
+      "bluetooth": "5.1-5.2",
+      "freq": "50Hz - 20kHz",
+      "preco": "R$ 1.200 - R$ 2.000",
+      "peso": "7,1kg"
+    },
+    "philco": {
+      "nome": "PHILCO PBX01 Extreme",
+      "potencia": "300W nominal (~100-150W RMS)",
+      "bateria": "30h nominal",
+      "ip": "IP66",
+      "bluetooth": "5.4",
+      "freq": "60Hz - 18kHz",
+      "preco": "R$ 900 - R$ 1.400",
+      "peso": "4,5kg"
+    }
+  }
+}

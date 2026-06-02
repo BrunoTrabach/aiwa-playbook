@@ -1,0 +1,13 @@
+
+body{margin:0;background:#000;color:#fff;font-family:system-ui}
+header{background:#E30613;padding:14px;text-align:center;font-weight:800;position:sticky;top:0}
+#stage{position:absolute;top:60px;bottom:70px;left:0;right:0;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{background:#111;padding:24px;border-radius:16px;max-width:90%;font-size:18px;line-height:1.6;text-align:center}
+.contexto{text-align:left;white-space:pre-wrap;font-size:16px}
+.etapa{color:#E30613;font-weight:800;font-size:20px}
+.msg{display:flex;gap:12px;align-items:flex-end;max-width:95%}
+.msg img{width:60px;height:60px;border-radius:50%;border:2px solid #E30613}
+.bubble{background:#1a1a1a;padding:14px;border-radius:12px;text-align:left;flex:1}
+.right{flex-direction:row-reverse}.right .bubble{background:#E30613}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#111;display:flex;justify-content:space-between;padding:12px}
+button{background:#E30613;color:#fff;border:none;padding:12px 24px;border-radius:8px;font-weight:700}
