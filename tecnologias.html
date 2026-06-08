@@ -8,6 +8,64 @@
     <script>
         document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
     </script>
+    <style>
+        .tech-tabs {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            scrollbar-width: none;
+        }
+        .tech-tabs::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-btn {
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn.active {
+            background: var(--accent-red);
+            color: #ffffff;
+            border-color: var(--accent-red);
+            box-shadow: 0 0 8px rgba(227, 6, 19, 0.4);
+        }
+        .tech-section {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .tech-section.active {
+            display: flex;
+        }
+        .tech-inline-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            margin-top: 8px;
+        }
+        .tech-inline-table th, .tech-inline-table td {
+            border: 1px solid var(--border-color);
+            padding: 6px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .tech-inline-table th {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-primary);
+        }
+        [data-theme="light"] .tech-inline-table th {
+            background: rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body>
 
@@ -23,79 +81,216 @@
         <div class="content-wrapper">
             
             <div class="welcome-header" style="margin-top: 8px;">
-                <span class="live-ticker">Diferenciais Técnicos Exclusivos</span>
-                <h2>Engenharia de Som AIWA</h2>
+                <span class="live-ticker">Enciclopédia de Engenharia Acústica</span>
+                <h2>Módulos de Tecnologia</h2>
             </div>
 
-            <div class="fusion-card card-cyan" style="padding: 16px; margin-bottom: 4px;">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                    <span style="font-size: 20px;">🔊</span>
-                    <span class="card-title" style="color: var(--neon-cyan);">T1 — Sistema de 3 Vias Real</span>
-                </div>
-                <p style="font-size: 12px; line-height: 1.5; color: var(--text-primary);">
-                    Legítima engenharia acústica que faz a separação física exata das frequências de áudio através de componentes dedicados: <b>Graves (Woofers), Médios (Mid-ranges) e Agudos (Tweeters)</b>. 
-                </p>
-                <div style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 6px; margin-top: 8px; border-left: 2px solid var(--neon-cyan);">
-                    <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
-                        <b>Diferencial de Mercado:</b> Enquanto as caixas concorrentes jogam todo o som misturado em um ou dois alto-falantes comuns, embolando o áudio em volumes altos, a AIWA mantém a resposta de estúdio profissional, onde cada instrumento e voz tem o seu espaço físico exato de reprodução.
-                    </p>
-                </div>
+            <div class="tech-tabs">
+                <button class="tab-btn active" onclick="switchTechTab('aiwa')">AIWA (AWS-BBS-01)</button>
+                <button class="tab-btn" onclick="switchTechTab('jbl')">JBL (BOOMBOX 3)</button>
+                <button class="tab-btn" onclick="switchTechTab('lg')">LG (XG9S)</button>
+                <button class="tab-btn" onclick="switchTechTab('philco')">PHILCO (PBX01)</button>
+                <button class="tab-btn" onclick="switchTechTab('apendices')">📊 APÊNDICES REAIS</button>
             </div>
 
-            <div class="fusion-card card-purple" style="padding: 16px; margin-bottom: 4px;">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                    <span style="font-size: 20px;">⚡</span>
-                    <span class="card-title" style="color: var(--neon-purple);">T2 — 3 Amplificadores Ativos Independentes</span>
-                </div>
-                <p style="font-size: 12px; line-height: 1.5; color: var(--text-primary);">
-                    A AIWA implementa <b>três módulos físicos de amplificação eletrônica separados</b> dentro do circuito. Um amplificador é focado unicamente em empurrar os graves, o segundo processa os médios e o terceiro alimenta os agudos.
-                </p>
-                <div style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 6px; margin-top: 8px; border-left: 2px solid var(--neon-purple);">
-                    <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
-                        <b>Por que isso quebra os concorrentes?</b> Sistemas comuns possuem apenas um amplificador integrado para a caixa toda. Quando o grave bate forte, falta energia física para o tweeter, gerando aquela distorção harmônica estridente e irritante. Na AIWA a energia é independente, gerando clareza cristalina mesmo em potência máxima.
-                    </p>
-                </div>
-            </div>
-
-            <div class="fusion-card card-orange" style="padding: 16px; margin-bottom: 4px;">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                    <span style="font-size: 20px;">🔋</span>
-                    <span class="card-title" style="color: var(--neon-orange);">T3 — 200W RMS Reais Estáveis</span>
-                </div>
-                <p style="font-size: 12px; line-height: 1.5; color: var(--text-primary);">
-                    Nossa engenharia garante que os <b>200W RMS sejam entregues de forma integral</b> tanto na tomada quanto operando puramente na bateria. 
-                </p>
-                <div style="background: rgba(0,0,0,0.15); padding: 10px; border-radius: 6px; margin-top: 8px; border-left: 2px solid var(--neon-orange);">
-                    <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
-                        <b>O Segredo de Campo:</b> Marcas importadas famosas reduzem bruscamente sua potência (de 180W RMS para 136W RMS, por exemplo) assim que o cabo é removido da tomada para tentar poupar bateria. A AIWA mantém o rendimento bruto sem "capar" o som do churrasco do cliente.
-                    </p>
-                </div>
-            </div>
-
-            <div class="fusion-card card-blue" style="padding: 16px; margin-bottom: 4px;">
-                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                    <span style="font-size: 20px;">🎯</span>
-                    <span class="card-title" style="color: var(--neon-blue);">Roteiro Prático de Demonstração Sensorial</span>
-                </div>
-                <p style="font-size: 12px; line-height: 1.5; color: var(--text-primary); margin-bottom: 8px;">
-                    Não fale apenas números técnicos para o cliente, faça-o sentir a engenharia na pele utilizando este passo a passo guiado:
-                </p>
+            <div id="tech-aiwa" class="tech-section active">
                 
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <div style="background: rgba(0,0,0,0.12); padding: 10px; border-radius: 6px;">
-                        <span class="sender-tag" style="color: var(--neon-blue); margin-bottom: 2px;">Passo 1: Teste de Graves e Pressão Física</span>
-                        <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
-                            Coloque uma música com batidas marcadas e limpas. Peça para o cliente <b>colocar a mão fisicamente próximo aos radiadores passivos laterais</b> para ele sentir o deslocamento mecânico de ar real gerado sem qualquer distorção harmônica.
-                        </p>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.12); padding: 10px; border-radius: 6px;">
-                        <span class="sender-tag" style="color: var(--neon-cyan); margin-bottom: 2px;">Passo 2: Teste de Médios, Vocais e Palco Sonoro</span>
-                        <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4;">
-                            Selecione uma faixa acústica ou ao vivo. Mostre como, graças ao sistema isolado de 3 vias e amplificação ativa dedicada, a voz do artista se mantém totalmente cristalina, nítida e centralizada no ambiente aberto, sem sumir ou ser engolida pelas frequências mais graves.
-                        </p>
+                <div class="cyber-panel neon-blue" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-blue);">GUIA DE ABORDAGEM DE CAMPO: AUDIÇÃO DE TESTE</span>
+                    <p style="font-size: 11px; color: var(--text-primary); margin-top: 4px; line-height: 1.4;">
+                        Para demonstrar a superioridade da engenharia da Aiwa em relação à concorrência, utilize estas duas faixas específicas no volume acima de 70% operando na bateria:
+                    </p>
+                    <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 6px;">
+                        <div style="background: rgba(0,0,0,0.15); padding: 8px; border-radius: 4px;">
+                            <b style="color: var(--neon-blue); font-size: 11px;">🎵 Música 1: "Fuego" (Alok & Bhaskar)</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">
+                                <b>O que demonstrar no Grave:</b> A linha de baixo dessa música é contínua, gorda e desce muito rápido no drop. Mostre para o cliente os Radiadores Passivos Laterais vibrando intensamente. Graças aos 20Hz de resposta, a caixa vai reproduzir o subgrave físico "de tremer o chão" com total maciez, sem engasgar, soprar ou estalar o cone.
+                            </p>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">
+                                <b>O que demonstrar no Vocal (Médios):</b> No meio do grave pesado dessa música, existem vocais picotados e efeitos de sintetizadores. Em caixas comuns de duas vias, o grave abafa essas vozes. Na Aiwa, com o amplificador exclusivo para os médios (T1), o vocal do "Fuego" soará totalmente limpo, nítido e destacado no centro, bem separado do impacto da batida.
+                            </p>
+                        </div>
+                        <div style="background: rgba(0,0,0,0.15); padding: 8px; border-radius: 4px;">
+                            <b style="color: var(--neon-blue); font-size: 11px;">🎵 Música 2: "Animals" (Martin Garrix)</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 2px;">
+                                <b>O que demonstrar no Agudo (Início):</b> A música começa com um som agudo isolado imitando o ponteiro de um relógio ("Tic-Tac"). Mostre que o Tweeter dedicado e o amplificador de agudos deixam esse som extremamente cristalino, brilhante e sem aquele chiado ou sopro áspear comum em caixas de canal compartilhado.
+                            </p>
+                            <p style="font-size: 11px; color: var(--text-secondary); margin-top: 4px;">
+                                <b>O que demonstrar no Drop Seco:</b> Quando a música sofre o "Drop", ela entrega um impacto de bumbo (kick) muito seco, rápido e estalado, junto com um sintetizador agressivo. É aqui que a união do Boost de Graves (que impede o som de ficar magro) com o Energy Saving (que segura os 200W reais na bateria) impede que a caixa abaixe o volume ou distorça no momento mais empolgante da música.
+                            </p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="fusion-card card-purple" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-purple); display: block; margin-bottom: 8px;">15 TECNOLOGIAS NATIVAS DA ENGENHARIA AIWA</span>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T1 - 3 Vias + 3 Amplificadores Dedicados:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">A caixa divide as frequências do som em três caminhos distintos (graves, médios e agudos) utilizando alto-falantes totalmente dedicados para cada função: Woofer, Mid-range e Tweeter. O grande diferencial de mercado é que cada alto-falante possui o seu próprio chip amplificador digital independente. Esta arquitetura eletrônica impede que o woofer de grave "roube" a energia do tweeter de agudo nos momentos de maior pico sonoro, eliminando distorções harmônicas e mantendo o som perfeitamente equilibrado e as vozes nítidas, mesmo quando o aparelho está operando no volume máximo.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T2 - Radiadores Passivos Laterais:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Seção mecânica composta por duas membranas posicionadas nas laterais externas do gabinete que não possuem motor elétrico ou fios conectados à placa ou à bateria. Elas se movimentam de forma puramente aerodinâmica, aproveitando exclusivamente a pressão do ar interna gerada pelo deslocamento dos woofers principais. Esse movimento projeta e expande os graves para as laterais da caixa, criando um efeito acústico de imersão de 360° no ambiente sem consumir sequer 1% de energia extra do sistema elétrico.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T3 - Resposta de Frequência Ultraestendida (20Hz a 20KHz):</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Representa o limite físico real de som que os componentes do aparelho conseguem reproduzir com fidelidade, cobrindo com precisão todo o espectro auditivo que o ouvido humano é capaz de perceber. O diferencial mecânico de alcançar os 20Hz significa que a caixa consegue reproduzir fisicamente os sub-graves mais profundos (aqueles tremores de impacto utilizados em cinemas), enquanto os modelos concorrentes do mercado que param em 40Hz ou 50Hz cortam completamente essas frequências mais baixas.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T4 - Energy Saving EXCLUSIVO:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Ao contrário da grande maioria das caixas de som do mercado nacional que reduzem a voltagem interna de trabalho (e consequentemente cortam a potência real em Watts) para economizar bateria assim que são desconectadas da tomada, este circuito eletrônico proprietário estabiliza o fornecimento de energia. Isso garante a entrega dos 200W RMS de potência máxima contínua, independentemente de a caixa estar ligada à rede elétrica ou operando de forma portátil na bateria. Adicionalmente, atua de forma preventiva: quando a bateria atinge a marca crítica de 30% de carga total, o aparelho entra automaticamente em modo de economia, reduzindo ligeiramente o ganho para prolongar o tempo de uso da festa e alertando o usuário através de uma indicação visual em LED.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T5 - Bateria de Alta Densidade de 10.400mAh:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Refere-se à capacidade nominal real de armazenamento de carga das células de lítio da caixa. Quanto maior é essa miliamperagem por hora (mAh), mais energia o banco de células consegue reter de forma compacta, o que permite sustentar o circuito de alta potência de 200W RMS por muito mais horas de reprodução contínua.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T6 - Tecnologia Bluetooth 5.3:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Versão de alta performance do protocolo de comunicação sem fio. Oferece uma latência muitíssimo baixa (eliminando aquele atraso incômodo entre o vídeo exibido na tela do celular e o som reproduzido na caixa), consumo de energia reduzido do smartphone e maior estabilidade de sinal contra interferências externas através do recurso de Classificação de Canais, que faz o sinal pular dinamicamente de frequência caso redes Wi-Fi locais tentem derrubar a conexão.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T7 - Certificação Internacional IP66:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Código regulamentado mundialmente pela norma internacional IEC 60529 que comprova o grau de vedação industrial do produto. O primeiro dígito (6) atesta que a estrutura é 100% estanque e totalmente vedada contra sólidos, impedindo a entrada de qualquer partícula de poeira ou areia fina. O segundo dígito (6) garante proteção de alta resistência contra jatos potentes de água vindos de qualquer direção, o que na prática permite que o aparelho resista a chuvas pesadas, maresia direta ou respingos intensos à beira da piscina sem queimar os componentes internos (observando apenas que ela não foi projetada para submersão total).</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T8 - Entrada USB para Pen Drive:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Conexão física do tipo USB-A dedicada que realiza a leitura direta de arquivos de música digital em formatos como MP3 e WAV. Permite a reprodução direta das playlists armazenadas no dispositivo flash, dispensando completamente a necessidade de manter um celular pareado via Bluetooth.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T9 - Entrada Auxiliar P2 Analógica:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Conexão padrão de 3,5 mm que permite ligar fisicamente computadores, televisores, projetores ou smartphones antigos através de um cabo analógico que já vem incluso na embalagem. Garante a transmissão do sinal de áudio puro, sem qualquer tipo de compressão digital ou atraso de processamento.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T10 - Função Power Bank (5V/2A):</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Transforma a grande bateria interna da caixa de som em um carregador portátil para dispositivos externos através de uma porta física USB-A. A saída fornece energia estabilizada com tensão de 5 Volts e corrente de 2 Amperes, velocidade de indução perfeitamente suficiente para carregar smartphones, fones de ouvido ou smartwatches diretamente na caixa durante o evento.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T11 - Aplicativo Oficial Aiwa BR Audio:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Interface digital avançada para smartphones que se conecta diretamente ao hardware da caixa. Através dele, o usuário ou o promotor consegue gerenciar funções à distância, realizar atualizações de firmware do sistema, alternar os padrões de iluminação e personalizar a assinatura sonora de forma fina através de um equalizador gráfico multimarcas.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T12 - BOOST de Graves EXCLUSIVO:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Trata-se de um algoritmo de ajuste inteligente programado via software no processador de sinal digital (DSP) que atua de forma automática assim que o volume geral do aparelho ultrapassa a marca de 70%. Em volumes muito elevados, as frequências de graves tendem naturalmente a sumir ou distorcer devido ao limite mecânico; este recurso compensa dinamicamente essa perda, reforçando cirurgicamente as batidas para que o som mantenha o peso e não soe "magro", estridente ou rachado.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T13 - Sistema de Iluminação com 6 Modos LED RGB:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Conjunto de iluminação dinâmica composto por diodos de alta intensidade que combinam as cores primárias Vermelho (Red), Verde (Green) e Azul (Blue). Os 6 modos pré-programados na memória do aparelho mudam os padrões visuais, transições e gradientes, piscando em sincronia matemática com o ritmo e as batidas da música que está tocando.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T14 - Tecnologia TWS (True Wireless Stereo):</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Sistema de pareamento sem fio de alta fidelidade que permite conectar duas caixas idênticas via Bluetooth com um único toque. O smartphone envia o sinal de áudio para a primeira caixa (Master) e esta retransmite o fluxo automaticamente para a segunda caixa (Slave). O sistema realiza a separação estéreo real de canais independentes: uma caixa emite estritamente o som do lado esquerdo (L) e a outra o som do lado direito (R), gerando um palco sonoro tridimensional legítimo com o dobro de potência física (400W RMS) e efeito dinâmico de passagem de som no ambiente.</p>
+                        </div>
+                        <div>
+                            <b style="font-size: 12px; color: var(--text-primary);">T15 - Alça de Transporte Integrada:</b>
+                            <p style="font-size: 11px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px;">Elemento de design estrutural e ergonômico moldado diretamente no próprio corpo do aparelho ou fixado firmemente ao chassi. Foi projetada e testada em laboratório para suportar com total segurança o peso total da caixa, facilitando o transporte seguro em deslocamentos de campo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tech-jbl" class="tech-section">
+                <div class="fusion-card card-orange" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-orange); display: block; margin-bottom: 8px;">JBL BOOMBOX 3: DETALHAMENTO DE ENGENHARIA</span>
+                    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; line-height: 1.4; color: var(--text-secondary);">
+                        <p><b style="color: var(--text-primary);">JBL Original Pro Sound:</b> Assinatura de calibração acústica proprietária da marca, regulada de fábrica com foco em alta dinâmica, médios limpos e curvas de graves muito acentuadas e agressivas, projetada especificamente para manter a projeção sonora em ambientes abertos e externos.</p>
+                        <p><b style="color: var(--text-primary);">Sistema de 3 Vias com Novo Subwoofer Dedicado:</b> Arquitetura física de áudio composta por 5 alto-falantes ativos alimentados por canais independentes: um subwoofer central robusto em formato de pista de corrida (racetrack) com 80W exclusivos para os graves de impacto, dois alto-falantes de médio alcance (mid-ranges) de 40W cada focados em vozes e instrumentos, e dois tweeters de 10W cada para cobrir os agudos finos.</p>
+                        <p style="background: rgba(249, 115, 22, 0.1); padding: 8px; border-radius: 4px; border-left: 2px solid var(--neon-orange); color: var(--text-primary);">
+                            <b>⚠️ COMPORTAMENTO ELÉTRICO (TOMADA VS BATERIA) - PONTO CRÍTICO:</b> Na tomada, a caixa entrega um total de 180W RMS. No entanto, ao ser desconectada da rede elétrica para operar de forma portátil, o seu sistema interno de proteção reduz a voltagem das células para preservar a integridade e economizar bateria, fazendo com que a potência máxima caia drasticamente de 180W para 136W RMS (uma perda real de aproximadamente 25% de força de som).
+                        </p>
+                        <p><b style="color: var(--text-primary);">Radiadores Passivos Frontais/Direcionados:</b> Componentes auxiliares de reforço mecânico que, diferentemente da Aiwa que projeta para as laterais em 360°, são direcionados para focar a vibração e a pressão acústica das batidas diretamente para a frente do usuário, priorizando o impacto frontal.</p>
+                        <p><b style="color: var(--text-primary);">Resposta de Frequência de 40Hz a 20KHz:</b> Faixa de resposta que indica que a caixa entrega um grave encorpado a partir de 40Hz e agudos até o limite do ouvido humano. Nota de confronto: Por cortar o som em 40Hz, ela não é capaz de reproduzir as frequências sub-graves mais profundas que a Aiwa (que atinge 20Hz) alcança.</p>
+                        <p><b style="color: var(--text-primary);">Certificação Internacional IP67:</b> Grau de proteção contra intempéries que garante vedação máxima contra sólidos (6 - totalmente blindada contra poeira e areia de praia) e proteção avançada contra imersão temporária em água (7), permitindo que a caixa caia acidentalmente em uma piscina de até 1 metro de profundidade por até 30 minutos sem queimar.</p>
+                        <p><b style="color: var(--text-primary);">Tecnologia de Conexão PartyBoost:</b> Protocolo proprietário de comunicação sem fio que substituiu os sistemas antigos da marca (Connect+), permitindo emparelhar duas caixas compatíveis para gerar som estéreo ou sincronizar mais de 100 caixas JBL simultaneamente para tocarem a mesma playlist.</p>
+                        <p><b style="color: var(--text-primary);">Alça de Metal sem Parafusos Expostos:</b> Elemento de design estrutural e ergonômico fundido diretamente ao chassi em metal escovado, eliminando parafusos visíveis que poderiam sofrer oxidação com o tempo devido ao contato com água ou acumular sujeira e detritos no campo.</p>
+                        <p><b style="color: var(--text-primary);">Aplicativo JBL Portable:</b> Software oficial para controle via celular utilizado para gerenciar atualizações de firmware, monitorar o nível exato da bateria, ligar/desligar o som de boot, ajustar a equalização através de um controle simples de 3 bandas (graves, médios e agudos) e gerenciar redes de caixas via PartyBoost.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tech-lg" class="tech-section">
+                <div class="fusion-card card-cyan" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-cyan); display: block; margin-bottom: 8px;">LG XBOOM GO XG9S: ANÁLISE COMPONENTES</span>
+                    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; line-height: 1.4; color: var(--text-secondary);">
+                        <p><b style="color: var(--text-primary);">Parceria Exclusiva com a Meridian Audio:</b> Engenharia acústica desenvolvida em conjunto com a Meridian, uma das grifes britânicas de áudio de luxo mais conceituadas do mundo (responsável pelos sistemas de som de marcas de automóveis premium como Jaguar, Land Rover e BMW). Ela adiciona algoritmos avançados de Processamento Digital de Sinal (DSP) que expandem o palco sonoro e eliminam distorções elétricas, priorizando a máxima fidelidade e pureza musical.</p>
+                        <p><b style="color: var(--text-primary);">Arquitetura de 2 Vias de Alta Fidelidade (Premium):</b> A LG optou por não usar o sistema físico de 3 vias. Em vez de colocar múltiplos alto-falantes, utiliza um sistema de 2 vias extremamente otimizado que responde de 45Hz a 50Hz, focando na resolução do timbre, na clareza das vozes e em instrumentos acústicos, e não em fazer as paredes tremerem com sub-graves.</p>
+                        <p><b style="color: var(--text-primary);">2 Woofers de 4.5" Confeccionados em Fibra de Carbono:</b> Cones dos alto-falantes de graves utilizam tramas de fibra de carbono em vez de papel ou polipropileno comum. Como a fibra de carbono é um material extremamente leve e rígido, ela se desloca com velocidade milimétrica e sem sofrer deformações estruturais, entregando batidas de graves extremamente secas, precisas e sem o efeito de som "borrado" ou abafado.</p>
+                        <p><b style="color: var(--text-primary);">Tweeter de Compressão Avançado:</b> Componente de alta eficiência mecânica projetado para cobrir grandes distâncias em ambientes abertos. Utiliza uma corneta guia de onda interna para direcionar as frequências agudas de forma focada e cirúrgica, garantindo que o som agudo chegue nítido mesmo a longas distâncias em festas externas.</p>
+                        <p><b style="color: var(--text-primary);">Recurso de Expansão Sound Boost:</b> Botão físico de controle que altera o perfil de equalização do DSP instantaneamente, expandindo o campo sonoro tridimensional (efeito de espacialidade) e amplificando a potência das frequências médias e agudas para melhorar a propagação do som em locais abertos.</p>
+                        <p><b style="color: var(--text-primary);">Iluminação de Palco Estilo Projetor (Globo de Luz):</b> Recurso visual exclusivo que integra uma lente especial na parte traseira do aparelho. Ela funciona como um mini projetor de balada, jogando feixes de luz dinâmicos e desenhos coloridos diretamente nas paredes e teto do ambiente.</p>
+                        <p><b style="color: var(--text-primary);">Iluminação RGB Completa com 16 Milhões de Cores:</b> Sistema de iluminação nos radiadores que mistura os LEDs com precisão digital, permitindo transições suaves, gradientes complexos e personalização total de cores via aplicativo.</p>
+                        <p><b style="color: var(--text-primary);">Tecnologia de Conectividade Party Link:</b> Sistema sem fio da LG que permite sincronizar e encadear múltiplas caixas de som da marca para trabalharem em conjunto no mesmo local, somando a potência dos aparelhos.</p>
+                        <p><b style="color: var(--text-primary);">Integração de Comando de Voz (Google Assistant / Alexa):</b> Compatibilidade de software que permite, ao pressionar um botão dedicado no corpo da caixa, utilizar o microfone embutido dela para acionar e ditar comandos para o assistente virtual do smartphone conectado, permitindo trocar de música ou fazer buscas por voz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tech-philco" class="tech-section">
+                <div class="fusion-card card-red" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-red); display: block; margin-bottom: 8px;">PHILCO EXTREME PBX01: RADIOGRAFIA COMERCIAL</span>
+                    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 11px; line-height: 1.4; color: var(--text-secondary);">
+                        <p style="background: rgba(227, 6, 19, 0.1); padding: 8px; border-radius: 4px; border-left: 2px solid var(--neon-red); color: var(--text-primary);">
+                            <b>⚠️ DIFERENCIAÇÃO CRÍTICA DE POTÊNCIA:</b> O marketing do produto destaca 300W de Potência Nominal (PMPO), que representa apenas a potência de pico máxima teórica que os componentes aguentam suportar por uma fração de segundo antes de queimar. A potência de trabalho contínuo real da caixa fica na faixa de 100W a 150W RMS Reais, que é o volume real que o amplificador consegue sustentar por horas sem danificar os componentes.
+                        </p>
+                        <p><b style="color: var(--text-primary);">Arquitetura de 2 Vias Tradicionais com Amplificador Único:</b> Sistema de áudio composto por woofers e tweeters comuns que compartilham o mesmo canal de um amplificador único integrado. Não possui divisão por amplificadores físicos separados para cada frequência, o que faz com que, em volumes muito próximos ao limite máximo, o circuito sofra para alimentar todas as frequências ao mesmo tempo, gerando distorções harmônicas que sistemas de 3 vias (como AIWA e JBL) não apresentam.</p>
+                        <p><b style="color: var(--text-primary);">Recurso ExBass Ajustável via Software:</b> Sistema de reforço de graves controlado digitalmente. Como a caixa não possui um subwoofer físico dedicado, esse recurso atua forçando digitalmente os woofers comuns através do software a realizarem um deslocamento maior para simular batidas mais fortes. A resposta de frequência mínima real fica limitada entre 50Hz a 60Hz.</p>
+                        <p><b style="color: var(--text-primary);">Bateria Portátil com Promessa de Até 30 Horas:</b> Autonomia estimada de fábrica sob condições de laboratório altamente controladas (geralmente medida com o volume em nível muito baixo, luzes LED totalmente desligadas e em modo econômico). Nota de confronto: Em condições reais de uso no volume máximo com os graves activos, o amplificador único consome muito mais carga, fazendo a autonomia reduzir drasticamente.</p>
+                        <p><b style="color: var(--text-primary);">Conectividade Bluetooth 5.4 Comercial:</b> Utiliza a versão comercial mais recente do protocolo Bluetooth. Oferece uma excelente eficiência energética para o smartphone conectado, alta estabilidade de sinal em locais públicos e uma latência (atraso de áudio) imperceptível.</p>
+                        <p><b style="color: var(--text-primary);">Sistema Box Flash Light com IA (5 Modos):</b> Circuito eletrônico integrado com um algoritmo que analisa o andamento, o ritmo e os picos de variação de graves da música em tempo real, alternando os disparos e as cores dos LEDs automaticamente entre 5 padrões visuais pré-programados sincronizados com a batida.</p>
+                        <p><b style="color: var(--text-primary);">Aplicativo Philco Audio:</b> Aplicativo para dispositivos móveis focado no controle das funções essenciais da caixa, permitindo gerenciar remotamente as faixas de reprodução, trocar os modos de iluminação dos LEDs e selecionar perfis de equalização digital pré-definidos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tech-apendices" class="tech-section">
+                
+                <div class="cyber-panel neon-purple" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-purple);">1. TABELA OFICIAL DE GRAU DE PROTEÇÃO IP (IEC 60529)</span>
+                    <div style="overflow-x: auto; width: 100%;">
+                        <table class="tech-inline-table">
+                            <thead>
+                                <tr>
+                                    <th>1º Dígito (Sólidos)</th>
+                                    <th>Significado Prático</th>
+                                    <th>2º Dígito (Líquidos)</th>
+                                    <th>Significado Prático</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0 - Sem proteção</td><td>Nenhuma proteção contra contatos.</td><td>0 - Sem proteção</td><td>Nenhuma proteção contra água.</td></tr>
+                                <tr><td>1 - Sólidos > 50 mm</td><td>Protege contra superfícies (ex: mão).</td><td>1 - Gotas verticais</td><td>Protege contra pingos de chuva verticais.</td></tr>
+                                <tr><td>2 - Sólidos > 12,5 mm</td><td>Protege contra dedos ou objetos similares.</td><td>2 - Gotas a 15°</td><td>Protege contra chuva com inclinação de 15°.</td></tr>
+                                <tr><td>3 - Sólidos > 2,5 mm</td><td>Protege contra ferramentas e cabos grossos.</td><td>3 - Borrifos</td><td>Protege contra sprays em ângulos até 60°.</td></tr>
+                                <tr><td>4 - Sólidos > 1,0 mm</td><td>Protege contra parafusos e fios grandes.</td><td>4 - Respingos</td><td>Protege contra respingos de toda direção (piscina).</td></tr>
+                                <tr><td>5 - Proteção Poeira</td><td>Poeira pode entrar, mas sutil sem danar.</td><td>5 - Jatos de água</td><td>Protege contra jatos de baixa pressão (bico 6,3mm).</td></tr>
+                                <tr style="background: rgba(168,85,247,0.15); font-weight:700;">
+                                    <td>6 - Totalmente Vedado</td>
+                                    <td>100% estanque. Nenhuma poeira ou areia entra no circuito (AIWA/JBL).</td>
+                                    <td>6 - Jatos Potentes</td>
+                                    <td>Protege contra maresia e jatos fortes de bicos de 12,5 mm - Chuva Pesada (AIWA).</td>
+                                </tr>
+                                <tr><td>-</td><td>-</td><td>7 - Imersão Temp.</td><td>Suporta cair na água até 1 metro por até 30 min (JBL/LG).</td></tr>
+                                <tr><td>-</td><td>-</td><td>8 - Imersão Cont.</td><td>Suporta ficar submerso a mais de 1 metro continuamente.</td></tr>
+                                <tr><td>-</td><td>-</td><td>9K - Alta Pressão</td><td>Suporta jatos d'água super quentes à queima-roupa.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="cyber-panel neon-cyan" style="padding: 12px;">
+                    <span class="sender-tag" style="color: var(--neon-cyan);">2. PANORAMA DO MERCADO DE BLUETOOTH NO BRASIL</span>
+                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 11px; line-height: 1.4; color: var(--text-secondary); margin-top: 4px;">
+                        <p><b style="color: var(--text-primary);">Bluetooth 5.0 e 5.1 (Padrão de Entrada):</b> Muito comum em caixas de som de baixo custo e TVs intermediárias. Dobrou a velocidade do antigo 4.2, mas sofre com quedas e interferências em locais cheios (shoppings/academias), consome mais bateria do celular e apresenta atraso (latência) perceptível em vídeos e jogos.</p>
+                        <p><b style="color: var(--text-primary);">Bluetooth 5.2 (Áudio Inicial):</b> Introduziu o protocolo LE Audio (Áudio de Baixa Energia), permitindo que fones recebam o sinal esquerdo e direito simultaneamente, otimizando o consumo de energia.</p>
+                        <p style="background: rgba(6, 182, 212, 0.1); padding: 6px; border-radius: 4px; color: var(--text-primary); border-left: 2px solid var(--neon-cyan);">
+                            <b>📶 Bluetooth 5.3 (Alta Performance Atual — Padrão AIWA):</b> Ideal para áudio premium. Traz a Classificação de Canais, eliminando interferências locais de redes Wi-Fi. Entrega latência quase zero no celular e gerenciamento de energia eficiente que preserva a autonomia da bateria.
+                        </p>
+                        <p><b style="color: var(--text-primary);">Bluetooth 5.4 (Bateria Extrema — Padrão Philco):</b> Focado em eficiência de energia agressiva (ganho de até 40% de bateria em fones em comparação ao 5.3) e transmissão criptografada bidirecional.</p>
+                        <p><b style="color: var(--text-primary);">Bluetooth 6.0 (A Nova Fronteira de Alta Tecnologia):</b> Presente nos adaptadores e periféricos de ponta mais recentes. Introduz a tecnologia Channel Sounding, funcionando como um radar com precisão de centímetros para localização e vedações de segurança contra clonagem de chaves digitais.</p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -108,5 +303,15 @@
         <a href="tecnologias.html" class="nav-btn active"><div>🔊</div><span>Tecnologias</span></a>
     </nav>
 
+    <script>
+        function switchTechTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tech-section').forEach(sec => sec.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById('tech-' + tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
+
