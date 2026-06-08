@@ -1,1 +1,158 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulações</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-gray-50"><header class="bg-[#E30613] text-white sticky top-0"><div class="flex items-center h-14 px-4 gap-3"><a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></a><h1 class="font-semibold">Simulações</h1></div></header><main class="max-w-3xl mx-auto p-4"><div class="bg-white rounded-2xl shadow p-4"><div class="flex gap-2 mb-4 overflow-x-auto"><button onclick="load(1)" id="b1" class="px-3 py-1.5 rounded-full bg-[#E30613] text-white text-xs whitespace-nowrap">História 1</button><button onclick="load(2)" id="b2" class="px-3 py-1.5 rounded-full bg-gray-200 text-xs">História 2</button><button onclick="load(3)" id="b3" class="px-3 py-1.5 rounded-full bg-gray-200 text-xs">História 3</button><button onclick="load(4)" id="b4" class="px-3 py-1.5 rounded-full bg-gray-200 text-xs">História 4</button></div><div id="c" class="min-h-[400px]"></div><div id="nav" class="mt-6"></div></div></main><script>function load(i){fetch(`dados/historia${i}.html`).then(r=>r.text()).then(h=>{document.getElementById('c').innerHTML=h;document.querySelectorAll('[id^=b]').forEach((b,idx)=>b.className=idx+1===i?'px-3 py-1.5 rounded-full bg-[#E30613] text-white text-xs':'px-3 py-1.5 rounded-full bg-gray-200 text-xs');document.getElementById('nav').innerHTML=i<4?`<a href="#" onclick="load(${i+1});return false" class="block w-full text-center py-3 bg-[#E30613] text-white rounded-xl font-medium">Próxima História →</a>`:`<div class="grid grid-cols-2 gap-3"><a href="../conclusao/completa.html" class="py-3 bg-[#0077B6] text-white rounded-xl text-center font-medium">Conclusão Completa</a><a href="../conclusao/resumida.html" class="py-3 bg-[#009639] text-white rounded-xl text-center font-medium">Conclusão Resumida</a></div>`})}load(1)</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Histórias Práticas - Aiwa Playbook</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="../index.html" class="back-btn">❮</a>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
+    </header>
+
+    <main class="app-container">
+        <div class="content-wrapper">
+            
+            <div class="welcome-header" style="margin-top: 8px;">
+                <span class="live-ticker">Casos Práticos de Vendas</span>
+                <h2>Simulações em Loja</h2>
+            </div>
+
+            <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 4px;">
+                <button onclick="loadStory(1)" id="b1" style="padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; border: none; cursor: pointer; whitespace: nowrap;">História 1</button>
+                <button onclick="loadStory(2)" id="b2" style="padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; border: none; cursor: pointer; whitespace: nowrap;">História 2</button>
+                <button onclick="loadStory(3)" id="b3" style="padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; border: none; cursor: pointer; whitespace: nowrap;">História 3</button>
+                <button onclick="loadStory(4)" id="b4" style="padding: 8px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; border: none; cursor: pointer; whitespace: nowrap;">História 4</button>
+            </div>
+
+            <div id="chat-container" class="chat-viewport">
+                </div>
+
+            <div id="story-navigation" style="margin-top: 8px;"></div>
+
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="../index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="index.html" class="nav-btn active"><div>📖</div><span>Histórias</span></a>
+        <a href="../comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="../sobre.html" class="nav-btn"><div>ℹ️</div><span>Sobre</span></a>
+    </nav>
+
+    <script>
+        function loadStory(storyId) {
+            fetch(`dados/historia${storyId}.html`)
+            .then(response => response.text())
+            .then(htmlContent => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlContent, 'text/html');
+                const paragraphs = doc.querySelectorAll('p');
+                
+                let processedHTML = '';
+                
+                paragraphs.forEach(p => {
+                    let text = p.innerHTML.trim();
+                    if (!text) return; // Ignora linhas vazias
+
+                    // Detecta se é uma linha de fala contendo a tag de negrito do emissor
+                    if (text.includes('class="text-[#E30613]"') || text.includes("class='text-[#E30613]'")) {
+                        const boldTag = p.querySelector('b');
+                        if (boldTag) {
+                            const senderName = boldTag.textContent.replace(':', '').trim();
+                            // Remove a tag <b> do texto para deixar apenas o diálogo limpo
+                            boldTag.remove();
+                            let dialogue = p.innerHTML.trim();
+
+                            // Determina o lado e cores do avatar com base no emissor (Fusão de UI)
+                            let isStaff = senderName.includes('BRUNO') || senderName.includes('PROMOTOR') || senderName.includes('EDY') || senderName.includes('Efy');
+                            let sideClass = isStaff ? 'left' : 'right';
+                            let avatarColor = isStaff ? '%23e30613' : '%2300b2ff';
+
+                            processedHTML += `
+                                <div class="chat-msg ${sideClass}">
+                                    <div class="chat-avatar">
+                                        <img src="../avatares/${senderName.toLowerCase().split(' ')[0]}.png" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'${avatarColor}\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M12 14c-6.1 0-12 2.5-12 6v2h24v-2c0-3.5-5.9-6-12-6z\'/></svg>';">
+                                    </div>
+                                    <div style="width: 100%;">
+                                        <span class="sender-tag" style="text-align: ${isStaff ? 'left' : 'right'};">${senderName}</span>
+                                        <div class="bubble">${dialogue}</div>
+                                    </div>
+                                </div>
+                            `;
+                            return;
+                        }
+                    }
+
+                    // Se for uma anotação de contexto estrutural, renderiza dentro de um painel explicativo sem perder a informação
+                    if (text.startsWith('[') && text.endsWith(']')) {
+                        processedHTML += `
+                            <div style="text-align: center; margin: 10px 0;">
+                                <span style="background: var(--border-default); color: var(--text-secondary); font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                    ${text.replace('[', '').replace(']', '')}
+                                </span>
+                            </div>
+                        `;
+                    } else {
+                        // Títulos das seções iniciais ou notas narrativas
+                        processedHTML += `
+                            <div class="cyber-panel" style="padding: 10px; margin-bottom: 2px; border-left: 3px solid var(--neon-cyan);">
+                                <p class="panel-text" style="font-size: 12px; font-weight: 600;">${text}</p>
+                            </div>
+                        `;
+                    }
+                });
+
+                // Injeta as bolhas estruturadas na área de chat
+                document.getElementById('chat-container').innerHTML = processedHTML;
+
+                // Atualiza o estado visual dos botões das abas superiores
+                document.querySelectorAll('[id^=b]').forEach((btn, idx) => {
+                    if ((idx + 1) === storyId) {
+                        btn.style.backgroundColor = '#E30613';
+                        btn.style.color = '#ffffff';
+                    } else {
+                        btn.style.backgroundColor = 'var(--bg-card)';
+                        btn.style.color = 'var(--text-secondary)';
+                        btn.style.border = '1px solid var(--border-default)';
+                    }
+                });
+
+                // Atualiza o botão de rodapé dinâmico para avançar
+                const navContainer = document.getElementById('story-navigation');
+                if (storyId < 4) {
+                    navContainer.innerHTML = `
+                        <button onclick="loadStory(${storyId + 1})" style="width: 100%; text-align: center; padding: 14px; background-color: #E30613; color: #ffffff; border-radius: 10px; font-size: 13px; font-weight: 700; border: none; cursor: pointer;">
+                            Próxima História →
+                        </button>
+                    `;
+                } else {
+                    // Mantém os redirecionamentos de conclusões intactos
+                    navContainer.innerHTML = `
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <a href="../conclusoes/completa.html" style="padding: 12px; background-color: var(--neon-blue); color: #fff; border-radius: 10px; text-align: center; font-size: 11px; font-weight: 700;">Conclusão Completa</a>
+                            <a href="../conclusoes/resumida.html" style="padding: 12px; background-color: var(--neon-cyan); color: #000; border-radius: 10px; text-align: center; font-size: 11px; font-weight: 700;">Conclusão Resumida</a>
+                        </div>
+                    `;
+                }
+            }).catch(err => {
+                document.getElementById('chat-container').innerHTML = `<p class="panel-text" style="color:var(--neon-red);">Erro ao carregar história: ${err}</p>`;
+            });
+        }
+
+        // Carrega a primeira história automaticamente na inicialização
+        document.addEventListener("DOMContentLoaded", () => {
+            loadStory(1);
+        });
+    </script>
+</body>
+</html>

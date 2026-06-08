@@ -1,0 +1,48 @@
+:root {
+    /* Modo Claro (Default) */
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --text-muted: #4b5563;
+    --header-bg: #E30613;
+    --border-color: #e5e7eb;
+}
+
+[data-theme="dark"] {
+    /* Modo Escuro */
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+a { color: var(--header-bg); text-decoration: none; }

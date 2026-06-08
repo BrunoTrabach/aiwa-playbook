@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook Aiwa - Mestre de Vendas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background: #0f172a; color: #f1f5f9; font-family: sans-serif; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .tab-btn { background: #1e293b; padding: 10px; margin: 2px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: bold; }
+        .tab-btn.active { background: #E30613; color: white; }
+        .content-card { background: #0f172a; border: 1px solid #334155; padding: 15px; border-radius: 12px; margin-bottom: 15px; }
+        h2 { color: #E30613; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #334155; padding-bottom: 5px; }
+        b { color: #fbbf24; }
+    </style>
+</head>
+<body class="p-4 max-w-2xl mx-auto">
+
+    <header class="mb-6">
+        <h1 class="text-2xl font-bold text-white">Playbook <span class="text-[#E30613]">Total</span></h1>
+        <div class="flex flex-wrap mt-4">
+            <button class="tab-btn active" onclick="show('tec')">Tecnologias</button>
+            <button class="tab-btn" onclick="show('marcas')">Comparativo</button>
+            <button class="tab-btn" onclick="show('pilares')">Método CHEGA+</button>
+            <button class="tab-btn" onclick="show('treino')">Histórias</button>
+        </div>
+    </header>
+
+    <section id="tec" class="section active">
+        <h2 class="text-xl">Especificações Técnicas Completas</h2>
+        <div class="content-card">
+            <h3>AIWA (AWS-BBS-01) - 15 Tecnologias</h3>
+            <p><b>T1 - 3 Vias reais + 3 Amps:</b> Divisão física (Woofer/Mid/Tweeter) com amplificadores dedicados para cada via. Sem distorção por sobrecarga.</p>
+            <p><b>T2 - Radiadores Passivos 360°:</b> Pressão pneumática interna para sub-graves sem consumo de bateria.</p>
+            <p><b>T3 - Resposta 20Hz-20KHz:</b> Espectro humano completo.</p>
+            <p><b>T4 - Energy Saving:</b> Mantém 200W RMS na bateria sem redução de voltagem.</p>
+            <p><b>T5 - TWS Real:</b> Estéreo independente (L+R) sem cancelamento de fase.</p>
+            <p><b>T6 - IPX6:</b> Alta pressão (jatos). Ideal para uso externo hostil.</p>
+            <p><b>T7 - Bluetooth 5.3:</b> Conectividade estável de alta fidelidade.</p>
+            <p><b>T8 - USB/P2/Powerbank:</b> Central de conectividade completa.</p>
+            <p><b>T9/T15:</b> App, LEDs, Alça e Blindagem estrutural.</p>
+        </div>
+        <div class="content-card">
+            <h3>LG (XG9S) - Fidelidade Meridian</h3>
+            <p>Parceria exclusiva Meridian. Foco em fidelidade: Woofers de <b>Fibra de Carbono</b> (velocidade milimétrica/sem borrão). Tweeter de compressão para clareza em vocais. Iluminação Palco Projetor.</p>
+        </div>
+        <div class="content-card">
+            <h3>Philco (PBX01) - Volume por Software</h3>
+            <p>2 vias tradicionais. Utiliza <b>ExBass</b> (algoritmo digital) para "forçar" os woofers. Foco em volume bruto/acessibilidade. Atenção: Distorce em volumes máximos devido à falta de amplificação dedicada por via.</p>
+        </div>
+    </section>
+
+    <section id="marcas" class="section">
+        <h2 class="text-xl">Confronto de Mercado</h2>
+        <div class="content-card">
+            <p><b>Aiwa:</b> A única que entrega potência máxima (200W) via bateria, possui 3 vias físicas reais e sub-grave de 20Hz.</p>
+            <p><b>JBL:</b> Referência em marca e IP67 (imersão). Porém, perde cerca de 25% de potência ao sair da tomada.</p>
+            <p><b>LG:</b> Foco em precisão acústica (fibra de carbono) e design premiado.</p>
+            <p><b>Philco:</b> A opção de entrada (50-70% mais barata). Ideal para quem busca volume para festa sem exigir a fidelidade acústica das outras marcas.</p>
+        </div>
+    </section>
+
+    <section id="pilares" class="section">
+        <h2 class="text-xl">Método CHEGA+</h2>
+        <div class="content-card">
+            <p><b>Pilar 1 (UX):</b> Sondagem desarmada. "O que você busca? Relaxamento ou festa?".</p>
+            <p><b>Pilar 2 (Legado):</b> Engenharia japonesa clássica atualizada com alta densidade energética.</p>
+            <p><b>Pilar 3 (Sensorial):</b> "Coloque a mão na lateral". A prova física da engenharia acústica sem vibração indesejada.</p>
+        </div>
+    </section>
+
+    <section id="treino" class="section">
+        <h2 class="text-xl">Treinamento e Simulação</h2>
+        <div class="content-card">
+            <p><b>História 1:</b> Abordagem inicial (UX) e teste real (aplicativo).</p>
+            <p><b>História 2:</b> Pós-venda e Reforço (TWS + IP66).</p>
+            <p><b>História 3:</b> A indicação (Cristiane traz Fernanda).</p>
+            <p><b>História 4:</b> Treinamento de Vendedor (Ouvir frequências + App).</p>
+        </div>
+    </section>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

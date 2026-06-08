@@ -1,1 +1,348 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>comparativos</title><script src="https://cdn.tailwindcss.com"></script></head><body class="bg-gray-50"><header class="bg-[#E30613] text-white sticky top-0"><div class="flex items-center h-14 px-4 gap-3"><a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></a><h1 class="font-semibold capitalize">comparativos</h1></div></header><main class="p-6 max-w-3xl mx-auto"><div class="bg-white p-8 rounded-2xl shadow text-center"><p class="text-gray-600">Conteúdo em construção. Aguardando informações dos 3 pilares.</p></div></main></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Matriz Comparativa - Aiwa Playbook</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Bloqueio de overflow global para fixar a estrutura na tela */
+        html, body {
+            height: 100% !important;
+            height: 100dvh !important;
+            margin: 0;
+            padding: 0;
+            overflow: hidden !important;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar {
+            flex-shrink: 0;
+        }
+
+        .app-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 !important;
+        }
+        
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 6px 75px 6px !important; 
+            box-sizing: border-box;
+            overflow: hidden !important;
+            height: 100%;
+        }
+
+        /* Painel Roxo Principal Expandido */
+        .cyber-panel.neon-purple {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+            min-height: 0 !important;
+            margin: 4px 0 0 0 !important; 
+            padding: 10px !important;
+            box-sizing: border-box;
+            gap: 8px !important;
+        }
+
+        .panel-title {
+            flex-shrink: 0 !important;
+        }
+
+        /* Layout Inteligente de Seleção (2x2 no mobile) */
+        .select-matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            flex-shrink: 0;
+        }
+
+        .select-matrix-grid select {
+            width: 100%;
+            background: rgba(18, 9, 36, 0.8);
+            color: var(--text-primary);
+            border: 1px solid var(--border-default);
+            padding: 8px;
+            font-size: 11px;
+            border-radius: 4px;
+            font-weight: bold;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .select-matrix-grid select:focus {
+            border-color: var(--neon-blue);
+        }
+
+        /* Container de Rolamento Seguro para a Tabela */
+        .table-viewport {
+            flex: 1 !important;
+            min-height: 0 !important;
+            width: 100% !important;
+            border: 1px solid var(--border-default);
+            box-sizing: border-box;
+            background: rgba(10, 5, 15, 0.5);
+            overflow: auto !important; /* Permite scroll tanto vertical quanto horizontal se necessário */
+            border-radius: 4px;
+        }
+
+        /* Estilização Cyber da Tabela Comparativa */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            text-align: left;
+            color: var(--text-primary);
+        }
+
+        .compare-table th, .compare-table td {
+            padding: 8px 10px;
+            border: 1px solid rgba(157, 78, 221, 0.15);
+            min-width: 110px; /* Garante tamanho mínimo legível para as colunas das marcas */
+            vertical-align: top;
+            line-height: 1.3;
+        }
+
+        /* Coluna fixa de critérios com destaque neon blue */
+        .compare-table th:first-child, .compare-table td:first-child {
+            position: sticky;
+            left: 0;
+            background: #130a24;
+            z-index: 2;
+            min-width: 85px;
+            font-weight: bold;
+            color: var(--neon-blue);
+            border-right: 2px solid var(--border-default);
+        }
+
+        .compare-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .compare-table th {
+            background: rgba(26, 12, 50, 0.9);
+            color: var(--neon-purple);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        /* Destaque para dados da AIWA */
+        .aiwa-cell-highlight {
+            background: rgba(0, 178, 255, 0.05) !important;
+            font-weight: 500;
+        }
+
+        /* Rodapé de créditos fixo */
+        .watermark-footer {
+            flex-shrink: 0;
+            text-align: center;
+            font-size: 10px;
+            color: var(--text-secondary, #888);
+            margin: 6px 0 0 0 !important;
+            width: 100%;
+            display: block;
+            opacity: 0.8;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area"><h1><span>AIWA</span> MATRIZ</h1></div>
+        <a href="../index.html" class="icon-control-btn">🏠</a>
+    </header>
+
+    <main class="app-container">
+        <section class="content-wrapper">
+            
+            <div class="cyber-panel neon-purple">
+                <div class="panel-title">📊 Comparativo Direto de Engenharia</div>
+                
+                <div class="select-matrix-grid">
+                    <select id="m1" onchange="atualizarMatriz()"></select>
+                    <select id="m2" onchange="atualizarMatriz()"></select>
+                    <select id="m3" onchange="atualizarMatriz()"></select>
+                    <select id="m4" onchange="atualizarMatriz()"></select>
+                </div>
+
+                <div class="table-viewport">
+                    <table class="compare-table" id="matrix-table">
+                        <thead>
+                            <tr id="table-header-row"></tr>
+                        </thead>
+                        <tbody id="table-body-content"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <footer class="watermark-footer">
+                Desenvolvido por Bruno Trabach - Playbook v4/2026
+            </footer>
+
+        </section>
+
+        <nav class="nav-menu">
+            <a href="../index.html" class="nav-btn">🏠<br>Home</a>
+            <a href="../historias/index.html" class="nav-btn">🎭<br>Teatro</a>
+            <a href="index.html" class="nav-btn active">📊<br>Matriz</a>
+            <a href="../tecnologias/index.html" class="nav-btn">💡<br>Engenharia</a>
+            <a href="../pilares/index.html" class="nav-btn">🎯<br>CHEGA+</a>
+        </nav>
+    </main>
+
+    <script>
+        // Banco de Dados Consolidado com base nos rascunhos fornecidos
+        const modelos = {
+            "AIWA_BBS01": {
+                nome: "Aiwa BBS01 Plus",
+                potencia: "200W RMS constante (na bateria e tomada)",
+                bateria: "Até 30h prometidas (Real: 30h a 50% / 3h a 100%)",
+                protecao: "IP66 (Proteção total contra poeira e jatos de água)",
+                bluetooth: "Bluetooth 5.3 (Conexão estável)",
+                recursos: "App Oficial, Bass Boost real, Equalização customizável",
+                conexoes: "USB (Pen Drive), Entrada AUX P2, Função Power Bank",
+                preco: "R$ 1.000 - R$ 1.600",
+                argumento: "Melhor relação Custo x Potência Real. Mantém pegada forte na bateria."
+            },
+            "JBL_BB3": {
+                nome: "JBL Boombox 3",
+                potencia: "180W RMS na tomada / 136W RMS na bateria",
+                bateria: "Até 24h prometidas (Real: 15h a 20h em som médio)",
+                protecao: "IP67 (Submersão total em água e poeira)",
+                bluetooth: "Bluetooth 5.3 (PartyBoost)",
+                recursos: "App Oficial, EQ gráfico simples, Som referencial limpo",
+                conexoes: "Entrada AUX P2, Função Power Bank (Não lê Pen Drive)",
+                preco: "R$ 1.800 - R$ 2.500+",
+                argumento: "Construção Premium de alta durabilidade, porém preço muito elevado."
+            },
+            "LG_XG9S": {
+                nome: "LG Xboom Go XG9S",
+                potencia: "120W RMS (Configuração de canais duplos)",
+                bateria: "Até 24h prometidas (Autonomia média real controlada)",
+                protecao: "IP67 (Resistente a água e poeira)",
+                bluetooth: "Bluetooth 5.1 (Conectividade padrão)",
+                recursos: "App Oficial, Iluminação integrada de palco, Sound Boost",
+                conexoes: "Entrada AUX P2, Saída Power Bank",
+                preco: "R$ 1.400 - R$ 1.900",
+                argumento: "Foco estético em luzes e design extravagante, mas menor potência RMS."
+            },
+            "PHILCO_PBX01": {
+                nome: "Philco PBX01 Extreme",
+                potencia: "300W Nominal / Real estimado ~120W RMS",
+                bateria: "Até 30h prometidas (Volume moderado)",
+                protecao: "IP66 (Resistência a jatos de água)",
+                bluetooth: "Bluetooth 5.4 (Mais econômico para 2026)",
+                recursos: "Função ExBass, Equalizações pré-definidas de fábrica",
+                conexoes: "USB (Pen Drive), Entrada AUX P2",
+                preco: "R$ 900 - R$ 1.400",
+                argumento: "Opção barata de entrada, mas som distorce mais nos volumes máximos."
+            }
+        };
+
+        const criterios = [
+            ["Potência Real", "potencia"],
+            ["Autonomia de Bateria", "bateria"],
+            ["Proteção (IP)", "protecao"],
+            ["Tecnologia Bluetooth", "bluetooth"],
+            ["Recursos e App", "recursos"],
+            ["Conexões Disponíveis", "conexoes"],
+            ["Faixa de Preço", "preco"],
+            ["Diferencial de Venda", "argumento"]
+        ];
+
+        function inicializarSeletores() {
+            const IDs = ["m1", "m2", "m3", "m4"];
+            const chaves = Object.keys(modelos);
+            
+            IDs.forEach((id, index) => {
+                const seletor = document.getElementById(id);
+                
+                // Opção em branco caso o usuário queira desativar uma coluna
+                const optVazia = document.createElement("option");
+                optVazia.value = "";
+                optVazia.textContent = "-- Ocultar Coluna --";
+                seletor.appendChild(optVazia);
+
+                chaves.forEach(chave => {
+                    const opt = document.createElement("option");
+                    opt.value = chave;
+                    opt.textContent = modelos[chave].nome;
+                    seletor.appendChild(opt);
+                });
+
+                // Seleções padrões iniciais para não abrir vazio
+                if (index === 0) seletor.value = "AIWA_BBS01";
+                if (index === 1) seletor.value = "JBL_BB3";
+                if (index === 2) seletor.value = "PHILCO_PBX01";
+                if (index === 3) seletor.value = "LG_XG9S";
+            });
+
+            atualizarMatriz();
+        }
+
+        function atualizarMatriz() {
+            const m1 = document.getElementById("m1").value;
+            const m2 = document.getElementById("m2").value;
+            const m3 = document.getElementById("m3").value;
+            const m4 = document.getElementById("m4").value;
+
+            const ativos = [m1, m2, m3, m4].filter(Boolean);
+
+            // 1. Renderizar o Cabeçalho da Tabela
+            const headerRow = document.getElementById("table-header-row");
+            headerRow.innerHTML = "<th>Critério</th>";
+            
+            ativos.forEach(chave => {
+                const th = document.createElement("th");
+                th.textContent = modelos[chave].nome;
+                if (chave === "AIWA_BBS01") th.className = "aiwa-cell-highlight";
+                headerRow.appendChild(th);
+            });
+
+            // 2. Renderizar o Corpo da Tabela baseado nos Critérios
+            const tbody = document.getElementById("table-body-content");
+            tbody.innerHTML = "";
+
+            criterios.forEach(crit => {
+                const tr = document.createElement("tr");
+                
+                // Coluna de nomes do critério
+                const tdLabel = document.createElement("td");
+                tdLabel.textContent = crit[0];
+                tr.appendChild(tdLabel);
+
+                // Colunas de dados correspondentes de cada marca ativa
+                ativos.forEach(chave => {
+                    const tdData = document.createElement("td");
+                    tdData.textContent = modelos[chave][crit[1]];
+                    if (chave === "AIWA_BBS01") tdData.className = "aiwa-cell-highlight";
+                    tr.appendChild(tdData);
+                });
+
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Recuperar o tema padrão do app e iniciar a matriz
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+            inicializarSeletores();
+        });
+    </script>
+</body>
+</html>

@@ -1,23 +1,90 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Playbook Aiwa v4</title><link rel="stylesheet" href="assets/tailwind.css"><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#E30613"></head><body>
-<header class="sticky top-0 bg-[#E30613] text-white"><div class="max-w-6xl mx-auto px-4"><div class="flex items-center h-14 gap-3">
-<div class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center" id="hora">--:--</div>
-<h1 class="font-semibold">Playbook Aiwa</h1></div></div></header>
-<main class="max-w-3xl mx-auto p-6">
-<div class="bg-white p-8 rounded-2xl shadow text-center">
-<h2 class="font-bold mb-3">Bem-vindo, Bruno</h2>
-<p class="text-gray-600">3 Pilares • Tecnologias • Histórias</p>
-<div class="grid grid-cols-2 gap-2 mt-4">
-<a href="tecnologias.html" class="bg-gray-50 p-3 rounded-xl">Tecnologias</a>
-<a href="sobre.html" class="bg-gray-50 p-3 rounded-xl">Sobre</a>
-</div></div></main>
-<footer class="text-center text-xs text-gray-500 py-5">Desenvolvido por Bruno Trabach - Playbook v4 🇧🇷🇯🇵</footer>
-<script>
-function atualizaHora(){
-  try{
-    const hora = new Intl.DateTimeFormat('pt-BR',{timeZone:'America/Sao_Paulo',hour:'2-digit',minute:'2-digit'}).format(new Date());
-    document.getElementById('hora').textContent = hora;
-  }catch(e){document.getElementById('hora').textContent = new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});}
-}
-atualizaHora(); setInterval(atualizaHora,60000);
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
-</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aiwa Playbook - Menu Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area">
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area">
+            <button onclick="toggleTheme()" class="icon-control-btn" title="Alternar Tema">🌓</button>
+            <div class="status-indicator"></div>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div class="content-wrapper">
+            <div class="welcome-header" style="margin-top: 8px;">
+                <span class="live-ticker">Painel de Treinamento</span>
+                <h2>Olá, Consultor de Campo</h2>
+            </div>
+
+            <div class="cyber-grid">
+                
+                <a href="historias/index.html" class="fusion-card card-cyan">
+                    <span style="font-size: 22px; margin-bottom: 4px;">编</span>
+                    <span class="card-title">Histórias</span>
+                    <span class="card-desc">Casos e simulações de vendas reais.</span>
+                </a>
+
+                <a href="comparativos.html" class="fusion-card card-purple">
+                    <span style="font-size: 22px; margin-bottom: 4px;">📊</span>
+                    <span class="card-title">Comparativos</span>
+                    <span class="card-desc">Confronto direto com a concorrência.</span>
+                </a>
+
+                <a href="pilares/index.html" class="fusion-card card-orange">
+                    <span style="font-size: 22px; margin-bottom: 4px;">🎯</span>
+                    <span class="card-title">3 Pilares</span>
+                    <span class="card-desc">Fundamentos do Método CHEGA+.</span>
+                </a>
+
+                <a href="tecnologias.html" class="fusion-card card-blue">
+                    <span style="font-size: 22px; margin-bottom: 4px;">🔊</span>
+                    <span class="card-title">Tecnologias</span>
+                    <span class="card-desc">Diferenciais de engenharia acústica.</span>
+                </a>
+
+                <a href="conclusoes/index.html" class="fusion-card card-yellow">
+                    <span style="font-size: 22px; margin-bottom: 4px;">🏁</span>
+                    <span class="card-title">Conclusões</span>
+                    <span class="card-desc">Fechamentos e argumentos finais.</span>
+                </a>
+
+                <a href="sobre.html" class="fusion-card card-red">
+                    <span style="font-size: 22px; margin-bottom: 4px;">ℹ️</span>
+                    <span class="card-title">Sobre</span>
+                    <span class="card-desc">Especificações e versão do app.</span>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="nav-btn active"><div>🏠</div><span>Home</span></a>
+        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="sobre.html" class="nav-btn"><div>ℹ️</div><span>Sobre</span></a>
+    </nav>
+
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute("data-theme");
+            const next = current === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", next);
+            localStorage.setItem("theme", next);
+        }
+    </script>
+</body>
+</html>

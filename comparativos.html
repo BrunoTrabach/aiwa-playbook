@@ -1,54 +1,70 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comparativos Boomboxes 2025-2026</title>
-<style>*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#0a0a0a;color:#fff}header{background:linear-gradient(135deg,#E30613,#8B0000);padding:20px;text-align:center;position:sticky;top:0;z-index:10}header h1{margin:0;font-size:20px}.tabs{display:flex;background:#111;overflow-x:auto}.tabs button{flex:1;padding:14px;border:none;background:transparent;color:#aaa;font-weight:600}.tabs button.active{color:#fff;border-bottom:3px solid #E30613}.container{padding:16px;max-width:1200px;margin:auto}.selector{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}@media(min-width:600px){.selector{grid-template-columns:repeat(4,1fr)}}.selector label{display:flex;align-items:center;gap:8px;background:#1a1a1a;padding:12px;border-radius:10px;border:2px solid #333;cursor:pointer}.selector label.active{border-color:#E30613;background:#1f0a0a}.grid{display:grid;grid-template-columns:1fr;gap:14px}@media(min-width:768px){.grid{grid-template-columns:repeat(2,1fr)}}.card{background:#141414;border:1px solid #222;border-radius:14px;padding:18px;margin-bottom:16px}.model{border-top:4px solid var(--c);background:#141414;padding:16px;border-radius:12px}.spec{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #222;font-size:13px}.spec span:first-child{color:#aaa}.badge{background:#222;padding:3px 8px;border-radius:10px;font-size:11px;margin:2px;display:inline-block}.table{width:100%;border-collapse:collapse;font-size:12px}.table th,.table td{padding:8px;border:1px solid #222;text-align:left}.table th{background:#1a1a1a}.highlight{background:rgba(227,6,19,.2);font-weight:700}.hidden{display:none}</style></head><body>
-<header><h1>📊 COMPARATIVOS BOOMBOXES COMPLETO</h1></header>
-<div class="tabs"><button class="active" onclick="tab('sel')">Selecionar</button><button onclick="tab('tabela')">Tabela Completa</button><button onclick="tab('bateria')">Bateria Real</button><button onclick="tab('obj')">Objeções</button></div>
-<div class="container">
-<div id="sel">
-<div class="card"><h3>Escolha os modelos para comparar:</h3><div class="selector">
-<label class="active"><input type="checkbox" value="aiwa" checked onchange="up()"> AIWA BBS01</label>
-<label class="active"><input type="checkbox" value="jbl" checked onchange="up()"> JBL Boombox 3</label>
-<label><input type="checkbox" value="lg" onchange="up()"> LG XG9S</label>
-<label><input type="checkbox" value="philco" onchange="up()"> PHILCO PBX01</label>
-</div></div>
-<div id="res" class="grid"></div>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Comparativos - Aiwa Playbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
+</head>
+<body>
 
-<div id="tabela" class="hidden">
-<div class="card" style="overflow-x:auto">
-<table class="table">
-<tr><th>Critério</th><th style="color:#E30613">AIWA</th><th style="color:#FF6600">JBL</th><th style="color:#009639">LG</th><th style="color:#6A0DAD">PHILCO</th></tr>
-<tr><td>Potência RMS Real</td><td class="highlight">200W Constantes</td><td>180W/136W</td><td>120W</td><td>~100-150W</td></tr>
-<tr><td>Arquitetura</td><td class="highlight">3 Vias / 3 Amps</td><td>3 Vias / Amp único</td><td>2 Vias Meridian</td><td>3 Vias Integrada</td></tr>
-<tr><td>Frequência</td><td class="highlight">20Hz-20kHz</td><td>40Hz-20kHz</td><td>50Hz-20kHz</td><td>60Hz-18kHz</td></tr>
-<tr><td>Bluetooth</td><td>5.3</td><td>5.3</td><td>5.1</td><td class="highlight">5.4</td></tr>
-<tr><td>Proteção IP</td><td>IP66</td><td class="highlight">IP67</td><td class="highlight">IP67</td><td>IP66</td></tr>
-<tr><td>Bateria (50%)</td><td class="highlight">26-30h</td><td>15-20h</td><td>11-15h</td><td>18-25h</td></tr>
-<tr><td>Pen Drive</td><td class="highlight">Sim FLAC</td><td>Não</td><td>Não</td><td class="highlight">Sim</td></tr>
-<tr><td>Preço 2026</td><td>R$1.0-1.6k</td><td>R$1.8-2.5k</td><td>R$1.2-2.0k</td><td class="highlight">R$0.9-1.4k</td></tr>
-<tr><td>Peso</td><td class="highlight">3,2kg</td><td>6,7kg</td><td>7,1kg</td><td>4,5kg</td></tr>
-</table>
-</div>
-</div>
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="index.html" class="back-btn">❮</a>
+            <h1>Comparativos Matriz</h1>
+        </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
+    </header>
 
-<div id="bateria" class="hidden">
-<div class="card"><h3>🔋 Benchmarking Real de Bateria</h3>
-<table class="table">
-<tr><th>Modelo</th><th>Capacidade</th><th>50% volume</th><th>100% volume</th><th>Calor extremo</th></tr>
-<tr><td>AIWA BBS01</td><td>77Wh</td><td class="highlight">26-30h</td><td class="highlight">6-8h</td><td>Estável</td></tr>
-<tr><td>JBL Boombox 3</td><td>72.6Wh</td><td>15-20h</td><td>4-6h</td><td>Reduz graves</td></tr>
-<tr><td>LG XG9S</td><td>Polímero</td><td>11-15h</td><td>3-5h</td><td>Protege e baixa vol</td></tr>
-<tr><td>PHILCO PBX01</td><td>Média</td><td>18-25h</td><td>5-7h</td><td>Aquece traseira</td></tr>
-</table>
-</div>
-</div>
+    <main class="app-container">
+        <div class="content-wrapper">
+            <div class="welcome-header">
+                <span class="live-ticker">Análise de Concorrência</span>
+                <h2>Confronto Técnico</h2>
+            </div>
 
-<div id="obj" class="hidden">
-<div class="card"><h3>🥊 Cliente quer JBL por status</h3><p><b>Objeção:</b> "Meu sonho era ter o logo da JBL"</p><p style="background:#1a1a1a;padding:12px;border-left:3px solid #E30613;font-style:italic">"Eu entendo, mas seus amigos vão para olhar adesivo ou curtir som que não para? Com AIWA você economiza quase mil reais, mantém 200W RMS na bateria e ainda tem RGB e Pen Drive."</p></div>
-<div class="card"><h3>🥊 Cliente desconfia da Philco</h3><p><b>Objeção:</b> "Está muito barata"</p><p style="background:#1a1a1a;padding:12px;border-left:3px solid #E30613;font-style:italic">"Preço baixo é estratégia nacional. Ela é a única com Bluetooth 5.4 de 2026, conecta mais rápido e economiza bateria do celular."</p></div>
-</div>
-</div>
-<script>
-const m={aiwa:{n:"AIWA BBS01",c:"#E30613",p:"200W Constantes",b:"30h / 3h",ip:"IP66",bt:"5.3",f:"20Hz-20kHz",pr:"R$1.0-1.6k",d:["3 amps","Pen Drive FLAC","App Bass Boost"]},jbl:{n:"JBL Boombox 3",c:"#FF6600",p:"180W/136W",b:"24h / 15-20h",ip:"IP67",bt:"5.3",f:"40Hz-20kHz",pr:"R$1.8-2.5k",d:["Som refinado","Flutua","PartyBoost"]},lg:{n:"LG XG9S",c:"#009639",p:"120W RMS",b:"24h / 11-15h",ip:"IP67",bt:"5.1",f:"50Hz-20kHz",pr:"R$1.2-2.0k",d:["Meridian","Canhão luz","Fibra carbono"]},philco:{n:"PHILCO PBX01",c:"#6A0DAD",p:"300W nom.",b:"30h / 5-10h",ip:"IP66",bt:"5.4",f:"60Hz-18kHz",pr:"R$0.9-1.4k",d:["BT 5.4","ExBass","Preço"]}};
-function tab(id){document.querySelectorAll('.container>div').forEach(d=>d.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));event.target.classList.add('active')}
-function up(){const s=[...document.querySelectorAll('#sel input:checked')].map(i=>i.value);document.getElementById('res').innerHTML=s.map(k=>{const x=m[k];return `<div class="model" style="--c:${x.c}"><h3 style="color:${x.c};margin:0 0 10px">${x.n}</h3><div class="spec"><span>Potência</span><span>${x.p}</span></div><div class="spec"><span>Bateria</span><span>${x.b}</span></div><div class="spec"><span>IP</span><span>${x.ip}</span></div><div class="spec"><span>BT</span><span>${x.bt}</span></div><div class="spec"><span>Freq</span><span>${x.f}</span></div><div class="spec"><span>Preço</span><span>${x.pr}</span></div><div style="margin-top:8px">${x.d.map(d=>`<span class="badge">${d}</span>`).join('')}</div></div>`}).join('');document.querySelectorAll('.selector label').forEach(l=>l.classList.toggle('active',l.querySelector('input').checked))}up();
-</script></body></html>
+            <div class="cyber-panel neon-purple">
+                <div class="panel-title">Escolha o Concorrente</div>
+                <select id="brand-select">
+                    <option value="jbl">JBL (Boombox 3)</option>
+                    <option value="lg">LG (Xboom Go)</option>
+                    <option value="philco">Philco (ExBass)</option>
+                </select>
+
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Recurso</th>
+                            <th>AIWA Plus</th>
+                            <th>Concorrente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Amplificação</td>
+                            <td style="color: var(--neon-cyan); font-weight:bold;">3 Canais Indep.</td>
+                            <td>Canal Único Dinâmico</td>
+                        </tr>
+                        <tr>
+                            <td>Vias de Som</td>
+                            <td style="color: var(--neon-cyan); font-weight:bold;">Tri-axial Real</td>
+                            <td>Full-range Coaxial</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="comparativos.html" class="nav-btn active"><div>📊</div><span>Comparar</span></a>
+        <a href="sobre.html" class="nav-btn"><div>ℹ️</div><span>Sobre</span></a>
+    </nav>
+
+</body>
+</html>

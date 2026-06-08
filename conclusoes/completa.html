@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conclusão Completa - Aiwa Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html[data-theme="dark"] {
+            --bg-global: #0f172a;
+            --bg-card: #111827;
+            --text-primary: #e2e8f0;
+            --border-card: rgba(255, 255, 255, 0.05);
+        }
+        html[data-theme="light"] {
+            --bg-global: #f8fafc;
+            --bg-card: #ffffff;
+            --text-primary: #1e293b;
+            --border-card: rgba(0, 0, 0, 0.05);
+        }
+        body {
+            background-color: var(--bg-global) !important;
+            color: var(--text-primary) !important;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .adaptive-card {
+            background-color: var(--bg-card) !important;
+            border: 1px solid var(--border-card) !important;
+            color: var(--text-primary) !important;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-[#E30613] text-white sticky top-0 z-50 shadow-md">
+        <div class="flex items-center h-14 px-4 gap-3">
+            <a href="index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </a>
+            <h1 class="font-semibold text-lg">Conclusão Completa</h1>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-4 mt-2">
+        <div class="adaptive-card rounded-2xl shadow-lg p-5 text-[14px] leading-relaxed whitespace-pre-wrap">
+**CONCLUSÃO COMPLETA**
+
+Para mim, bom relacionamento em loja não é vender quando eu não estou lá. É um conjunto de atitudes diárias.
+
+É atendimento direcionado para a Aiwa mesmo sem eu pedir. É abordagem bem feita, convidando o cliente a experimentar. É ajudar no pós-venda quando ele volta com dúvida de Proteção e Durabilidade, TWS ou app. É arrumar a ilha com capricho. É conquistar uma vitrine mesmo eu estando de folga, em outro roteiro ou de férias. É receber a foto dessa arrumação.
+
+Essa semana eu estava em casa, de folga. A vendedora Ana me mandou duas fotos da vitrine que ela montou com o totem da Aiwa. Ela lembrou da marca sem eu estar lá.
+
+**O que eu faço:** aplico técnica de abordagem, faço o cliente ter a experiência de sentir o grave, mostro a qualidade do médio e agudo, abro o app Aiwa Áudio BR, ligo o Bass para o reforço do grave, falo dos equalizadores, deixo ele escolher. Ensino o vendedor a replicar. Acompanho até a porta.
+
+**Resultado:** gera venda direta no dia. Gera venda indireta quando o cliente indica um amigo, como a Cristiane fez com a Fernanda. Gera divulgação gratuita dentro e fora da loja. Abre porta para ação, ponto extra e vitrine. Conheço histórias de lojas que pararam de oferecer a marca quando tiraram o promotor, e de gerentes que solicitaram o mesmo promotor de volta. Isso é relacionamento.
+
+Quando oferecemos um atendimento personalizado e com uma boa experiência para o cliente, a loja ganha, o vendedor ganha, a marca e o promotor ganham resultados, o cliente volta com um amigo. É um ciclo. Eu não vendo ficha técnica, eu entrego experiência. Experiência vira relacionamento. Relacionamento vira venda todo dia, com ou sem promotor na loja.
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        });
+    </script>
+</body>
+</html>
