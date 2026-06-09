@@ -3,88 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Aiwa Playbook - Menu Principal</title>                                                                         <link rel="stylesheet" href="styles.css">
-    <script>
-        const savedTheme = localStorage.getItem("theme") || "dark";
-        document.documentElement.setAttribute("data-theme", savedTheme);
-    </script>
-</head>
-<body>
+    <title>Sobre a AIWA - Aiwa Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
 
-    <header class="topbar">
-        <div class="logo-area">
-            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
+
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin: 14px 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .info-item {
+            background: var(--bg-card); /* Ajusta conforme o tema */
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 12px;
+        }
+        .info-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #9ca3af; 
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .info-value {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+
+    <header class="sticky top-0 z-40 bg-[#E30613] text-white shadow-md">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="flex items-center h-14 gap-3">
+          <a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>
+          <div class="flex-1">
+            <h1 class="text-white font-semibold">Sobre a AIWA</h1>
+          </div>
         </div>
-        <div class="controls-area">
-            <button onclick="toggleTheme()" class="icon-control-btn" title="Alternar Tema">🌓</button>
-            <div class="status-indicator"></div>
-        </div>
+      </div>
     </header>
 
-    <main class="app-container">
-        <div class="content-wrapper">
-            <div class="welcome-header" style="margin-top: 8px;">
-                <span class="live-ticker">Painel de Treinamento</span>
-                <h2>Olá, Consultor de Campo</h2>
+    <main class="max-w-3xl mx-auto p-4 pt-6 space-y-4">
+
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow p-4 border border-gray-100 dark:border-gray-700">
+            <h2 class="text-[14px] font-bold text-gray-900 dark:text-white uppercase tracking-wide mb-3 flex items-center gap-2">
+                <span class="text-red-600">🎬</span> Vídeo da Fábrica
+            </h2>
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/HLAx01fo9uo"
+                    title="Fábrica AIWA"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-[12px] text-gray-600 dark:text-gray-400 text-center mt-2 italic">
+                Tour pela linha de montagem automatizada no Polo Industrial.
+            </p>
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <div class="info-label">Legado Japonês</div>
+                <div class="info-value text-gray-900 dark:text-gray-200">Fundada no Japão em 1951, a AIWA tornou-se uma lenda global em engenharia acústica e design icônico.</div>
             </div>
 
-            <div class="cyber-grid">
-
-                <a href="historias/index.html" class="fusion-card card-cyan">
-                    <span style="font-size: 22px; margin-bottom: 4px;">编</span>
-                    <span class="card-title">Histórias</span>
-                    <span class="card-desc">Casos e simulações de vendas reais.</span>
-                </a>
-
-                <a href="comparativos.html" class="fusion-card card-purple">
-                    <span style="font-size: 22px; margin-bottom: 4px;">📊</span>
-                    <span class="card-title">Comparativos</span>
-                    <span class="card-desc">Confronto direto com a concorrência.</span>
-                </a>
-
-                <a href="pilares/index.html" class="fusion-card card-orange">
-                    <span style="font-size: 22px; margin-bottom: 4px;">🎯</span>
-                    <span class="card-title">3 Pilares</span>
-                    <span class="card-desc">Fundamentos do Método CHEGA+.</span>
-                </a>
-
-                <a href="tecnologias.html" class="fusion-card card-blue">
-                    <span style="font-size: 22px; margin-bottom: 4px;">🔊</span>
-                    <span class="card-title">Tecnologias</span>
-                    <span class="card-desc">Diferenciais de engenharia acústica.</span>
-                </a>
-
-                <a href="conclusoes/index.html" class="fusion-card card-yellow">
-                    <span style="font-size: 22px; margin-bottom: 4px;">🏁</span>
-                    <span class="card-title">Conclusões</span>
-                    <span class="card-desc">Fechamentos e argumentos finais.</span>
-                </a>
-
-                <a href="sobre/index.html" class="fusion-card card-red">
-                    <span style="font-size: 22px; margin-bottom: 4px;">ℹ️</span>
-                    <span class="card-title">Sobre</span>
-                    <span class="card-desc">Especificações e versão do app.</span>
-                </a>
-
+            <div class="info-item">
+                <div class="info-label">Operação no Brasil</div>
+                <div class="info-value text-gray-900 dark:text-gray-200">Operação sob liderança do Grupo MK, com fábrica ultra tecnológica em Manaus focada em excelência local.</div>
             </div>
+
+            <div class="info-item">
+                <div class="info-label">Canal Oficial</div>
+                <a href="https://www.aiwa.com.br" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-[14px]">
+                    🌐 www.aiwa.com.br
+                </a>
+            </div>
+        </div>
+
+        <div class="text-center pt-6 pb-8">
+            <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#E30613] text-white text-[14px] font-semibold rounded-xl shadow-lg transition-transform active:scale-95">
+                ← Voltar ao Início
+            </a>
         </div>
     </main>
 
-    <nav class="nav-menu">
-        <a href="index.html" class="nav-btn active"><div>🏠</div><span>Home</span></a>
-        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
-        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
-        <a href="sobre/index.html" class="nav-btn"><div>ℹ️</div><span>Sobre</span></a>
-    </nav>
-
-    <script>
-        function toggleTheme() {
-            const current = document.documentElement.getAttribute("data-theme");
-            const next = current === "dark" ? "light" : "dark";
-            document.documentElement.setAttribute("data-theme", next);
-            localStorage.setItem("theme", next);
-        }
-    </script>
 </body>
 </html>
 
