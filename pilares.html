@@ -1,108 +1,161 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-    <title>Os 3 Pilares CHEGA+ - AIWA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3 Pilares - Método CHEGA+ | Aiwa Playbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
     <style>
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #f0f2f5; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .pilar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        .pilar-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+        .pilar-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-blue { background: rgba(37, 99, 235, 0.15); color: var(--neon-blue); border: 1px solid rgba(37, 99, 235, 0.3); }
+        .badge-purple { background: rgba(168, 85, 247, 0.15); color: var(--neon-purple); border: 1px solid rgba(168, 85, 247, 0.3); }
+        .badge-green { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
+        
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            tracking-character: 0.05em;
+            margin-bottom: 4px;
+        }
+        .pilar-concept {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .script-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 3px solid var(--accent-red);
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        [data-theme="light"] .script-box {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        .script-text {
+            font-size: 12px;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 1.5;
+        }
     </style>
 </head>
-<body class="min-h-screen flex justify-center py-0 sm:py-4 transition-colors duration-200 bg-[#f0f2f5] dark:bg-gray-950">
+<body>
 
-    <div class="w-full max-w-[420px] bg-gray-50 dark:bg-gray-900 min-h-screen sm:min-h-[90vh] sm:rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,.12)] flex flex-col relative overflow-hidden pb-24">
-        
-        <header class="sticky top-0 z-50 bg-[#E30613] text-white shadow-md">
-            <div class="h-14 flex items-center px-4 gap-3">
-                <a href="index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center active:scale-95 transition-transform">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-                </a>
-                <div>
-                    <h1 class="font-bold text-[15px] text-white">Método CHEGA+</h1>
-                    <p class="text-white/80 text-[11px] -mt-0.5">Fundamentos de Abordagem de Balcão</p>
-                </div>
-            </div>
-        </header>
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="index.html" class="back-btn">❮</a>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
+    </header>
 
-        <main class="flex-1 overflow-y-auto px-4 pt-4 space-y-4 no-scrollbar">
-
-            <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 p-4 rounded-3xl shadow-sm">
-                <span class="text-[9px] font-extrabold bg-blue-100 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full uppercase tracking-wider">Metodologia</span>
-                <h2 class="text-base font-bold text-gray-800 dark:text-gray-100 mt-1.5">Conectando Ideias no PDV</h2>
-                <p class="text-[12px] text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
-                    O CHEGA+ não é apenas um roteiro, é uma postura técnica e psicológica para desarmar a concorrência e provar autoridade com base em engenharia de verdade.
+    <main class="app-container">
+        <div class="content-wrapper">
+            
+            <div class="welcome-header" style="margin-top: 8px; margin-bottom: 16px;">
+                <span class="live-ticker">MÉTODO CHEGA+ — EDIÇÃO PROFISSIONAL</span>
+                <h2>Os 3 Pilares de Abordagem Avançada</h2>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.4;">
+                    Esta engrenagem de vendas foi desenvolvida para estabelecer uma conexão imediata com o cliente, substituindo a abordagem tradicional de empurrar produtos por um diálogo consultivo, técnico e focado na experiência real de uso no ponto de venda.
                 </p>
             </div>
 
-            <div class="space-y-3">
-                <h3 class="text-[11px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider px-1">Os Pilares Técnicos</h3>
-
-                <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 p-4 rounded-2xl shadow-sm">
-                    <div class="flex gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/40 flex items-center justify-center text-[#E30613] dark:text-red-500 shrink-0 font-bold text-sm">01</div>
-                        <div>
-                            <h4 class="font-bold text-[14px] text-gray-800 dark:text-gray-200">Abordagem de Impacto</h4>
-                            <p class="text-[12px] text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
-                                Esqueça o "Posso ajudar?". Chame a atenção do cliente para o produto mudando o foco para a experiência física e visual: os radiadores passivos laterais se movimentando e os LEDs dinâmicos.
-                            </p>
-                        </div>
+            <div class="pilar-card">
+                <div class="pilar-header">
+                    <span class="pilar-badge badge-blue">Pilar 1</span>
+                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0;">🎯 UX & Descoberta (A Sondagem Desarmada)</h3>
+                </div>
+                <div>
+                    <div class="section-title" style="color: var(--neon-blue);">O Conceito</div>
+                    <p class="pilar-concept">
+                        O consumidor custuma entrar na loja com uma postura defensiva em relação ao vendedor. Para neutralizar essa barreira, o foco inicial deve ser deslocado da venda direta para a experiência de uso (User Experience - UX), ativando também a memória afetiva do cliente com a marca.
+                    </p>
+                    
+                    <div class="script-box" style="border-color: var(--neon-blue);">
+                        <div class="section-title" style="color: var(--neon-blue); font-size: 10px; margin-bottom: 2px;">Script de Abordagem de Campo</div>
+                        <p class="script-text">
+                            "Olá, tudo bem? Fique totalmente à vontade para aumentar o volume e testar a caixa de som; afinal, um equipamento como este precisa ser ouvido em sua máxima capacidade! Me conte uma coisa: você busca um sistema de som para momentos de relaxamento em casa com a família ou a sua ideia é um equipamento com maior pressão sonora para animar festas e reuniões com os amigos? E, por curiosidade, você se lembra da época em que os aparelhos da AIWA eram o grande destaque de alta fidelidade nas salas de estar ou está conhecendo a marca agora?"
+                        </p>
                     </div>
                 </div>
-
-                <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 p-4 rounded-2xl shadow-sm">
-                    <div class="flex gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/40 flex items-center justify-center text-[#E30613] dark:text-red-500 shrink-0 font-bold text-sm">02</div>
-                        <div>
-                            <h4 class="font-bold text-[14px] text-gray-800 dark:text-gray-200">Desconstrução Técnica</h4>
-                            <p class="text-[12px] text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
-                                Neutralize números inflados de Watts RMS da concorrência explicando a física acústica (gabinete robusto, tweeters e woofers dedicados) de forma simples e de fácil absorção para o cliente.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 p-4 rounded-2xl shadow-sm">
-                    <div class="flex gap-3.5">
-                        <div class="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/40 flex items-center justify-center text-[#E30613] dark:text-red-500 shrink-0 font-bold text-sm">03</div>
-                        <div>
-                            <h4 class="font-bold text-[14px] text-gray-800 dark:text-gray-200">Fechamento por Valor</h4>
-                            <p class="text-[12px] text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">
-                                Direcione a venda mostrando os benefícios de longo prazo da marca premium, focando na durabilidade da bateria náutica e na alta fidelidade sonora que não gera fadiga auditiva.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
-        </main>
-
-        <nav class="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur border-t border-gray-200 dark:border-gray-700 z-50">
-            <div class="flex justify-around py-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom))]">
-                <a href="index.html" class="flex flex-col items-center gap-1 text-[#E30613] dark:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    <span class="text-[10px] font-bold">Início</span>
-                </a>
-                <a href="historias/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                    <span class="text-[10px] font-medium">Histórias</span>
-                </a>
-                <a href="comparativos/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                    <span class="text-[10px] font-medium">Comparar</span>
-                </a>
-                <a href="tecnologias/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                    <span class="text-[10px] font-medium">Recursos</span>
-                </a>
+            <div class="pilar-card">
+                <div class="pilar-header">
+                    <span class="pilar-badge badge-purple">Pilar 2</span>
+                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0;">🏭 Legado, Confiança e Engenharia (O Storytelling de Autoridade)</h3>
+                </div>
+                <div>
+                    <div class="section-title" style="color: var(--neon-purple);">O Conceito</div>
+                    <p class="pilar-concept">
+                        A principal dúvida do consumidor ao presenciar o retorno de marcas tradicionais ao mercado nacional diz respeito à procedência e à durabilidade do ecossistema de hardware atual. A resposta para essa lacuna está na herança de engenharia e nos rígidos critérios de fabricação que a marca preserva.
+                    </p>
+                    
+                    <div class="script-box" style="border-color: var(--neon-purple);">
+                        <div class="section-title" style="color: var(--neon-purple); font-size: 10px; margin-bottom: 2px;">Script de Abordagem de Campo</div>
+                        <p class="script-text">
+                            "Compreendo perfeitamente o seu ponto de vista. É importante destacar que a AIWA não está apenas retornando; ela traz consigo décadas de autoridade global em áudio premium. Atualmente, os mesmos pilares de engenharia técnica, automação de alta precisão e controle de qualidade japonês foram integrados aos produtos da AIWA. O resultado é a mesma durabilidade clássica que o mercado já conhece, perfeitamente atualizada com conectividade de última geração e baterias de altíssima densidade energética."
+                        </p>
+                    </div>
+                </div>
             </div>
-        </nav>
 
-    </div>
+            <div class="pilar-card">
+                <div class="pilar-header">
+                    <span class="pilar-badge badge-green">Pilar 3</span>
+                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0;">🔊 Demonstração Sensorial e Física (A Validação Acústica)</h3>
+                </div>
+                <div>
+                    <div class="section-title" style="color: #22c55e;">O Conceito</div>
+                    <p class="pilar-concept">
+                        Potência nominal e fidelidade sonora não são totalmente compreendidas apenas com a leitura de panfletos ou dados técnicos frios; elas demandam percepção física. Este pilar orienta o cliente a interagir taticamente com os componentes de engenharia do gabinete.
+                    </p>
+                    
+                    <div class="script-box" style="border-color: #22c55e;">
+                        <div class="section-title" style="color: #22c55e; font-size: 10px; margin-bottom: 2px;">Script de Abordagem de Campo</div>
+                        <p class="script-text">
+                            "Para além das especificações do manual, o ideal é permitir que a sua percepção auditiva e física decida. Aproxime-se um pouco e coloque a mão na lateral desta Boombox. Note a pressão física que este radiador passivo exerce sem a necessidade de consumir energia extra da bateria. Perceba que, mesmo elevando consideravelmente o volume, a estrutura do gabinete permanece firme, sem apresentar vibrações indesejadas, e a voz do artista continua perfeitamente limpa, sem distorções harmônicas. Isso comprova uma engenharia acústica legítima: um grave profundo que preenche o ambiente com conforto, sem cansar a sua audição."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
+    </nav>
 
 </body>
 </html>
