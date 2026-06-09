@@ -6,13 +6,12 @@
     <title>Sobre a AIWA - Aiwa Playbook</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles.css">
-    
+
     <script>
         document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
     </script>
-    
+
     <style>
-        /* Mantendo seu visual original */
         .about-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -23,7 +22,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             border-radius: 12px;
             overflow: hidden;
@@ -43,8 +42,8 @@
             gap: 12px;
             margin-top: 14px;
         }
+        /* Ajuste: Removi o background fixo daqui para usar classes Tailwind no HTML */
         .info-item {
-            background: rgba(255, 255, 255, 0.05); /* Leve destaque visual */
             border: 1px solid var(--border-color);
             padding: 12px;
             border-radius: 12px;
@@ -52,20 +51,19 @@
         .info-label {
             font-size: 11px;
             text-transform: uppercase;
-            color: #9ca3af; /* Gray-400 */
+            color: #9ca3af;
             font-weight: 700;
             margin-bottom: 4px;
         }
         .info-value {
             font-size: 14px;
-            color: var(--text-primary);
             line-height: 1.4;
         }
         .external-link {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            color: #3b82f6; /* Blue-500 */
+            color: #3b82f6;
             text-decoration: none;
             font-weight: 600;
         }
@@ -108,18 +106,18 @@
         </div>
 
         <div class="info-grid">
-            
-            <div class="info-item">
+
+            <div class="info-item bg-white dark:bg-white/5">
                 <div class="info-label">Legado Japonês</div>
-                <div class="info-value">Fundada no Japão em 1951, a AIWA tornou-se uma lenda global em engenharia acústica e design icônico.</div>
+                <div class="info-value text-gray-900 dark:text-white">Fundada no Japão em 1951, a AIWA tornou-se uma lenda global em engenharia acústica e design icônico.</div>
             </div>
 
-            <div class="info-item">
+            <div class="info-item bg-white dark:bg-white/5">
                 <div class="info-label">Operação no Brasil</div>
-                <div class="info-value">Operação sob liderança do Grupo MK, com fábrica ultra tecnológica em Manaus focada em excelência local.</div>
+                <div class="info-value text-gray-900 dark:text-white">Operação sob liderança do Grupo MK, com fábrica ultra tecnológica em Manaus focada em excelência local.</div>
             </div>
 
-            <div class="info-item">
+            <div class="info-item bg-white dark:bg-white/5">
                 <div class="info-label">Canal Oficial</div>
                 <a href="https://www.aiwa.com.br" target="_blank" class="external-link">
                     🌐 www.aiwa.com.br
@@ -128,7 +126,7 @@
         </div>
 
         <div class="text-center pt-6 pb-8">
-            <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#E30613] text-white text-[14px] font-semibold rounded-xl shadow-lg transition-transform active:scale-95">
+            <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#E30613] text-white text-[14px] font-semibold rounded-xl shadow-lg">
                 ← Voltar ao Início
             </a>
         </div>
