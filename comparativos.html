@@ -3,68 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Comparativos - Aiwa Playbook</title>
+    <title>Comparativos Avançados - Aiwa Playbook</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
     </script>
+    <style>
+        .comp-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 12px;
+        }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .matrix-table th, .matrix-table td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .matrix-table th {
+            background: rgba(0, 0, 0, 0.3);
+            font-weight: 700;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            font-size: 10px;
+        }
+        .matrix-table tr:last-child td {
+            border-bottom: none;
+        }
+        .highlight-row {
+            background: rgba(37, 99, 235, 0.08) !important;
+        }
+        .argument-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+        .argument-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-red);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        .obj-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+        .obj-table td {
+            padding: 10px;
+            vertical-align: top;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .obj-label {
+            font-weight: 700;
+            color: var(--text-primary);
+            width: 30%;
+            background: rgba(255,255,255,0.02);
+        }
+        .obj-response {
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        .badge-brand {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
 
     <header class="topbar">
         <div class="logo-area">
             <a href="index.html" class="back-btn">❮</a>
-            <h1>Comparativos Matriz</h1>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
         </div>
         <div class="controls-area"><div class="status-indicator"></div></div>
     </header>
 
     <main class="app-container">
         <div class="content-wrapper">
-            <div class="welcome-header">
-                <span class="live-ticker">Análise de Concorrência</span>
-                <h2>Confronto Técnico</h2>
+            
+            <div class="welcome-header" style="margin-top: 8px; margin-bottom: 16px;">
+                <span class="live-ticker">MÉTRICAS TÉCNICAS E ARGUMENTAÇÃO DE COMBATE</span>
+                <h2>Cruzamento de Modelos 2025-2026</h2>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
+                    Matriz completa de especificações reais e guia analítico para quebra de objeções no ponto de venda sem omissão de dados.
+                </p>
             </div>
 
-            <div class="cyber-panel neon-purple">
-                <div class="panel-title">Escolha o Concorrente</div>
-                <select id="brand-select">
-                    <option value="jbl">JBL (Boombox 3)</option>
-                    <option value="lg">LG (Xboom Go)</option>
-                    <option value="philco">Philco (ExBass)</option>
-                </select>
-
-                <table class="compare-table">
+            <h3 class="section-title" style="color: var(--neon-blue); margin-bottom: 8px;">📊 Matriz Comparativa de Hardware</h3>
+            <div style="overflow-x: auto; margin-bottom: 20px;">
+                <table class="matrix-table">
                     <thead>
                         <tr>
-                            <th>Recurso</th>
-                            <th>AIWA Plus</th>
-                            <th>Concorrente</th>
+                            <th>Especificação</th>
+                            <th style="color: var(--neon-blue);">Aiwa BBS01 (B/LBL)</th>
+                            <th>JBL Boombox 3</th>
+                            <th>Philco PBX01</th>
+                            <th>LG XBOOM XG9S</th>
+                            <th>LG XBOOM XG8T</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Amplificação</td>
-                            <td style="color: var(--neon-cyan); font-weight:bold;">3 Canais Indep.</td>
-                            <td>Canal Único Dinâmico</td>
+                        <tr class="highlight-row">
+                            <td><strong>Potência Real (RMS)</strong></td>
+                            <td><strong style="color: var(--neon-blue);">200W RMS</strong></td>
+                            <td>180W (Bateria) / 240W (Tomada)</td>
+                            <td>300W Nominal (&lt;200W RMS)</td>
+                            <td>80W RMS + 40W RMS</td>
+                            <td>60W RMS</td>
                         </tr>
                         <tr>
-                            <td>Vias de Som</td>
-                            <td style="color: var(--neon-cyan); font-weight:bold;">Tri-axial Real</td>
-                            <td>Full-range Coaxial</td>
+                            <td><strong>Versão Bluetooth</strong></td>
+                            <td>Bluetooth 5.3</td>
+                            <td>Bluetooth 5.3</td>
+                            <td style="color: #22c55e; font-weight: bold;">Bluetooth 5.4</td>
+                            <td>Bluetooth 5.1</td>
+                            <td>Bluetooth 5.1</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Faixa de Preço (BRL)</strong></td>
+                            <td>R$ 1.000 – R$ 1.600</td>
+                            <td>R$ 1.800 – R$ 2.500+</td>
+                            <td>R$ 900 – R$ 1.400</td>
+                            <td>R$ 1.300 – R$ 1.900</td>
+                            <td>R$ 900 – R$ 1.200</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proteção IP (Água/Poeira)</strong></td>
+                            <td>IP66 (Jatos potentes de água)</td>
+                            <td>IP67 (Submersão temporária)</td>
+                            <td>IPX4 (Respingos leves)</td>
+                            <td>IP67 (Submersão temporária)</td>
+                            <td>IP67 (Submersão temporária)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Recursos Extras</strong></td>
+                            <td>APP Dedicado, EQ Custom, Modo TWS, Powerbank</td>
+                            <td>PartyBoost, Powerbank</td>
+                            <td>ExBass, Entrada Microfone/Guitarra</td>
+                            <td>Iluminação Estroboscópica, Sound Boost</td>
+                            <td>Alça de ombro híbrida, Sound Boost</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div class="argument-block" style="border-left: 3px solid #84cc16;">
+                <div class="flex-between" style="margin-bottom: 8px;">
+                    <span class="badge-brand" style="background: rgba(132, 204, 22, 0.15); color: #84cc16;">Análise de Confronto: Philco</span>
+                </div>
+                
+                <div class="argument-title">Argumento 1: Potência Nominal vs Real</div>
+                <p class="pilar-concept" style="font-size: 12px; margin-bottom: 8px;">
+                    A Philco anuncia 300W de potência nominal, porém esse dado não reflete a medição padrão em RMS. Na prática, a pressão sonora real da Philco fica abaixo dos 200W RMS puros entregues pelo gabinete acústico estabilizado da Aiwa.
+                </p>
+
+                <div class="argument-title">Argumento 2: Eficiência e Conectividade Bluetooth 5.4</div>
+                <p class="pilar-concept" style="font-size: 12px; margin-bottom: 8px;">
+                    A Philco integra a versão Bluetooth 5.4 (arquitetura mais recente), que confere até 30% mais eficiência energética em modo stand-by se comparado às versões 5.3 da Aiwa/JBL e às antigas 5.1 da linha LG XBOOM.
+                </p>
+
+                <div class="argument-title">Argumento 3: Posicionamento de Custo de Entrada</div>
+                <p class="pilar-concept" style="font-size: 12px; margin-bottom: 12px;">
+                    Flutuando na faixa de R$ 900 a R$ 1.400, a Philco se posiciona agressivamente como a opção de menor custo financeiro do segmento de gabinetes grandes, sacrificando para isso o refinamento de áudio e as vedações contra água.
+                </p>
+
+                <div class="section-title" style="color: #84cc16;">Objeções Específicas e Respostas Práticas — Philco</div>
+                <table class="obj-table">
+                    <tr>
+                        <td class="obj-label">"Aiwa/JBL são melhores"</td>
+                        <td class="obj-response">"A Philco foca em ser 50% a 70% mais barata do que as linhas topo de mercado. Para quem busca uma caixa de grande porte e potência volumosa gastando o mínimo possível, a Philco entrega o melhor custo por Watt bruto."</td>
+                    </tr>
+                    <tr>
+                        <td class="obj-label">"A potência de 300W é real?"</td>
+                        <td class="obj-response">"Os 300W indicados são nominais, o que é tecnicamente menor do que 200W RMS reais. Contudo, o volume mecânico final é alto o suficiente para preencher festas e ambientes abertos sem dificuldades."</td>
+                    </tr>
+                    <tr>
+                        <td class="obj-label">"A Aiwa tem botão BOOST"</td>
+                        <td class="obj-response">"A Philco possui o sistema ExBass integrado na placa de áudio. Ele desempenha uma função de equalização e ganho de subgraves equivalente, operando dentro de uma faixa comercial bem mais acessível."</td>
+                    </tr>
+                    <tr>
+                        <td class="obj-label">"A JBL possui certificação IP67"</td>
+                        <td class="obj-response">"A Philco traz proteção IPX4, resistente apenas a respingos decorrentes de chuva leve ou uso próximo a pias. Caso a vedação contra imersão completa e quedas na água não seja um pré-requisito indispensável para você, a economia financeira gerada compensa essa diferença técnica."</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="argument-block" style="border-left: 3px solid #f97316;">
+                <div class="flex-between" style="margin-bottom: 8px;">
+                    <span class="badge-brand" style="background: rgba(249, 115, 22, 0.15); color: #f97316;">Análise de Confronto: JBL</span>
+                </div>
+                <p class="pilar-concept" style="font-size: 12px; margin-bottom: 12px;">
+                    A JBL Boombox 3 estabelece o teto de desempenho com engenharia de 3 vias (subwoofer dedicado + drivers de médio + tweeters). Ela entrega uma resposta dinâmica impecável em subgraves e possui certificação IP67 de submersão total, porém demanda um investimento financeiro significativamente elevado (R$ 1.800 a R$ 2.500+).
+                </p>
+                
+                <div class="section-title" style="color: #f97316;">Diretriz de Venda no Balcão</div>
+                <p class="script-text" style="font-size: 12px; margin-top: 4px;">
+                    Ao confrontar com a JBL, o foco deve ser o equilíbrio econômico-técnico da Aiwa: entregar os mesmos 200W RMS puros, aplicativo de equalização em tempo real e proteção contra jatos de água pesados (IP66), custando quase metade do valor cobrado pela concorrente.
+                </p>
+            </div>
+
+            <div class="argument-block" style="border-left: 3px solid #a855f7;">
+                <div class="flex-between" style="margin-bottom: 8px;">
+                    <span class="badge-brand" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;">Análise de Confronto: LG XBOOM (XG9S / XG8T)</span>
+                </div>
+                <p class="pilar-concept" style="font-size: 12px; margin-bottom: 12px;">
+                    A série XBOOM aposta fortemente em apelo visual (luzes estroboscópicas laterais) e portabilidade mecânica (alças integradas no chassi). Tecnicamente, utilizam módulos de Bluetooth defasados (versão 5.1). A XG9S divide sua potência em vias de 80W+40W, enquanto a XG8T opera com 60W RMS focados em portabilidade urbana, ficando atrás da consistência acústica e dos 200W lineares da Aiwa BBS01.
+                </p>
+            </div>
+
         </div>
     </main>
 
     <nav class="nav-menu">
         <a href="index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
-        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="historias.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
         <a href="comparativos.html" class="nav-btn active"><div>📊</div><span>Comparar</span></a>
-        <a href="sobre.html" class="nav-btn"><div>ℹ️</div><span>Sobre</span></a>
+        <a href="tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
     </nav>
 
 </body>
 </html>
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>3 Pilares - Método CHEGA+ | Aiwa Playbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
+    <style>
+        .pilar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+        }
+        .pilar-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+        }
+        .pilar-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .badge-blue { background: rgba(37, 99, 235, 0.15); color: var(--neon-blue); border: 1px solid rgba(37, 99, 235, 0.3); }
+        .badge-purple { background: rgba(168, 85, 247, 0.15); color: var(--neon-purple); border: 1px solid rgba(168, 85, 247, 0.3); }
+        .badge-green { background: rgba(34, 197, 94, 0.15); color: #22c55e; border: 1px solid rgba(34, 197, 94, 0.3); }
+        
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            tracking-character: 0.05em;
+            margin-bottom: 4px;
+        }
+        .pilar-concept {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .script-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 3px solid var(--accent-red);
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+        }
+        [data-theme="light"] .script-box {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        .script-text {
+            font-size: 12px;
+            color: var(--text-primary);
+            font-style: italic;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="index.html" class="back-btn">❮</a>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
+    </header>
+
+    <main class="app-container">
+        <div class="content-wrapper">
+            
+            <div class="welcome-header" style="margin-top: 8px; margin-bottom: 16px;">
+                <span class="live-ticker">MÉTODO CHEGA+ — EDIÇÃO PROFISSIONAL</span>
+                <h2>Os 3 Pilares de Abordagem Avançada</h2>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 6px; line-height: 1.4;">
+                    Esta engrenagem de vendas foi desenvolvida para estabelecer uma conexão imediata com o cliente, substituindo a abordagem tradicional de empurrar produtos por um diálogo consultivo, técnico e focado na experiência real de uso no ponto de venda.
+                </p>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-header">
+                    <span class="pilar-badge badge-blue">Pilar 1</span>
+                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0;">🎯 UX & Descoberta (A Sondagem Desarmada)</h3>
+                </div>
+                <div>
+                    <div class="section-title" style="color: var(--neon-blue);">O Conceito</div>
+                    <p class="pilar-concept">
+                        O consumidor custuma entrar na loja com uma postura defensiva em relação ao vendedor. Para neutralizar essa barreira, o foco inicial deve ser deslocado da venda direta para a experiência de uso (User Experience - UX), ativando também a memória afetiva do cliente com a marca.
+                    </p>
+                    
+                    <div class="script-box" style="border-color: var(--neon-blue);">
+                        <div class="section-title" style="color: var(--neon-blue); font-size: 10px; margin-bottom: 2px;">Script de Abordagem de Campo</div>
+                        <p class="script-text">
+                            "Olá, tudo bem? Fique totalmente à vontade para aumentar o volume e testar a caixa de som; afinal, um equipamento como este precisa ser ouvido em sua máxima capacidade! Me conte uma coisa: você busca um sistema de som para momentos de relaxamento em casa com a família ou a sua ideia é um equipamento com maior pressão sonora para animar festas e reuniões com os amigos? E, por curiosidade, você se lembra da época em que os aparelhos da AIWA eram o grande destaque de alta fidelidade nas salas de estar ou está conhecendo a marca agora?"
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-header">
+                    <span class="pilar-badge badge-purple">Pilar 2</span>
+                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0;">🏭 Legado, Confiança e Engenharia (O Storytelling de Autoridade)</h3>
+                </div>
+                <div>
+                    <div class="section-title" style="color: var(--neon-purple);">O Conceito</div>
+                    <p class="pilar-concept">
+                        A principal dúvida do consumidor ao presenciar o retorno de marcas tradicionais ao mercado nacional diz respeito à procedência e à durabilidade do ecossistema de hardware atual. A resposta para essa lacuna está na herança de engenharia e nos rígidos critérios de fabricação que a marca preserva.
+                    </p>
+                    
+                    <div class="script-box" style="border-color: var(--neon-purple);">
+                        <div class="section-title" style="color: var(--neon-purple); font-size: 10px; margin-bottom: 2px;">Script de Abordagem de Campo</div>
+                        <p class="script-text">
+                            "Compreendo perfeitamente o seu ponto de vista. É importante destacar que a AIWA não está apenas retornando; ela traz consigo décadas de autoridade global em áudio premium. Atualmente, os mesmos pilares de engenharia técnica, automação de alta precisão e controle de qualidade japonês foram integrados aos produtos da AIWA. O resultado é a mesma durabilidade clássica que o mercado já conhece, perfeitamente atualizada com conectividade de última geração e baterias de altíssima densidade energética."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pilar-card">
+                <div class="pilar-header">
+                    <span class="pilar-badge badge-green">Pilar 3</span>
+                    <h3 style="font-size: 14px; font-weight: 700; color: var(--text-primary); margin: 0;">🔊 Demonstração Sensorial e Física (A Validação Acústica)</h3>
+                </div>
+                <div>
+                    <div class="section-title" style="color: #22c55e;">O Conceito</div>
+                    <p class="pilar-concept">
+                        Potência nominal e fidelidade sonora não são totalmente compreendidas apenas com a leitura de panfletos ou dados técnicos frios; elas demandam percepção física. Este pilar orienta o cliente a interagir taticamente com os componentes de engenharia do gabinete.
+                    </p>
+                    
+                    <div class="script-box" style="border-color: #22c55e;">
+                        <div class="section-title" style="color: #22c55e; font-size: 10px; margin-bottom: 2px;">Script de Abordagem de Campo</div>
+                        <p class="script-text">
+                            "Para além das especificações do manual, o ideal é permitir que a sua percepção auditiva e física decida. Aproxime-se um pouco e coloque a mão na lateral desta Boombox. Note a pressão física que este radiador passivo exerce sem a necessidade de consumir energia extra da bateria. Perceba que, mesmo elevando consideravelmente o volume, a estrutura do gabinete permanece firme, sem apresentar vibrações indesejadas, e a voz do artista continua perfeitamente limpa, sem distorções harmônicas. Isso comprova uma engenharia acústica legítima: um grave profundo que preenche o ambiente com conforto, sem cansar a sua audição."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
+    </nav>
+
+</body>
+</html>
+

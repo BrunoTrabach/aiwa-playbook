@@ -1,5 +1,166 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Histórias</title><link rel="stylesheet" href="assets/tailwind.css"></head><body>
-<header class="bg-[#E30613] text-white sticky top-0"><div class="flex items-center h-14 px-4 gap-3"><a href="index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">←</a><h1 class="font-semibold">Histórias</h1></div></header>
-<main class="p-6 max-w-3xl mx-auto"><div class="bg-white p-8 rounded-2xl shadow text-center"><p class="text-gray-600">Histórias com avatares Bruno, Cristiane, Edy e Fernanda em construção.</p></div></main>
-<footer class="text-center text-xs text-gray-500 py-5">Desenvolvido por Bruno Trabach - Playbook v4 🇧🇷🇯🇵</footer>
-</body></html>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Histórias Práticas - Aiwa Playbook</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
+    <style>
+        .chat-viewport {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .chat-msg {
+            display: flex;
+            gap: 10px;
+            max-width: 88%;
+            align-items: flex-start;
+        }
+        .chat-msg.left {
+            align-self: flex-start;
+        }
+        .chat-msg.right {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+        
+        .chat-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            overflow: hidden;
+            background-color: var(--bg-topbar);
+            flex-shrink: 0;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+        
+        .chat-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+        }
+        
+        .bubble {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-primary);
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.5;
+            border: 1px solid var(--border-color);
+        }
+        
+        [data-theme="light"] .bubble {
+            background: rgba(0, 0, 0, 0.03);
+        }
+        
+        .chat-msg.left .bubble {
+            border-left: 3px solid var(--accent-red);
+            border-top-left-radius: 2px;
+        }
+        
+        .chat-msg.right .bubble {
+            border-right: 3px solid var(--neon-blue);
+            border-top-right-radius: 2px;
+        }
+        
+        .sender-name {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 2px;
+            display: block;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="index.html" class="back-btn">❮</a>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
+    </header>
+
+    <main class="app-container">
+        <div class="content-wrapper">
+            
+            <div class="welcome-header" style="margin-top: 8px;">
+                <span class="live-ticker">Casos Práticos de Vendas</span>
+                <h2>Simulações em Loja</h2>
+            </div>
+
+            <div class="chat-viewport cyber-panel neon-blue">
+                <span class="pilar-badge badge-blue" style="margin-bottom: 8px;">Cenário: Abordagem CHEGA+</span>
+                
+                <div class="chat-msg left">
+                    <div class="chat-avatar">
+                        <img src="avatares/bruno.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23e30613\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M12 14c-6.1 0-12 2.5-12 6v2h24v-2c0-3.5-5.9-6-12-6z\'/></svg>';">
+                    </div>
+                    <div>
+                        <span class="sender-name">BRUNO (Promotor AIWA)</span>
+                        <div class="bubble">Opa, pode aumentar aí sem medo. Eu sou o Bruno, Promotor da AIWA. Está procurando um som?</div>
+                    </div>
+                </div>
+
+                <div class="chat-msg right">
+                    <div class="chat-avatar">
+                        <img src="avatares/cristiane.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%2300b2ff\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M12 14c-6.1 0-12 2.5-12 6v2h24v-2c0-3.5-5.9-6-12-6z\'/></svg>';">
+                    </div>
+                    <div>
+                        <span class="sender-name" style="text-align: right;">CRISTIANE</span>
+                        <div class="bubble">Olá, estou sim, Estou dando uma olhada pois quero levar para um churrasco. Vi a concorrência ali, mas tá salgada...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-viewport cyber-panel neon-orange">
+                <span class="pilar-badge badge-orange" style="margin-bottom: 8px;">Cenário: Fechamento</span>
+                
+                <div class="chat-msg left">
+                    <div class="chat-avatar">
+                        <img src="avatares/edy.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23ff7a00\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M12 14c-6.1 0-12 2.5-12 6v2h24v-2c0-3.5-5.9-6-12-6z\'/></svg>';">
+                    </div>
+                    <div>
+                        <span class="sender-name">EDY (Vendedor)</span>
+                        <div class="bubble">Vamos ver a forma de pagamento para você já fechar agora! Você leva ela hoje mesmo.</div>
+                    </div>
+                </div>
+
+                <div class="chat-msg right">
+                    <div class="chat-avatar">
+                        <img src="avatares/fernanda.jpg" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%23bd00ff\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M12 14c-6.1 0-12 2.5-12 6v2h24v-2c0-3.5-5.9-6-12-6z\'/></svg>';">
+                    </div>
+                    <div>
+                        <span class="sender-name" style="text-align: right;">FERNANDA (Amiga)</span>
+                        <div class="bubble">Gostei, vamos sim. Vou levar igual a dela.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="historias.html" class="nav-btn active"><div>📖</div><span>Histórias</span></a>
+        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
+    </nav>
+
+</body>
+</html>
+

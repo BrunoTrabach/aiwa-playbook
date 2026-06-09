@@ -2,63 +2,85 @@
 <html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Conclusão Resumida - Aiwa Playbook</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
     <style>
-        html[data-theme="dark"] {
-            --bg-global: #0f172a;
-            --bg-card: #111827;
-            --text-primary: #e2e8f0;
-            --border-card: rgba(255, 255, 255, 0.05);
+        .conclusion-panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 12px;
+            box-shadow: var(--shadow-sm);
         }
-        html[data-theme="light"] {
-            --bg-global: #f8fafc;
-            --bg-card: #ffffff;
-            --text-primary: #1e293b;
-            --border-card: rgba(0, 0, 0, 0.05);
+        .text-block {
+            font-size: 13.5px;
+            color: var(--text-primary);
+            line-height: 1.6;
+            white-space: pre-wrap;
         }
-        body {
-            background-color: var(--bg-global) !important;
-            color: var(--text-primary) !important;
-            transition: background-color 0.2s, color 0.2s;
+        .grid-summary {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 16px 0;
         }
-        .adaptive-card {
-            background-color: var(--bg-card) !important;
-            border: 1px solid var(--border-card) !important;
-            color: var(--text-primary) !important;
+        .summary-item {
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.15);
+            padding: 12px;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <header class="bg-[#E30613] text-white sticky top-0 z-50 shadow-md">
-        <div class="flex items-center h-14 px-4 gap-3">
-            <a href="index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-            </a>
-            <h1 class="font-semibold text-lg">Conclusão Resumida</h1>
+
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="index.html" class="back-btn">❮</a>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
         </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
     </header>
 
-    <main class="max-w-3xl mx-auto p-4 mt-2">
-        <div class="adaptive-card rounded-2xl shadow-lg p-5 text-[14px] leading-relaxed whitespace-pre-wrap">
-**CONCLUSÃO RESUMIDA**
+    <main class="app-container">
+        <div class="content-wrapper">
+            
+            <div class="welcome-header" style="margin-top: 8px;">
+                <span class="live-ticker" style="color: #22c55e; background: rgba(34, 197, 94, 0.15);">VERSÃO RESUMIDA</span>
+                <h2>Conclusão Direta</h2>
+            </div>
 
-Relacionamento é fazer a loja vender Aiwa mesmo sem eu estar lá.
+            <div class="conclusion-panel">
+                <div class="text-block" style="font-weight: 700; font-size: 15px; color: var(--neon-blue); margin-bottom: 12px;">Relacionamento é fazer a loja vender Aiwa mesmo sem eu estar lá.</div>
+                
+                <div class="text-block"><strong style="color: var(--accent-red);">Como faço:</strong> direciono atendimento, ensino o cliente a sentir o som, uso o app, mostro TWS, ajudo no pós-venda, arrumo ponto de venda e treino o vendedor para replicar.
 
-**Como faço:** direciono atendimento, ensino o cliente a sentir o som, uso o app, mostro TWS, ajudo no pós-venda, arrumo ponto de venda e treino o vendedor para replicar.
+<strong style="color: #22c55e;">O que gera:</strong> vitrine montada na minha folga, foto enviada pelo time, indicação de cliente para cliente, divulgação gratuita, abertura para ações e ponto extra.
 
-**O que gera:** vitrine montada na minha folga, foto enviada pelo time, indicação de cliente para cliente, divulgação gratuita, abertura para ações e ponto extra.
+<strong style="color: var(--neon-purple);">Resultado:</strong> venda direta hoje, venda indireta amanhã. Loja ganha, vendedor ganha, marca cresce. 
 
-**Resultado:** venda direta hoje, venda indireta amanhã.
+Eu entrego experiência, Experiência Gera relacionamento, Relacionamento Gera venda e Reconhecimento com ou sem promotor na loja.</div>
+            </div>
+
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="index.html" class="pilar-badge badge-green" style="padding: 10px 20px; text-decoration: none; display: inline-block;">← Voltar ao Menu Conclusões</a>
+            </div>
+
         </div>
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedTheme = localStorage.getItem("theme") || "dark";
-            document.documentElement.setAttribute("data-theme", savedTheme);
-        });
-    </script>
+    <nav class="nav-menu">
+        <a href="../index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="../historias.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="../comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="../tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
+    </nav>
+
 </body>
 </html>
+
