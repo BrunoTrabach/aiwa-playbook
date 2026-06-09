@@ -1,27 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Aiwa Playbook</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; background: #f0f2f5; }</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aiwa Playbook - Menu Principal</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
 </head>
-<body class="min-h-screen flex justify-center py-4">
-    <div class="w-full max-w-[420px] bg-white min-h-[90vh] rounded-[32px] shadow-xl flex flex-col pb-20">
-        <header class="bg-[#E30613] p-8 text-white rounded-t-[32px]">
-            <h1 class="text-2xl font-bold">Aiwa Playbook</h1>
-            <p class="opacity-80 text-sm">Treinamento e Estratégia</p>
-        </header>
-        <main class="p-4 space-y-3">
-            <a href="historias/index.html" class="block p-4 bg-gray-50 rounded-xl font-bold border border-gray-100">📖 Histórias de Campo</a>
-            <a href="comparativos/index.html" class="block p-4 bg-gray-50 rounded-xl font-bold border border-gray-100">📊 Comparativos</a>
-            <a href="tecnologias/index.html" class="block p-4 bg-gray-50 rounded-xl font-bold border border-gray-100">⚡ Tecnologias</a>
-            <a href="pilares/index.html" class="block p-4 bg-gray-50 rounded-xl font-bold border border-gray-100">🎯 3 Pilares</a>
-            <a href="conclusoes/index.html" class="block p-4 bg-gray-50 rounded-xl font-bold border border-gray-100">🏁 Conclusões</a>
-        </main>
-    </div>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area">
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area">
+            <button onclick="toggleTheme()" class="icon-control-btn" title="Alternar Tema">🌓</button>
+            <div class="status-indicator"></div>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div class="content-wrapper">
+            <div class="welcome-header" style="margin-top: 8px;">
+                <span class="live-ticker">Painel de Treinamento</span>
+                <h2>Olá, Consultor de Campo</h2>
+            </div>
+
+            <div class="cyber-grid">
+                
+                <a href="historias/index.html" class="fusion-card card-cyan">
+                    <span style="font-size: 22px; margin-bottom: 4px;">编</span>
+                    <span class="card-title">Histórias</span>
+                    <span class="card-desc">Casos e simulações de vendas reais.</span>
+                </a>
+
+                <a href="comparativos.html" class="fusion-card card-purple">
+                    <span style="font-size: 22px; margin-bottom: 4px;">📊</span>
+                    <span class="card-title">Comparativos</span>
+                    <span class="card-desc">Confronto direto com a concorrência.</span>
+                </a>
+
+                <a href="pilares/index.html" class="fusion-card card-orange">
+                    <span style="font-size: 22px; margin-bottom: 4px;">🎯</span>
+                    <span class="card-title">3 Pilares</span>
+                    <span class="card-desc">Fundamentos do Método CHEGA+.</span>
+                </a>
+
+                <a href="tecnologias.html" class="fusion-card card-blue">
+                    <span style="font-size: 22px; margin-bottom: 4px;">🔊</span>
+                    <span class="card-title">Tecnologias</span>
+                    <span class="card-desc">Diferenciais de engenharia acústica.</span>
+                </a>
+
+                <a href="conclusoes/index.html" class="fusion-card card-yellow">
+                    <span style="font-size: 22px; margin-bottom: 4px;">🏁</span>
+                    <span class="card-title">Conclusões</span>
+                    <span class="card-desc">Fechamentos e argumentos finais.</span>
+                </a>
+
+                <a href="sobre.html" class="fusion-card card-red">
+                    <span style="font-size: 22px; margin-bottom: 4px;">ℹ️</span>
+                    <span class="card-title">Sobre</span>
+                    <span class="card-desc">Especificações e versão do app.</span>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="index.html" class="nav-btn active"><div>🏠</div><span>Home</span></a>
+        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="sobre.html" class="nav-btn"><div>ℹ️</div><span>Sobre</span></a>
+    </nav>
+
+    <script>
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute("data-theme");
+            const next = current === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", next);
+            localStorage.setItem("theme", next);
+        }
+    </script>
 </body>
 </html>
-
