@@ -1,122 +1,150 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
-    <title>Sobre e Engenharia - Playbook AIWA</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sobre a AIWA - Aiwa Playbook</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            margin: 14px 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .info-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+        }
+        .info-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .info-value {
+            font-size: 13.5px;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        .external-link {
+            display: inline-flex;
+            items-center: center;
+            gap: 6px;
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .external-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
-<body class="bg-[#f0f2f5] dark:bg-gray-900 min-h-screen flex justify-center py-0 sm:py-4 transition-colors duration-200">
+<body>
 
-    <div class="w-full max-w-[420px] bg-gray-50 dark:bg-gray-900 min-h-screen sm:min-h-[90vh] sm:rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,.12)] flex flex-col relative overflow-hidden pb-24">
-        
-        <header class="sticky top-0 z-50 bg-[#E30613] text-white shadow-md">
-            <div class="h-14 flex items-center px-4 gap-3">
-                <a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center active:scale-95 transition-transform">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-                </a>
-                <div>
-                    <h1 class="font-bold text-[15px] text-white">Sobre a AIWA</h1>
-                    <p class="text-white/80 text-[11px] -mt-0.5">História e Engenharia de Fábrica</p>
-                </div>
-            </div>
-        </header>
+    <header class="topbar">
+        <div class="logo-area">
+            <a href="../index.html" class="back-btn">❮</a>
+            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+        </div>
+        <div class="controls-area"><div class="status-indicator"></div></div>
+    </header>
 
-        <div class="flex-1 overflow-y-auto px-4 pt-4 space-y-4 no-scrollbar">
+    <main class="app-container">
+        <div class="content-wrapper">
             
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-4 border border-gray-100 dark:border-gray-700">
-                <h2 class="text-[12px] font-bold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-                    <span class="text-[#E30613]">🎬</span> Vídeo de Fábrica (Manaus)
-                </h2>
-                <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black border border-gray-100 dark:border-gray-700">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/HLAx01fo9uo" 
-                        title="Fábrica AIWA" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="text-[11px] text-gray-400 dark:text-gray-400 text-center mt-2 italic">
-                    Tour operacional automotivo de alta tecnologia.
+            <div class="welcome-header" style="margin-top: 8px; margin-bottom: 16px;">
+                <span class="live-ticker">LEGADO, ESTRUTURA E RECONHECIMENTO</span>
+                <h2>Sobre a Marca</h2>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
+                    Conheça a história de inovação japonesa e a robusta estrutura fabril que dão suporte à autoridade da AIWA no Brasil.
                 </p>
             </div>
 
-            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-md p-4 text-white border border-gray-700">
-                <h2 class="text-[12px] font-bold text-red-500 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
-                    <span class="text-red-500">⚙️</span> Pilares de Engenharia Acústica
-                </h2>
-                <div class="space-y-3 text-[13px]">
-                    <div>
-                        <span class="font-bold text-gray-300 block text-[11px] uppercase">Estrutura Física Sony:</span>
-                        <p class="text-gray-200 leading-relaxed">A linha de produção utiliza o mesmo complexo industrial de alta performance que pertenceu à engenharia da Sony em Manaus, unindo maquinários japoneses robotizados e processos severos de calibração acústica.</p>
-                    </div>
-                    <hr class="border-gray-700">
-                    <div>
-                        <span class="font-bold text-gray-300 block text-[11px] uppercase">Controle de Vibração Harmônica:</span>
-                        <p class="text-gray-200 leading-relaxed">Os gabinetes das Boomboxes são injetados com polímeros de alta densidade e reforçados estruturalmente para eliminar ressonâncias parasitas, garantindo que o som não distorça mesmo em volumes máximos.</p>
-                    </div>
+            <h3 class="section-title" style="color: var(--accent-red); margin-bottom: 4px;">🎬 Vídeo Institucional da Fábrica</h3>
+            <div class="about-card" style="padding: 12px;">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/HLAx01fo9uo" 
+                        title="Vídeo Institucional Fábrica AIWA" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
+                <p style="font-size: 11.5px; color: var(--text-secondary); text-align: center; margin-top: 4px; font-style: italic;">
+                    Por dentro da linha de montagem automatizada e de alta precisão em Manaus.
+                </p>
             </div>
 
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-4 space-y-3.5 border border-gray-100 dark:border-gray-700">
-                <div>
-                    <h3 class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Trajetória Global</h3>
-                    <p class="text-[13px] text-gray-700 dark:text-gray-300 leading-relaxed">
-                        Nascida no Japão em 1951, a AIWA conquistou autoridade absoluta no mercado mundial de som de alta fidelidade (Hi-Fi) através de inovações acústicas duráveis.
-                    </p>
-                </div>
-                
-                <hr class="border-gray-100 dark:border-gray-700">
+            <h3 class="section-title" style="color: var(--neon-blue); margin-bottom: 4px;">🏢 Informações Corporativas</h3>
+            <div class="about-card">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Fundação e Legado</div>
+                        <div class="info-value">Fundada no Japão em 1951, a AIWA consolidou-se mundialmente como sinônimo de alta fidelidade de áudio (Hi-Fi) e engenharia acústica durável.</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-label">Operação no Brasil</div>
+                        <div class="info-value">A marca retornou com força total ao mercado brasileiro sob a governança do Grupo MK. Toda a linha de áudio premium é fabricada em uma planta industrial de última geração localizada no Polo Industrial de Manaus (AM), utilizando o mesmo espaço e alto padrão técnico que historicamente pertenceu à Sony.</div>
+                    </div>
 
-                <div>
-                    <h3 class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Governança no Brasil</h3>
-                    <p class="text-[13px] text-gray-700 dark:text-gray-300 leading-relaxed">
-                        Gerenciada pelo Grupo MK, a operação nacional foca em trazer produtos premium competitivos, assegurando suporte técnico local e distribuição integrada com as maiores redes de varejo.
-                    </p>
-                </div>
+                    <div class="info-item">
+                        <div class="info-label">Diferencial de Fábrica</div>
+                        <div class="info-value">Infraestrutura com maquinários japoneses robotizados, processos de calibração acústica rigorosos e 100% de controle de qualidade automatizado em laboratórios próprios.</div>
+                    </div>
 
-                <hr class="border-gray-100 dark:border-gray-700">
-
-                <div>
-                    <h3 class="text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-1">Canal Oficial</h3>
-                    <a href="https://www.aiwa.com.br" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-[13px] block mt-1 hover:underline">
-                        🌐 www.aiwa.com.br
-                    </a>
+                    <div class="info-item">
+                        <div class="info-label">Canal Digital Oficial</div>
+                        <div class="info-value">
+                            Explore o catálogo completo de produtos, manuais e novidades no site oficial da marca: 
+                            <br><br>
+                            <a href="https://www.aiwa.com.br" target="_blank" class="external-link">🌐 www.aiwa.com.br</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
         </div>
+    </main>
 
-        <nav class="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur border-t border-gray-200 dark:border-gray-700 z-50">
-            <div class="flex justify-around py-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom))]">
-                <a href="../index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                    <span class="text-[10px] font-medium">Início</span>
-                </a>
-                <a href="../historias/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                    <span class="text-[10px] font-medium">Histórias</span>
-                </a>
-                <a href="../comparativos/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                    <span class="text-[10px] font-medium">Comparar</span>
-                </a>
-                <a href="../tecnologias/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                    <span class="text-[10px] font-medium">Recursos</span>
-                </a>
-            </div>
-        </nav>
-
-    </div>
+    <nav class="nav-menu">
+        <a href="../index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="../historias.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="../comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="../tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
+    </nav>
 
 </body>
 </html>
