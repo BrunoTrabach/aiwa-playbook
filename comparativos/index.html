@@ -1,348 +1,106 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Matriz Comparativa - Aiwa Playbook</title>
-    <link rel="stylesheet" href="../styles.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+    <title>Comparativos de Produtos - AIWA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Bloqueio de overflow global para fixar a estrutura na tela */
-        html, body {
-            height: 100% !important;
-            height: 100dvh !important;
-            margin: 0;
-            padding: 0;
-            overflow: hidden !important;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .topbar {
-            flex-shrink: 0;
-        }
-
-        .app-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 0 !important;
-        }
-        
-        .content-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 10px 6px 75px 6px !important; 
-            box-sizing: border-box;
-            overflow: hidden !important;
-            height: 100%;
-        }
-
-        /* Painel Roxo Principal Expandido */
-        .cyber-panel.neon-purple {
-            flex: 1 !important;
-            display: flex !important;
-            flex-direction: column !important;
-            min-height: 0 !important;
-            margin: 4px 0 0 0 !important; 
-            padding: 10px !important;
-            box-sizing: border-box;
-            gap: 8px !important;
-        }
-
-        .panel-title {
-            flex-shrink: 0 !important;
-        }
-
-        /* Layout Inteligente de Seleção (2x2 no mobile) */
-        .select-matrix-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-            flex-shrink: 0;
-        }
-
-        .select-matrix-grid select {
-            width: 100%;
-            background: rgba(18, 9, 36, 0.8);
-            color: var(--text-primary);
-            border: 1px solid var(--border-default);
-            padding: 8px;
-            font-size: 11px;
-            border-radius: 4px;
-            font-weight: bold;
-            outline: none;
-            box-sizing: border-box;
-        }
-
-        .select-matrix-grid select:focus {
-            border-color: var(--neon-blue);
-        }
-
-        /* Container de Rolamento Seguro para a Tabela */
-        .table-viewport {
-            flex: 1 !important;
-            min-height: 0 !important;
-            width: 100% !important;
-            border: 1px solid var(--border-default);
-            box-sizing: border-box;
-            background: rgba(10, 5, 15, 0.5);
-            overflow: auto !important; /* Permite scroll tanto vertical quanto horizontal se necessário */
-            border-radius: 4px;
-        }
-
-        /* Estilização Cyber da Tabela Comparativa */
-        .compare-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 11px;
-            text-align: left;
-            color: var(--text-primary);
-        }
-
-        .compare-table th, .compare-table td {
-            padding: 8px 10px;
-            border: 1px solid rgba(157, 78, 221, 0.15);
-            min-width: 110px; /* Garante tamanho mínimo legível para as colunas das marcas */
-            vertical-align: top;
-            line-height: 1.3;
-        }
-
-        /* Coluna fixa de critérios com destaque neon blue */
-        .compare-table th:first-child, .compare-table td:first-child {
-            position: sticky;
-            left: 0;
-            background: #130a24;
-            z-index: 2;
-            min-width: 85px;
-            font-weight: bold;
-            color: var(--neon-blue);
-            border-right: 2px solid var(--border-default);
-        }
-
-        .compare-table tr:nth-child(even) {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .compare-table th {
-            background: rgba(26, 12, 50, 0.9);
-            color: var(--neon-purple);
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 10px;
-            letter-spacing: 0.5px;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-        }
-
-        /* Destaque para dados da AIWA */
-        .aiwa-cell-highlight {
-            background: rgba(0, 178, 255, 0.05) !important;
-            font-weight: 500;
-        }
-
-        /* Rodapé de créditos fixo */
-        .watermark-footer {
-            flex-shrink: 0;
-            text-align: center;
-            font-size: 10px;
-            color: var(--text-secondary, #888);
-            margin: 6px 0 0 0 !important;
-            width: 100%;
-            display: block;
-            opacity: 0.8;
-            box-sizing: border-box;
-        }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: #f0f2f5; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex justify-center py-0 sm:py-4 transition-colors duration-200 bg-[#f0f2f5] dark:bg-gray-950">
 
-    <header class="topbar">
-        <div class="logo-area"><h1><span>AIWA</span> MATRIZ</h1></div>
-        <a href="../index.html" class="icon-control-btn">🏠</a>
-    </header>
-
-    <main class="app-container">
-        <section class="content-wrapper">
-            
-            <div class="cyber-panel neon-purple">
-                <div class="panel-title">📊 Comparativo Direto de Engenharia</div>
-                
-                <div class="select-matrix-grid">
-                    <select id="m1" onchange="atualizarMatriz()"></select>
-                    <select id="m2" onchange="atualizarMatriz()"></select>
-                    <select id="m3" onchange="atualizarMatriz()"></select>
-                    <select id="m4" onchange="atualizarMatriz()"></select>
-                </div>
-
-                <div class="table-viewport">
-                    <table class="compare-table" id="matrix-table">
-                        <thead>
-                            <tr id="table-header-row"></tr>
-                        </thead>
-                        <tbody id="table-body-content"></tbody>
-                    </table>
+    <div class="w-full max-w-[420px] bg-gray-50 dark:bg-gray-900 min-h-screen sm:min-h-[90vh] sm:rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,.12)] flex flex-col relative overflow-hidden pb-24">
+        
+        <header class="sticky top-0 z-50 bg-[#E30613] text-white shadow-md">
+            <div class="h-14 flex items-center justify-between px-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-xl bg-white/10 flex items-center justify-center font-black text-sm tracking-wider">AW</div>
+                    <div>
+                        <h1 class="font-bold text-[15px] tracking-tight text-white">Comparativos</h1>
+                        <p class="text-white/80 text-[10px] -mt-0.5">Lado a Lado / Argumentação Técnica</p>
+                    </div>
                 </div>
             </div>
+        </header>
 
-            <footer class="watermark-footer">
-                Desenvolvido por Bruno Trabach - Playbook v4/2026
-            </footer>
+        <main class="flex-1 overflow-y-auto px-4 pt-4 space-y-4 no-scrollbar">
+            
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 dark:from-gray-950 dark:to-gray-900 p-4 rounded-3xl text-white relative overflow-hidden shadow-sm">
+                <div class="relative z-10">
+                    <span class="bg-[#E30613] text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full tracking-wider">Métricas Reais</span>
+                    <h2 class="text-lg font-bold mt-1.5 leading-tight">AIWA vs Concorrência</h2>
+                    <p class="text-gray-300 text-[11px] mt-1 leading-relaxed max-w-[85%]">Selecione uma categoria de produto abaixo para acessar fichas de comparação direta e quebrar as objeções do balcão.</p>
+                </div>
+                <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-[#E30613]/10 rounded-full blur-xl"></div>
+            </div>
 
-        </section>
+            <div class="space-y-3">
+                <h3 class="text-[11px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider px-1">Categorias de Som</h3>
 
-        <nav class="nav-menu">
-            <a href="../index.html" class="nav-btn">🏠<br>Home</a>
-            <a href="../historias/index.html" class="nav-btn">🎭<br>Teatro</a>
-            <a href="index.html" class="nav-btn active">📊<br>Matriz</a>
-            <a href="../tecnologias/index.html" class="nav-btn">💡<br>Engenharia</a>
-            <a href="../pilares/index.html" class="nav-btn">🎯<br>CHEGA+</a>
+                <a href="dados/boombox.html" class="block bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 p-4 rounded-2xl shadow-sm hover:scale-[0.99] active:scale-[0.97] transition-all group">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-950/40 flex items-center justify-center text-[#E30613] dark:text-red-500 group-hover:bg-[#E30613] group-hover:text-white transition-colors">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[14px] text-gray-800 dark:text-gray-200">Família Boomboxes</h4>
+                                <p class="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5">AWS-BB-01 vs Concorrência Premium</p>
+                            </div>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700/50 flex items-center justify-center text-gray-400 group-hover:translate-x-0.5 transition-transform">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5l7 7-7 7"/></svg>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="opacity-60 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 p-4 rounded-2xl shadow-sm relative">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-400">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><circle cx="12" cy="14" r="4"/><line x1="12" y1="6" x2="12.01" y2="6"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[14px] text-gray-400 dark:text-gray-500">Party Boxes</h4>
+                                <p class="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5">Brevemente: Comparativos de Torres de Som</p>
+                            </div>
+                        </div>
+                        <span class="text-[9px] font-bold bg-gray-100 dark:bg-gray-700 text-gray-500 px-2 py-0.5 rounded-full uppercase">Breve</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <nav class="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur border-t border-gray-200 dark:border-gray-700 z-50">
+            <div class="flex justify-around py-2.5 pb-[calc(0.625rem+env(safe-area-inset-bottom))]">
+                <a href="../index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    <span class="text-[10px] font-medium">Início</span>
+                </a>
+                <a href="../historias/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span class="text-[10px] font-medium">Histórias</span>
+                </a>
+                <a href="index.html" class="flex flex-col items-center gap-1 text-[#E30613] dark:text-red-500 w-16">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <span class="text-[10px] font-bold">Comparar</span>
+                </a>
+                <a href="../tecnologias/index.html" class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-[#E30613] dark:hover:text-red-500 w-16">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                    <span class="text-[10px] font-medium">Recursos</span>
+                </a>
+            </div>
         </nav>
-    </main>
 
-    <script>
-        // Banco de Dados Consolidado com base nos rascunhos fornecidos
-        const modelos = {
-            "AIWA_BBS01": {
-                nome: "Aiwa BBS01 Plus",
-                potencia: "200W RMS constante (na bateria e tomada)",
-                bateria: "Até 30h prometidas (Real: 30h a 50% / 3h a 100%)",
-                protecao: "IP66 (Proteção total contra poeira e jatos de água)",
-                bluetooth: "Bluetooth 5.3 (Conexão estável)",
-                recursos: "App Oficial, Bass Boost real, Equalização customizável",
-                conexoes: "USB (Pen Drive), Entrada AUX P2, Função Power Bank",
-                preco: "R$ 1.000 - R$ 1.600",
-                argumento: "Melhor relação Custo x Potência Real. Mantém pegada forte na bateria."
-            },
-            "JBL_BB3": {
-                nome: "JBL Boombox 3",
-                potencia: "180W RMS na tomada / 136W RMS na bateria",
-                bateria: "Até 24h prometidas (Real: 15h a 20h em som médio)",
-                protecao: "IP67 (Submersão total em água e poeira)",
-                bluetooth: "Bluetooth 5.3 (PartyBoost)",
-                recursos: "App Oficial, EQ gráfico simples, Som referencial limpo",
-                conexoes: "Entrada AUX P2, Função Power Bank (Não lê Pen Drive)",
-                preco: "R$ 1.800 - R$ 2.500+",
-                argumento: "Construção Premium de alta durabilidade, porém preço muito elevado."
-            },
-            "LG_XG9S": {
-                nome: "LG Xboom Go XG9S",
-                potencia: "120W RMS (Configuração de canais duplos)",
-                bateria: "Até 24h prometidas (Autonomia média real controlada)",
-                protecao: "IP67 (Resistente a água e poeira)",
-                bluetooth: "Bluetooth 5.1 (Conectividade padrão)",
-                recursos: "App Oficial, Iluminação integrada de palco, Sound Boost",
-                conexoes: "Entrada AUX P2, Saída Power Bank",
-                preco: "R$ 1.400 - R$ 1.900",
-                argumento: "Foco estético em luzes e design extravagante, mas menor potência RMS."
-            },
-            "PHILCO_PBX01": {
-                nome: "Philco PBX01 Extreme",
-                potencia: "300W Nominal / Real estimado ~120W RMS",
-                bateria: "Até 30h prometidas (Volume moderado)",
-                protecao: "IP66 (Resistência a jatos de água)",
-                bluetooth: "Bluetooth 5.4 (Mais econômico para 2026)",
-                recursos: "Função ExBass, Equalizações pré-definidas de fábrica",
-                conexoes: "USB (Pen Drive), Entrada AUX P2",
-                preco: "R$ 900 - R$ 1.400",
-                argumento: "Opção barata de entrada, mas som distorce mais nos volumes máximos."
-            }
-        };
+    </div>
 
-        const criterios = [
-            ["Potência Real", "potencia"],
-            ["Autonomia de Bateria", "bateria"],
-            ["Proteção (IP)", "protecao"],
-            ["Tecnologia Bluetooth", "bluetooth"],
-            ["Recursos e App", "recursos"],
-            ["Conexões Disponíveis", "conexoes"],
-            ["Faixa de Preço", "preco"],
-            ["Diferencial de Venda", "argumento"]
-        ];
-
-        function inicializarSeletores() {
-            const IDs = ["m1", "m2", "m3", "m4"];
-            const chaves = Object.keys(modelos);
-            
-            IDs.forEach((id, index) => {
-                const seletor = document.getElementById(id);
-                
-                // Opção em branco caso o usuário queira desativar uma coluna
-                const optVazia = document.createElement("option");
-                optVazia.value = "";
-                optVazia.textContent = "-- Ocultar Coluna --";
-                seletor.appendChild(optVazia);
-
-                chaves.forEach(chave => {
-                    const opt = document.createElement("option");
-                    opt.value = chave;
-                    opt.textContent = modelos[chave].nome;
-                    seletor.appendChild(opt);
-                });
-
-                // Seleções padrões iniciais para não abrir vazio
-                if (index === 0) seletor.value = "AIWA_BBS01";
-                if (index === 1) seletor.value = "JBL_BB3";
-                if (index === 2) seletor.value = "PHILCO_PBX01";
-                if (index === 3) seletor.value = "LG_XG9S";
-            });
-
-            atualizarMatriz();
-        }
-
-        function atualizarMatriz() {
-            const m1 = document.getElementById("m1").value;
-            const m2 = document.getElementById("m2").value;
-            const m3 = document.getElementById("m3").value;
-            const m4 = document.getElementById("m4").value;
-
-            const ativos = [m1, m2, m3, m4].filter(Boolean);
-
-            // 1. Renderizar o Cabeçalho da Tabela
-            const headerRow = document.getElementById("table-header-row");
-            headerRow.innerHTML = "<th>Critério</th>";
-            
-            ativos.forEach(chave => {
-                const th = document.createElement("th");
-                th.textContent = modelos[chave].nome;
-                if (chave === "AIWA_BBS01") th.className = "aiwa-cell-highlight";
-                headerRow.appendChild(th);
-            });
-
-            // 2. Renderizar o Corpo da Tabela baseado nos Critérios
-            const tbody = document.getElementById("table-body-content");
-            tbody.innerHTML = "";
-
-            criterios.forEach(crit => {
-                const tr = document.createElement("tr");
-                
-                // Coluna de nomes do critério
-                const tdLabel = document.createElement("td");
-                tdLabel.textContent = crit[0];
-                tr.appendChild(tdLabel);
-
-                // Colunas de dados correspondentes de cada marca ativa
-                ativos.forEach(chave => {
-                    const tdData = document.createElement("td");
-                    tdData.textContent = modelos[chave][crit[1]];
-                    if (chave === "AIWA_BBS01") tdData.className = "aiwa-cell-highlight";
-                    tr.appendChild(tdData);
-                });
-
-                tbody.appendChild(tr);
-            });
-        }
-
-        // Recuperar o tema padrão do app e iniciar a matriz
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedTheme = localStorage.getItem("theme") || "dark";
-            document.documentElement.setAttribute("data-theme", savedTheme);
-            inicializarSeletores();
-        });
-    </script>
 </body>
 </html>
+
