@@ -1,72 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conclusões - Aiwa Playbook</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+    <title>Conclusões - Playbook AIWA</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Variáveis de Tema Adaptativas */
-        html[data-theme="dark"] {
-            --bg-global: #0f172a;
-            --bg-card: #111827;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border-card: rgba(255, 255, 255, 0.05);
-        }
-        html[data-theme="light"] {
-            --bg-global: #f8fafc;
-            --bg-card: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --border-card: rgba(0, 0, 0, 0.05);
-        }
-        
-        body {
-            background-color: var(--bg-global) !important;
-            color: var(--text-primary) !important;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        .adaptive-card {
-            background-color: var(--bg-card) !important;
-            border: 1px solid var(--border-card) !important;
-            color: var(--text-primary) !important;
-        }
-        .adaptive-text-muted {
-            color: var(--text-secondary) !important;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>body{font-family:Inter,sans-serif;background:#f8f9fa}</style>
 </head>
-<body>
-    <header class="bg-[#E30613] text-white sticky top-0 z-50 shadow-md">
-        <div class="flex items-center h-14 px-4 gap-3">
-            <a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center hover:bg-white/25 transition">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-            </a>
-            <h1 class="font-semibold text-lg">Conclusões</h1>
+<body class="bg-gray-50 min-h-screen">
+
+    <header class="sticky top-0 z-40 bg-[#E30613] text-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="flex items-center h-14 gap-3">
+          <a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>
+          <div class="flex-1">
+            <h1 class="text-white font-semibold">Conclusões</h1>
+            <p class="text-white/80 text-xs -mt-0.5">Estratégia de Relacionamento</p>
+          </div>
         </div>
+      </div>
     </header>
 
-    <main class="max-w-3xl mx-auto p-4 mt-6">
+    <main class="max-w-3xl mx-auto p-4 pt-6">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="completa.html" class="adaptive-card p-6 rounded-2xl shadow-md border-2 border-[#0077B6] text-center transform active:scale-95 transition block">
-                <div class="text-4xl mb-3">📄</div>
-                <div class="font-bold text-base">Conclusão Completa</div>
-                <div class="text-xs adaptive-text-muted mt-1">A visão detalhada sobre o relacionamento estratégico em loja.</div>
+            
+            <a href="completa.html" class="bg-white p-6 rounded-2xl shadow border border-gray-100 text-center block active:scale-95 transition-transform">
+                <div class="text-3xl mb-2">📄</div>
+                <div class="font-bold text-gray-800">Conclusão Completa</div>
+                <p class="text-xs text-gray-500 mt-1">Texto integral com casos de loja</p>
             </a>
-            <a href="resumida.html" class="adaptive-card p-6 rounded-2xl shadow-md border-2 border-[#009639] text-center transform active:scale-95 transition block">
-                <div class="text-4xl mb-3">📌</div>
-                <div class="font-bold text-base">Conclusão Resumida</div>
-                <div class="text-xs adaptive-text-muted mt-1">Os pontos-chave em formato rápido e direto para o campo.</div>
+
+            <a href="resumida.html" class="bg-white p-6 rounded-2xl shadow border border-gray-100 text-center block active:scale-95 transition-transform">
+                <div class="text-3xl mb-2">📌</div>
+                <div class="font-bold text-gray-800">Conclusão Resumida</div>
+                <p class="text-xs text-gray-500 mt-1">Tópicos e direcionamento direto</p>
+            </a>
+
+        </div>
+
+        <div class="text-center pt-8">
+            <a href="../index.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gray-200 text-gray-700 text-[14px] font-semibold rounded-xl active:scale-95 transition-transform">
+                ← Voltar
             </a>
         </div>
     </main>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedTheme = localStorage.getItem("theme") || "dark";
-            document.documentElement.setAttribute("data-theme", savedTheme);
-        });
-    </script>
 </body>
 </html>
+

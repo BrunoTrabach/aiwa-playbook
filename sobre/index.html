@@ -1,150 +1,80 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sobre a AIWA - Aiwa Playbook</title>
-    <link rel="stylesheet" href="../styles.css">
-    <script>
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-    </script>
-    <style>
-        .about-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            margin: 14px 0;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 14px;
-        }
-        .info-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            padding: 12px;
-            border-radius: 8px;
-        }
-        .info-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-        .info-value {
-            font-size: 13.5px;
-            color: var(--text-primary);
-            line-height: 1.4;
-        }
-        .external-link {
-            display: inline-flex;
-            items-center: center;
-            gap: 6px;
-            color: var(--neon-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .external-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+    <title>Sobre a AIWA - Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>body{font-family:Inter,sans-serif;background:#f8f9fa}</style>
 </head>
-<body>
+<body class="bg-gray-50 min-h-screen">
 
-    <header class="topbar">
-        <div class="logo-area">
-            <a href="../index.html" class="back-btn">❮</a>
-            <h1>AIWA <span style="font-weight:300; opacity:0.85;">PLAYBOOK</span></h1>
+    <header class="sticky top-0 z-40 bg-[#E30613] text-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <div class="flex items-center h-14 gap-3">
+          <a href="../index.html" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center">
+            <svg width="20" height=\"20\" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </a>
+          <div class="flex-1">
+            <h1 class="text-white font-semibold">Sobre a AIWA</h1>
+            <p class="text-white/80 text-xs -mt-0.5">História e Infraestrutura</p>
+          </div>
         </div>
-        <div class="controls-area"><div class="status-indicator"></div></div>
+      </div>
     </header>
 
-    <main class="app-container">
-        <div class="content-wrapper">
+    <main class="max-w-3xl mx-auto p-4 pt-6 space-y-4">
+        
+        <div class="bg-white rounded-2xl shadow p-4">
+            <h2 class="text-[14px] font-bold text-gray-900 uppercase tracking-wide mb-3 flex items-center gap-2">
+                <span class="text-red-600">🎬</span> Vídeo da Fábrica (Manaus)
+            </h2>
+            <div class="relative w-full aspect-video rounded-xl overflow-hidden border border-gray-100 shadow-inner">
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/HLAx01fo9uo" 
+                    title="Fábrica AIWA" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="text-[12px] text-gray-500 text-center mt-2 italic">
+                Tour pela linha de montagem automatizada no Polo Industrial.
+            </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-5 space-y-4">
+            <div>
+                <h3 class="text-[12px] font-bold text-gray-400 uppercase tracking-wide mb-1">Legado Japonês</h3>
+                <p class="text-[14px] text-gray-700 leading-relaxed">Fundada no Japão em 1951, a AIWA tornou-se uma lenda global em engenharia acústica de alta fidelidade (Hi-Fi) e durabilidade de componentes.</p>
+            </div>
             
-            <div class="welcome-header" style="margin-top: 8px; margin-bottom: 16px;">
-                <span class="live-ticker">LEGADO, ESTRUTURA E RECONHECIMENTO</span>
-                <h2>Sobre a Marca</h2>
-                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 4px;">
-                    Conheça a história de inovação japonesa e a robusta estrutura fabril que dão suporte à autoridade da AIWA no Brasil.
+            <hr class="border-gray-100">
+
+            <div>
+                <h3 class="text-[12px] font-bold text-gray-400 uppercase tracking-wide mb-1">Operação e Estrutura no Brasil</h3>
+                <p class="text-[14px] text-gray-700 leading-relaxed">A marca opera no Brasil sob a liderança do Grupo MK, com uma fábrica ultra tecnológica situada no Polo Industrial de Manaus (AM). A estrutura ocupa o complexo industrial que historicamente pertenceu à Sony, mantendo o rigor do controle de qualidade automatizado e robôs de precisão.</p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <div>
+                <h3 class="text-[12px] font-bold text-gray-400 uppercase tracking-wide mb-1">Canal Oficial</h3>
+                <p class="text-[14px] text-gray-700">
+                    Visite o portal para conferir o catálogo completo: 
+                    <a href="https://www.aiwa.com.br" target="_blank" class="text-blue-600 font-semibold block mt-1 hover:underline">🌐 www.aiwa.com.br</a>
                 </p>
             </div>
+        </div>
 
-            <h3 class="section-title" style="color: var(--accent-red); margin-bottom: 4px;">🎬 Vídeo Institucional da Fábrica</h3>
-            <div class="about-card" style="padding: 12px;">
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/HLAx01fo9uo" 
-                        title="Vídeo Institucional Fábrica AIWA" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p style="font-size: 11.5px; color: var(--text-secondary); text-align: center; margin-top: 4px; font-style: italic;">
-                    Por dentro da linha de montagem automatizada e de alta precisão em Manaus.
-                </p>
-            </div>
-
-            <h3 class="section-title" style="color: var(--neon-blue); margin-bottom: 4px;">🏢 Informações Corporativas</h3>
-            <div class="about-card">
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">Fundação e Legado</div>
-                        <div class="info-value">Fundada no Japão em 1951, a AIWA consolidou-se mundialmente como sinônimo de alta fidelidade de áudio (Hi-Fi) e engenharia acústica durável.</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">Operação no Brasil</div>
-                        <div class="info-value">A marca retornou com força total ao mercado brasileiro sob a governança do Grupo MK. Toda a linha de áudio premium é fabricada em uma planta industrial de última geração localizada no Polo Industrial de Manaus (AM), utilizando o mesmo espaço e alto padrão técnico que historicamente pertenceu à Sony.</div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-label">Diferencial de Fábrica</div>
-                        <div class="info-value">Infraestrutura com maquinários japoneses robotizados, processos de calibração acústica rigorosos e 100% de controle de qualidade automatizado em laboratórios próprios.</div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-label">Canal Digital Oficial</div>
-                        <div class="info-value">
-                            Explore o catálogo completo de produtos, manuais e novidades no site oficial da marca: 
-                            <br><br>
-                            <a href="https://www.aiwa.com.br" target="_blank" class="external-link">🌐 www.aiwa.com.br</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="text-center pt-2 pb-8">
+            <a href="../index.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#E30613] text-white text-[14px] font-semibold rounded-xl shadow-md shadow-red-600/10 active:scale-95 transition-transform">
+                ← Voltar ao Início
+            </a>
         </div>
     </main>
-
-    <nav class="nav-menu">
-        <a href="../index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
-        <a href="../historias.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
-        <a href="../comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
-        <a href="../tecnologias.html" class="nav-btn"><div>🔊</div><span>Tecnologias</span></a>
-    </nav>
 
 </body>
 </html>
