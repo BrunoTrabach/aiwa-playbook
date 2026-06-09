@@ -2,39 +2,44 @@
 <html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sobre - Aiwa Playbook</title>
-    <link rel="stylesheet" href="styles.css">
-    <script>
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a AIWA - Aiwa Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #f3f4f6; }
+        .card { background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 16px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-top: 10px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    </style>
 </head>
-<body>
+<body class="p-4 max-w-lg mx-auto">
 
-    <header class="topbar" style="background-color: #E30613; border-bottom: none;">
-        <div class="logo-area">
-            <a href="index.html" class="icon-control-btn" style="border: none; background: rgba(255,255,255,0.2); color: white; margin-right: 4px;">📂</a>
-            <h1 style="color: #fff; font-size: 16px; font-weight: 700;">Sobre o App</h1>
-        </div>
-        <div class="controls-area"><div class="status-indicator"></div></div>
+    <header class="flex items-center mb-6">
+        <a href="index.html" class="p-2 mr-3 bg-white rounded-full shadow">←</a>
+        <h1 class="text-xl font-bold text-gray-800">Sobre a AIWA</h1>
     </header>
 
-    <main class="app-container">
-        <div class="content-wrapper" style="margin-top: 10px;">
-            <div class="cyber-panel neon-orange">
-                <div class="panel-title">AIWA PLAYBOOK v4.8</div>
-                <p class="panel-text" style="color: var(--text-primary); margin-bottom: 8px;">Guia de bolso definitivo focado na capacitação de promotores e consultores de tecnologia de som de alta performance.</p>
-                <p class="panel-text" style="color: var(--text-secondary); font-size: 11px;">Desenvolvido para execução mobile otimizada em campo (Termux/Android Environment).</p>
-            </div>
+    <div class="card">
+        <h2 class="text-lg font-bold text-[#E30613] mb-2">🎬 Fábrica (Manaus)</h2>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/HLAx01fo9uo" frameborder="0" allowfullscreen></iframe>
         </div>
-    </main>
+        <p class="text-sm text-gray-600 mt-3 italic">Tour pela linha de montagem automatizada no Polo Industrial.</p>
+    </div>
 
-    <nav class="nav-menu">
-        <a href="index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
-        <a href="historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
-        <a href="comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
-        <a href="sobre.html" class="nav-btn active"><div>ℹ️</div><span>Sobre</span></a>
-    </nav>
+    <div class="card">
+        <h3 class="font-bold text-gray-800">Legado Japonês</h3>
+        <p class="text-sm text-gray-600 mt-1">Fundada no Japão em 1951, a AIWA é referência global em engenharia acústica, conhecida pela qualidade sonora e design icônico.</p>
+        
+        <hr class="my-4 border-gray-100">
+        
+        <h3 class="font-bold text-gray-800">Estrutura no Brasil</h3>
+        <p class="text-sm text-gray-600 mt-1">Operação sob liderança do Grupo MK, com fábrica ultra tecnológica em Manaus focada em excelência e suporte local.</p>
+    </div>
+
+    <div class="text-center pt-2">
+        <a href="https://www.aiwa.com.br" target="_blank" class="block w-full py-3 bg-black text-white font-bold rounded-xl">Visitar Site Oficial</a>
+    </div>
 
 </body>
 </html>
