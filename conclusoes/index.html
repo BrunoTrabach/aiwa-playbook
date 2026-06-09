@@ -1,23 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Conclusões - AIWA Playbook</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>body { font-family: 'Inter', sans-serif; background: #f0f2f5; }</style>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        const savedTheme = localStorage.getItem("theme") || "dark";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
 </head>
-<body class="min-h-screen flex justify-center py-4">
-    <div class="w-full max-w-[420px] bg-white min-h-[90vh] rounded-[32px] shadow-xl flex flex-col overflow-hidden pb-20">
-        <header class="bg-[#E30613] p-6 text-white">
-            <h1 class="text-xl font-bold">Conclusões</h1>
-            <p class="text-white/80 text-xs">Relatos de campo e estratégias.</p>
-        </header>
-        <main class="p-4 space-y-4">
-            <a href="completa.html" class="block bg-gray-50 p-5 rounded-2xl border border-gray-100 font-bold text-gray-800">📖 Relato Completo (Na Íntegra)</a>
-            <a href="resumida.html" class="block bg-gray-50 p-5 rounded-2xl border border-gray-100 font-bold text-gray-800">⚡ Versão Resumida</a>
-        </main>
-    </div>
+<body>
+
+    <header class="topbar">
+        <div class="logo-area flex items-center gap-3">
+            <a href="../index.html" class="icon-control-btn">←</a>
+            <h1>CONCLUSÕES</h1>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div class="content-wrapper">
+            <div class="welcome-header" style="margin-top: 8px;">
+                <span class="live-ticker">Relatos de Campo</span>
+                <h2>Selecione o Formato</h2>
+            </div>
+
+            <div class="cyber-grid">
+                <a href="completa.html" class="fusion-card card-cyan">
+                    <span style="font-size: 22px; margin-bottom: 4px;">📖</span>
+                    <span class="card-title">Relato Completo</span>
+                    <span class="card-desc">Na íntegra, com todos os detalhes.</span>
+                </a>
+
+                <a href="resumida.html" class="fusion-card card-purple">
+                    <span style="font-size: 22px; margin-bottom: 4px;">⚡</span>
+                    <span class="card-title">Versão Resumida</span>
+                    <span class="card-desc">Foco em argumentos rápidos.</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <nav class="nav-menu">
+        <a href="../index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
+        <a href="../historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
+        <a href="../comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
+        <a href="index.html" class="nav-btn active"><div>🏁</div><span>Conclusão</span></a>
+    </nav>
+
 </body>
 </html>
 
