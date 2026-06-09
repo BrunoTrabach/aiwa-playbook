@@ -8,20 +8,17 @@
     <link rel="stylesheet" href="../styles.css">
 
     <script>
-        // Inicializa o tema conforme o que o usuário escolheu anteriormente
-        const savedTheme = localStorage.getItem("theme") || "dark";
-        document.documentElement.setAttribute("data-theme", savedTheme);
-
-        // Função para alternar o tema
-        function toggleTheme() {
-            const current = document.documentElement.getAttribute("data-theme");
-            const next = current === "dark" ? "light" : "dark";
-            document.documentElement.setAttribute("data-theme", next);
-            localStorage.setItem("theme", next);
-        }
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
     </script>
 
     <style>
+        .about-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
         .video-container {
             position: relative;
             width: 100%;
@@ -45,6 +42,7 @@
             gap: 12px;
             margin-top: 14px;
         }
+        /* Ajuste: Removi o background fixo daqui para usar classes Tailwind no HTML */
         .info-item {
             border: 1px solid var(--border-color);
             padding: 12px;
@@ -71,7 +69,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 min-h-screen pb-20">
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
 
     <header class="sticky top-0 z-40 bg-[#E30613] text-white shadow-md">
       <div class="max-w-3xl mx-auto px-4">
@@ -83,7 +81,6 @@
             <h1 class="text-white font-semibold">Sobre a AIWA</h1>
             <p class="text-white/80 text-xs -mt-0.5">História e Infraestrutura</p>
           </div>
-          <button onclick="toggleTheme()" class="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center text-white" title="Alternar Tema">🌓</button>
         </div>
       </div>
     </header>
@@ -110,17 +107,17 @@
 
         <div class="info-grid">
 
-            <div class="info-item bg-white dark:bg-white/5 border-gray-200 dark:border-gray-700">
+            <div class="info-item bg-white dark:bg-white/5">
                 <div class="info-label">Legado Japonês</div>
                 <div class="info-value text-gray-900 dark:text-white">Fundada no Japão em 1951, a AIWA tornou-se uma lenda global em engenharia acústica e design icônico.</div>
             </div>
 
-            <div class="info-item bg-white dark:bg-white/5 border-gray-200 dark:border-gray-700">
+            <div class="info-item bg-white dark:bg-white/5">
                 <div class="info-label">Operação no Brasil</div>
                 <div class="info-value text-gray-900 dark:text-white">Operação sob liderança do Grupo MK, com fábrica ultra tecnológica em Manaus focada em excelência local.</div>
             </div>
 
-            <div class="info-item bg-white dark:bg-white/5 border-gray-200 dark:border-gray-700">
+            <div class="info-item bg-white dark:bg-white/5">
                 <div class="info-label">Canal Oficial</div>
                 <a href="https://www.aiwa.com.br" target="_blank" class="external-link">
                     🌐 www.aiwa.com.br
@@ -129,18 +126,11 @@
         </div>
 
         <div class="text-center pt-6 pb-8">
-            <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#E30613] text-white text-[14px] font-semibold rounded-xl shadow">
+            <a href="../index.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#E30613] text-white text-[14px] font-semibold rounded-xl shadow-lg">
                 ← Voltar ao Início
             </a>
         </div>
     </main>
-
-    <nav class="nav-menu">
-        <a href="../index.html" class="nav-btn"><div>🏠</div><span>Home</span></a>
-        <a href="../historias/index.html" class="nav-btn"><div>📖</div><span>Histórias</span></a>
-        <a href="../comparativos.html" class="nav-btn"><div>📊</div><span>Comparar</span></a>
-        <a href="index.html" class="nav-btn active"><div>ℹ️</div><span>Sobre</span></a>
-    </nav>
 
 </body>
 </html>
